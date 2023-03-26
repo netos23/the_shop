@@ -2,8 +2,8 @@
  
 ## Участники
 
-1) Team lead, flutter developer - [Никита морозов](https://github.com/netos23)
-2) Backend - [Софья черникова](https://github.com/SofChernikova)
+1) Team lead, flutter developer - [Никита Морозов](https://github.com/netos23)
+2) Backend - [Софья Черникова](https://github.com/SofChernikova)
 3) QA - [Карл Х Флорексил](https://github.com/jkalh)
 
 ## Ссылки
