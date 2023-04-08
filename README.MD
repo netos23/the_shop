@@ -7,6 +7,7 @@
 3) QA - [Карл Х Флорексил](https://github.com/jkalh)
 
 ## Ссылки
+* [Руководство по работе с репозиторием и рабочим процессам](https://github.com/netos23/the_shop/blob/task%2335/CONTRIBUTING.MD)
 * [Макет + User story](https://www.figma.com/file/ltg8CdexSB1p92Z0pXGZvV/The-shop?node-id=0:1&t=6Yh1QwqL3TQb1pyw-1)
 * [Таск менеджер](https://trello.com/b/iUTXtR69/the-shop)
 * [Техническое задание](docs/ТП_ТЗ_pdf.pdf)
