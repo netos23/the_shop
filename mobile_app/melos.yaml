@@ -1,0 +1,22 @@
+name: the_store
+packages:
+  - "admin_app"
+  - "core"
+  - "the_store_app"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: melos exec -- "flutter analyze"
+    description: Run `flutter analyze` in all packages
+
+  format:
+    run: melos exec -- "flutter format lib"
+    description: Run `flutter format .` in all packages
+
+  test:
+    run: melos exec --dir-exists=test -- "flutter test"
+    description: Run `flutter test` in all packages
