@@ -1,0 +1,709 @@
+openapi: 3.0.0
+info:
+  title: Продуктовый онлайн-магазин "The Shop"
+  version: 0.0.1
+servers: 
+  - description: для примера, может измениться
+    url: http://localhost:8080/api/v1
+    
+paths:
+  /user/registration:
+    post:
+      description: Регистрация нового пользователя
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+             $ref: '#/components/schemas/RegistrationRequest'
+      responses:
+        '200':
+          description: Регистрация прошла успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegistrationResponse'
+        '400':
+          description: Ошибка при валидации полей
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+  /user/auth:
+    post:
+      description: Авторизация пользователя
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest' 
+      responses:
+        '200':
+          description: Авторизация прошла успешно
+          content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Ошибка при валидации полей при заполнении, или неверный код, или нет такого номера в БД
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              
+              
+  /catalog:
+    get:
+      tags:
+        - Product
+      # security:
+      #   - bearerAuth: []
+      description: Формирование каталога для просмотра всех продуктов
+      parameters:
+        - in: query
+          name: pageNumber
+          schema:
+            type: integer
+            default: 1
+        - in: query
+          name: category
+          schema:
+            $ref: '#/components/schemas/Category'
+        - in: query
+          name: sort
+          schema:
+            $ref: '#/components/schemas/ProductSort'
+        - in: query
+          name: isAsc
+          schema:
+            type: boolean
+            default: true    
+      responses:
+        '200':
+          description: Возвращается страница с продуктами
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Произошла ошибка при извлечении продуктов из БД
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /catalog/update:
+    put:
+      tags:
+        - Product
+      security:
+        - bearerAuth: []
+      description: Обновление каталога администратором с помощью загрузки файла
+      requestBody:
+        content:
+          multipart/from-data:
+            schema:
+                $ref: '#/components/schemas/ProductDTO'
+      responses:
+        '200':
+          description: Возвращается страница с продуктами
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Произошла ошибка при открытии файла, например. Ошибки распишу попозже
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+                
+  /catalog/add:
+    post:
+      tags:
+        - Product
+      security:
+        - bearerAuth: []
+      description: Добавление нового товара через приложение
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductDTO'    
+      responses:
+        '200':
+          description: Возвращается страница с продуктами
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Ошибка при валидации, например. Ошибки распишу попозже 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse' 
+                
+                
+  /catalog/{id}:
+    get:
+      tags:
+        - Product
+      # security:
+      #   - bearerAuth: []
+      description: Просмотр карточки товара
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '200':
+          description: Возвращается товар
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductDTO'
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+  /catalog/{id}/update:
+    put:
+      tags:
+        - Product
+      security:
+        - bearerAuth: []
+      description: Редактирование карточки товара через приложение
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+            format: int64
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductDTO'    
+      responses:
+        '200':
+          description: Возвращается страница с продуктами
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  
+              
+                
+  /catalog/{id}/delete:
+    delete:
+      tags:
+        - Product
+      security:
+        - bearerAuth: []
+      description: ВОЗМОЖНО НЕНУЖНАЯ ФУНКЦИЯ. Удаление карточки товара (товар закончился). Либо можно в товаре поле amount смотреть, если там 0, то делать пометку - "Товар закончился", не удаляя его при этом из БД
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '200':
+          description: Возвращается страница с продуктами
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'              
+                
+                
+  /order/{orderId}:
+    get:
+      tags:
+        - Order
+      description: Просмотр заказа
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '200':
+          description: Возвращается заказ
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDTO'
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /order:
+    post:
+      tags:
+        - Order
+      description: Создание заказа
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'   
+      responses:
+        '200':
+          description: Если пользователь авторизован, то переходит в "Мои заказы", если нет - в "Корзину". Если пользователь выбрал онлайн-оплату, то он перенаправляется на страницу оплаты
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  
+  /order/{orderId}/payment:
+    post:
+      tags:
+        - Payment
+      description: Оплата
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: orderId
+          schema:
+            type: integer
+            format: int64
+          required: true  
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'   
+      responses:
+        '200':
+          description: Если пользователь авторизован, то переходит в "Мои заказы", если нет - в "Корзину"
+        '400':
+          description: Такого id не существует 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse' 
+  
+  /stock:
+    get:
+      tags:
+        - Stock
+      # security:
+      #   - bearerAuth: []
+      description: Просмотр акций магазина
+      parameters:
+        - in: query
+          name: pageNumber
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: Возвращается страница с акциями
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Произошла ошибка при извлечении списка акций из БД
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+  /stock/add:              
+    post:
+      tags:
+        - Stock
+      security:
+        - bearerAuth: []
+      description: Добавление банера новой акции
+      requestBody:
+        content:
+          image/png:
+            schema:
+              $ref: '#/components/schemas/Banner'    
+      responses:
+        '200':
+          description: Возвращается страница с акциями
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Ошибка при валидации, например. Ошибки распишу попозже 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'            
+    
+    
+  /stock/{id}/delete:              
+    delete:
+      tags:
+        - Stock
+      security:
+        - bearerAuth: []
+      description: Удаление банера акции
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '200':
+          description: Возвращается страница с акциями
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Paging'
+        '400':
+          description: Ошибка при валидации, например. Ошибки распишу попозже 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'  
+             
+             
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      
+  schemas:
+    RegistrationRequest:
+      type: object
+      description: Схема запроса на регистрацию
+      properties:
+        city:
+          type: string
+          nullable: false
+        name:
+          type: string
+          maxLength: 120
+          nullable: false
+        number:
+          type: string
+          format: Russian number
+          example: "+7 910 444 44 44"
+          nullable: false
+        email:
+          type: string
+          format: email
+          example: "me@mail.ru"
+          nullable: false
+    
+    RegistrationResponse:
+      type: object
+      description: Схема ответа после регистрации
+      properties:
+        number:
+          type: string
+          format: Russian number
+          example: "+7 910 444 44 44"
+          nullable: false
+        code:
+          type: integer
+          example: "1111"
+          nullable: false
+          
+    ErrorResponse:
+      type: object
+      description: Схема для вывода ошибки
+      properties:
+        error:
+          type: string
+          
+    AuthRequest:
+      type: object
+      description: Схема запроса на авторизацию
+      properties:
+        number:
+          type: string
+          format: Russian number
+          example: "+7 910 444 44 44"
+          nullable: false
+        code:
+          type: integer
+          nullable: false
+      
+    AuthResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "OK"    
+    
+    Paging:
+      type: object
+      properties:
+        paging:
+          type: object
+          properties:
+            pageNumber:
+              type: integer
+            pageSize:
+              type: integer
+            totalPages:
+              type: integer
+        data:
+          type: array
+          items:
+            type: object
+    
+    ProductDTO:
+      type: object
+      description: Продукт
+      properties:
+        productId:
+          type: integer
+          format: itn64
+        picture:
+          $ref: '#/components/schemas/ProductPictureDTO'  
+        name:
+          type: string
+        price:
+          type: number
+          format: double
+        oldPrice:
+          type: number
+          format: double  
+        volume:
+          type: number
+          format: double
+        description:
+          type: string
+          maxLength: 500
+        amount:
+          type: integer
+          format: int64
+    
+    ProductPictureDTO:
+      type: object
+      description: Картинка товара
+      properties:
+        productId:
+          type: integer
+          format: itn64
+        pictId:
+          type: integer
+          format: itn64  
+        pictPath:
+          type: string
+          maxLength: 300
+          
+    Category:
+      type: object
+      properties:
+        sort:
+          type: string
+          enum: [ DAIRY, VEGETABLES, FRUITS, CEREALS, BREAD, BAKERY, DRINKS ]
+    
+    ProductSort:
+      type: object
+      properties:
+        sort:
+          type: string
+          enum: [ BY_PRICE, BY_NAME ]      
+          
+    OrderDTO:
+      type: object
+      description: Заказ
+      properties:
+        orderId:
+          type: integer
+          format: int64
+        user:
+          $ref: '#/components/schemas/UserDTO'
+        total:
+          type: number
+          format: double
+        payment:
+          $ref: '#/components/schemas/PaymentDTO'
+        delivery:
+          $ref: '#/components/schemas/DeliveryDTO'
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductDTO'
+        status:
+          type: string
+          enum: [CREATED, PAID, RECEIVED]
+            
+    UserDTO:
+      type: object
+      description: Пользователь
+      properties:
+        userId:
+          type: integer
+          format: int64
+        city:
+          $ref: '#/components/schemas/CityDTO'
+        name:
+          type: string
+          maxLength: 120
+        number:
+          type: string
+          format: Russian number
+          example: "+7 910 444 44 44"
+        email:
+          type: string
+          format: email
+          example: "me@mail.ru"
+        sex: 
+          type: string
+          enum: [MEN, WOMEN]
+        anonimus:
+          type: boolean
+          default: true
+        firebaseId:
+          type: integer
+          format: int64 
+          
+    CityDTO:
+      type: object
+      description: Город
+      properties:
+        cityId:
+          type: integer
+          format: int64
+        name:
+          type: string
+          maxLength: 50
+              
+          
+    PaymentDTO:
+      type: object
+      description: Платеж (чек)
+      properties:
+        paymentId:
+          type: integer
+          format: int64
+        name:
+          type: string
+          maxLength: 50
+          
+    DeliveryDTO:
+      type: object
+      description: Доставка
+      properties:
+        deliveryId:
+          type: integer
+          format: int64
+        name:
+          type: string
+          maxLength: 50
+        status:
+          type: string
+          enum: [DELIVERY_PROCESSING_STARTED, DELIVERY_LOADED, DELIVERY_TRANSPORTATION, DELIVERY_TRANSMITTED_TO_RECIPIENT]  
+          
+    CreateOrderRequest:
+      type: object
+      description: Создание заказа
+      properties:
+        userName:
+          type: string
+          maxLength: 120
+          nullable: false
+        userNumber:
+          type: string
+          format: Russian number
+          example: "+7 910 444 44 44"
+          nullable: false
+        delivery:
+          type: boolean
+          default: false
+          nullable: false
+        address:
+          type: string
+          maxLength: 120
+          nullable: false
+        paymentMethod:
+          type: string
+          enum: [CARD, CASH]
+          nullable: false
+        
+    PaymentRequest:
+      type: object
+      description: Оплата заказа
+      properties:
+        card:
+          type: string
+          format: Credit card number
+          example: "1111 1111 1111 1111"
+          nullable: false
+        exprDate:
+          type: string
+          format: "MM/YY"
+          example: "04/24"
+          nullable: false
+        cvc:
+          type: integer
+          minLength: 3
+          maxLength: 3
+          example: 123
+          nullable: false
+          
+    
+    Banner:
+      type: object
+      description: Баннер с акцией
+      properties:
+        bannerId:
+          type: integer
+          format: int64
+        path:
+          type: string
+          maxLength: 200
+      
+      
+   
+        
+        
+    
+          
+          
+      
+  
