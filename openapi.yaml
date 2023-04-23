@@ -123,13 +123,11 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
                 
                 
-  /catalog/add:
+  /basket/add:
     post:
       tags:
-        - Product
-      security:
-        - bearerAuth: []
-      description: Добавление нового товара через приложение
+        - Basket
+      description: Добавление нового товара в корзину
       requestBody:
         content:
           application/json:
@@ -214,13 +212,11 @@ paths:
   
               
                 
-  /catalog/{id}/delete:
+  /basket/{id}/delete:
     delete:
       tags:
-        - Product
-      security:
-        - bearerAuth: []
-      description: ВОЗМОЖНО НЕНУЖНАЯ ФУНКЦИЯ. Удаление карточки товара (товар закончился). Либо можно в товаре поле amount смотреть, если там 0, то делать пометку - "Товар закончился", не удаляя его при этом из БД
+        - Basket
+      description: Удаление товара из корзины
       parameters:
         - in: path
           name: id
