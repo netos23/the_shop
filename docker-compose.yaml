@@ -11,4 +11,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 40s
+  ingress:
+    image: 'the-store-ingress:1.0'
+    build: ./ingress/
+    ports:
+      - '80:80'
+      - '443:443'
+    container_name: the-store-ingress
+
 
