@@ -1,4 +1,7 @@
 # The Shop
+
+[![Codemagic build status](https://api.codemagic.io/apps/6434682a8ad9d4117eb3ebec/64346dda8ad9d4117eb3ecd9/status_badge.svg)](https://codemagic.io/apps/6434682a8ad9d4117eb3ebec/64346dda8ad9d4117eb3ecd9/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/6434682a8ad9d4117eb3ebec/64346db65131d0337316fd7a/status_badge.svg)](https://codemagic.io/apps/6434682a8ad9d4117eb3ebec/64346db65131d0337316fd7a/latest_build)
  
 ## Участники
 

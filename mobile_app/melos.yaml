@@ -20,3 +20,6 @@ scripts:
   test:
     run: melos exec --dir-exists=test -- "flutter test"
     description: Run `flutter test` in all packages
+  add:
+    run: melos exec -- "flutter pub add $1"
+    description: Run `flutter test` in all packages
