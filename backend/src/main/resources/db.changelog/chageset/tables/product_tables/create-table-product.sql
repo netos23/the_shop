@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS product
     product_old_price DECIMAL(5, 3) NOT NULL,
     product_volume INT NOT NULL,
     product_description VARCHAR(300) NOT NULL,
-    product_amount INT NOT NULL,
-    FOREIGN KEY (product_picture) REFERENCES my_user (user_id) ON DELETE CASCADE,
+    product_amount INT NOT NULL
 );
+
