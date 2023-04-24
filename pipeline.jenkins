@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'dev',
+                    url: 'https://github.com/netos23/the_shop'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker compose up -d'
+            }
+        }
+    }
+}
