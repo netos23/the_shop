@@ -38,4 +38,11 @@
         <sqlFile path="changeset/tables/insert-table-product.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="Create-main-tables-1" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/create-table-pick-up_points.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="Update-main-tables-0" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/update_tables/update-tables-0.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>
