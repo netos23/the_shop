@@ -1,6 +1,6 @@
 package ru.fbtw.thestore.backend.data.delivery.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,10 +8,14 @@ import java.math.BigDecimal;
 /**
  * A DTO for the {@link ru.fbtw.thestore.backend.domain.delivery.Delivery} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class DeliveryDto implements Serializable {
-	private final Long id;
-	private final String deliveryName;
-	private final String picture;
-	private final BigDecimal price;
+    private Long id;
+    private String deliveryName;
+    private String picture;
+    private BigDecimal price;
 }

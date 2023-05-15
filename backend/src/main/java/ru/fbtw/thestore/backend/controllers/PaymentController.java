@@ -2,11 +2,10 @@ package ru.fbtw.thestore.backend.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.fbtw.thestore.backend.controllers.requests.PaymentRequest;
 import ru.fbtw.thestore.backend.data.delivery.dto.DeliveryDto;
 import ru.fbtw.thestore.backend.data.payment.dto.PaymentDto;
 
@@ -23,9 +22,17 @@ public class PaymentController {
     public List<PaymentDto> getAllPayments() {
         throw new RuntimeException();
     }
-    @GetMapping("/{paymentid}")
+    @GetMapping("/{paymentId}")
     @Operation(summary = "Просмотр информации о платеже")
-    public PaymentDto getPaymentById(@PathVariable("paymentid") Long paymentId) {
+    public PaymentDto getPaymentById(@PathVariable("paymentId") Long paymentId) {
         throw new RuntimeException();
     }
+
+    @PostMapping("/create")
+    @Operation(summary = "Создание нового платежа")
+    public PaymentDto createPayment(@Valid @RequestBody PaymentRequest paymentRequest){
+        throw new RuntimeException();
+    }
+
+    //todo разобраться, как проиходит платеж
 }

@@ -1,6 +1,8 @@
 package ru.fbtw.thestore.backend.data.catalog.dto;
 
-import lombok.Data;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -8,10 +10,24 @@ import java.util.Set;
 /**
  * A DTO for the {@link ru.fbtw.thestore.backend.domain.catalog.Category} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CategoryDto implements Serializable {
-	private final Long id;
-	private final String categoryName;
-	private final String picture;
-	private final Set<CategoryDto> children;
+    private Long id;
+    @NotBlank(message = "Invalid categoryName: categoryName is BLANK")
+    @NotNull(message = "Invalid categoryName: categoryName is NULL")
+    private String categoryName;
+    @NotBlank(message = "Invalid picture: picture is BLANK")
+    @NotNull(message = "Invalid picture: picture is NULL")
+    private String picture;
+    private Set<CategoryDto> children;
+
+    /**
+     *@NotBlank - строка может быть null, но не может состоять ТОЛЬКО из
+    пробелов и/или символов переноса строки
+     *@NotNull - строка не может быть null, но может состоять ТОЛЬКО из
+    пробелов и/или символов переноса строки  */
 }

@@ -1,13 +1,15 @@
 package ru.fbtw.thestore.backend.domain.delivery;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "delivery")
 public class Delivery {

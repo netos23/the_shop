@@ -20,4 +20,7 @@ public class City {
     @Column(name = "city_code", nullable = false, length = 100)
     private String cityCode;
 
+    @Column(name = "city_region", nullable = false, length = 100)
+    private String cityRegion;
+
 }
