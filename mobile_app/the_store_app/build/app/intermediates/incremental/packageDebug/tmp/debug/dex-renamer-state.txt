@@ -1,4 +1,0 @@
-#Tue Apr 18 18:34:01 MSK 2023
-base.0=C\:\\Users\\ruskh\\StudioProjects\\the_shop\\mobile_app\\the_store_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

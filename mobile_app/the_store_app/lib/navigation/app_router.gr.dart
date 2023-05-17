@@ -15,23 +15,23 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CityListRoute.name: (routeData) {
+      final args = routeData.argsAs<CityListRouteArgs>(
+          orElse: () => const CityListRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CityListScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
     StartingMethodRoute.name: (routeData) {
       final args = routeData.argsAs<StartingMethodRouteArgs>(
           orElse: () => const StartingMethodRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: StartingMethodScreenWidget(
-          key: args.key,
-          wmFactory: args.wmFactory,
-        ),
-      );
-    },
-    StartingCityRoute.name: (routeData) {
-      final args = routeData.argsAs<StartingCityRouteArgs>(
-          orElse: () => const StartingCityRouteArgs());
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: StartingCityScreenWidget(
           key: args.key,
           wmFactory: args.wmFactory,
         ),
@@ -49,6 +49,47 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [CityListScreenWidget]
+class CityListRoute extends PageRouteInfo<CityListRouteArgs> {
+  CityListRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultCityListScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CityListRoute.name,
+          args: CityListRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CityListRoute';
+
+  static const PageInfo<CityListRouteArgs> page =
+      PageInfo<CityListRouteArgs>(name);
+}
+
+class CityListRouteArgs {
+  const CityListRouteArgs({
+    this.key,
+    this.wmFactory = defaultCityListScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'CityListRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
 }
 
 /// generated route for
@@ -89,47 +130,6 @@ class StartingMethodRouteArgs {
   @override
   String toString() {
     return 'StartingMethodRouteArgs{key: $key, wmFactory: $wmFactory}';
-  }
-}
-
-/// generated route for
-/// [StartingCityScreenWidget]
-class StartingCityRoute extends PageRouteInfo<StartingCityRouteArgs> {
-  StartingCityRoute({
-    Key? key,
-    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-            BuildContext)
-        wmFactory = defaultStartingCityScreenWidgetModelFactory,
-    List<PageRouteInfo>? children,
-  }) : super(
-          StartingCityRoute.name,
-          args: StartingCityRouteArgs(
-            key: key,
-            wmFactory: wmFactory,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'StartingCityRoute';
-
-  static const PageInfo<StartingCityRouteArgs> page =
-      PageInfo<StartingCityRouteArgs>(name);
-}
-
-class StartingCityRouteArgs {
-  const StartingCityRouteArgs({
-    this.key,
-    this.wmFactory = defaultStartingCityScreenWidgetModelFactory,
-  });
-
-  final Key? key;
-
-  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-      BuildContext) wmFactory;
-
-  @override
-  String toString() {
-    return 'StartingCityRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }
 
