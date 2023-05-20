@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="Create-main-tables-0" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/create-table-shop.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-banner.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/user_tables/create-table-user.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/user_tables/create-table-city.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/product_tables/create-table-product.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/product_tables/create-table-category.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/product_tables/create-table-picture.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/order_tables/create-table-delivery.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/order_tables/create-table-order.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/order_tables/create-table-payment.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="Create-additional-tables-0" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/user_tables/create-table-user-city.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/user_tables/create-table-user-product.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/user_tables/create-table-user-favourites.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/product_tables/create-table-product-category.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/product_tables/create-table-product-picture.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/order_tables/create-table-order-delivery.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/order_tables/create-table-order-payment.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/order_tables/create-table-order-product.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="Insert-product-table-0" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/insert-table-product.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="Create-main-tables-1" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/create-table-pick-up_points.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="Update-main-tables-0" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/update_tables/update-tables-0.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+</databaseChangeLog>
