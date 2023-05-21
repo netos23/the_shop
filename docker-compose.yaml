@@ -45,5 +45,7 @@ services:
     volumes:
       - letsencrypt-data:/etc/letsencrypt
       - nginx-static-data:/var/www/html
-
+volumes:
+  letsencrypt-data:
+  nginx-static-data:
 
