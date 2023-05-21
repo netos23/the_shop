@@ -1,16 +1,40 @@
 version: '3.4'
 
 services:
+  certbot:
+    image: 'certbot/certbot'
+    depends_on:
+      nginx:
+        condition: service_started
+    volumes:
+      - letsencrypt-data:/etc/letsencrypt
+      - nginx-static-data:/var/www/html
+    command: certonly --webroot --webroot-path /var/www/html --email nikmoroz2002@yandex.ru --agree-tos --no-eff-email  -d the-store.fbtw.ru
+
   backend:
     image: 'the-store-backend:1.0'
     build: ./backend/
     container_name: the-store-backend
+    depends_on:
+      postgres:
+        condition: service_started
+    env_file:
+      - ./backend/backend.env
     healthcheck:
       test: "curl --fail --silent backend:8080/actuator/health | grep UP || exit 1"
       interval: 30s
       timeout: 5s
       retries: 5
       start_period: 40s
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'the-store-db'
+    ports:
+      - 5432:5432
+    env_file:
+      - ./backend/backend.env
+    volumes:
+      - postgres-data:/var/lib/postgresql/shopdb_data
   ingress:
     image: 'the-store-ingress:1.0'
     build: ./ingress/
@@ -18,5 +42,8 @@ services:
       - '80:80'
       - '443:443'
     container_name: the-store-ingress
+    volumes:
+      - letsencrypt-data:/etc/letsencrypt
+      - nginx-static-data:/var/www/html
 
 
