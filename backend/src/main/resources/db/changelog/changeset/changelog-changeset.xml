@@ -34,9 +34,9 @@
         <sqlFile path="changeset/tables/order_tables/create-table-order-product.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="Insert-product-table-0" author="Sofia Chernikova">
-        <sqlFile path="changeset/tables/insert-table-product.sql" relativeToChangelogFile="true"/>
-    </changeSet>
+<!--    <changeSet id="Insert-product-table-0" author="Sofia Chernikova">-->
+<!--        <sqlFile path="changeset/tables/insert-table-product.sql" relativeToChangelogFile="true"/>-->
+<!--    </changeSet>-->
 
     <changeSet id="Create-main-tables-1" author="Sofia Chernikova">
         <sqlFile path="changeset/tables/create-table-pick-up_points.sql" relativeToChangelogFile="true"/>
