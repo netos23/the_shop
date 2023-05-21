@@ -13,24 +13,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/banner")
 @AllArgsConstructor
-@Tag(name = "Контроллер баннеров")
+@Tag(name="banner",description = "Контроллер баннеров" )
 public class BannerController {
 
     @GetMapping()
-    @Operation(summary = "Список баннеров")
+    @Operation(summary = "Список баннеров", tags = "banner")
     public List<BannerDto> getAllOrders() {
         throw new RuntimeException();
     }
 
     @GetMapping("/{bannerId}")
-    @Operation(summary = "Просмотр одного баннера \n Надо или нет?")
+    @Operation(summary = "Просмотр одного баннера \n Надо или нет?", tags = "banner")
     public BannerDto getBannerById(@PathVariable("bannerId") Long bannerId) {
         throw new RuntimeException();
     }
 
     @PostMapping("/add")
     @Operation(summary = "Добавление баннера, @RequestBody BannerDto пока так, потому что я так и не " +
-            "поняла, как загружаются баннеры")
+            "поняла, как загружаются баннеры", tags = "banner")
     public BannerDto addBanner(@Valid @RequestBody BannerDto bannerDto) {
         throw new RuntimeException();
     }

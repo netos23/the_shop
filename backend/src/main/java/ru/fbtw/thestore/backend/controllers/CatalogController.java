@@ -20,12 +20,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/catalog")
 @AllArgsConstructor
-@Tag(name = "Каталог")
+@Tag(name = "catalog")
 public class CatalogController {
     private final CategoryService categoryService;
 
     @GetMapping()
-    @Operation(summary = "Каталог постранично")
+    @Operation(summary = "Каталог постранично", tags = "catalog")
     public ProductPageDto getProductsInPages(
             @RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
             @RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
@@ -36,32 +36,32 @@ public class CatalogController {
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Карточка продукта")
+    @Operation(summary = "Карточка продукта", tags = "catalog")
     public ProductDto getProduct(@PathVariable("id") Long id) {
         return categoryService.getProduct(id);
     }
 
     @PostMapping("/add")
     @Operation(summary = "Обновление каталога, @RequestBody File file пока так," +
-            "если не так, то я изменю")
+            "если не так, то я изменю", tags = "catalog")
     public void updateProducts(@RequestBody File file) {
         throw new RuntimeException();
     }
 
     @GetMapping("category")
-    @Operation(summary = "Список категорий")
+    @Operation(summary = "Список категорий", tags = "catalog")
     public List<CategoryDto> getCategories() {
         return categoryService.getCategories();
     }
 
     @GetMapping("category/{id}")
-    @Operation(summary = "Список подкатегорий категории")
+    @Operation(summary = "Список подкатегорий категории", tags = "catalog")
     public List<CategoryDto> getSubcategories(@PathVariable("id") Long categoryId) {
         return categoryService.getSubcategories(categoryId);
     }
 
     @PostMapping("category/add")
-    @Operation(summary = "Добавление новой категории")
+    @Operation(summary = "Добавление новой категории", tags = "catalog")
     public void addСategory(@Valid @RequestBody CategoryDto category) {
         categoryService.addСategory(category);
     }

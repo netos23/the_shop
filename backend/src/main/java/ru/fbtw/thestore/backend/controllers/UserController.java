@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 @AllArgsConstructor
-@Tag(name = "Пользовательский контроллер")
+@Tag(name="user",description = "Пользовательский контроллер")
 public class UserController {
 
 
@@ -21,37 +21,37 @@ public class UserController {
     см {@link ru.fbtw.thestore.backend.domain.user.MyUser} entity
      */
     @GetMapping("/{id}/basket")
-    @Operation(summary = "Корзина пользователя")
+    @Operation(summary = "Корзина пользователя", tags = "user")
     public List<ProductDto> getBasket(@PathVariable("id") Long id) {
         throw new RuntimeException();
     }
 
     @PostMapping("/{id}/basket/add")
-    @Operation(summary = "Добавить в корзину пользователя")
+    @Operation(summary = "Добавить в корзину пользователя", tags = "user")
     public ProductDto addToBasket(@RequestBody ProductDto productDto) {
         throw new RuntimeException();
     }
 
     @GetMapping("/{id}/favourites")
-    @Operation(summary = "Избранное пользователя")
+    @Operation(summary = "Избранное пользователя", tags = "user")
     public List<ProductDto> getFavourites(@PathVariable("id") Long id) {
         throw new RuntimeException();
     }
 
     @PostMapping("/{id}/favourites/add")
-    @Operation(summary = "Добавить в избранное пользователя")
+    @Operation(summary = "Добавить в избранное пользователя", tags = "user")
     public ProductDto addToFavourites(@RequestBody ProductDto productDto) {
         throw new RuntimeException();
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Информация о  пользователе")
+    @Operation(summary = "Информация о  пользователе", tags = "user")
     public MyUserDto getInformation(@PathVariable("id") Long id) {
         throw new RuntimeException();
     }
 
     @GetMapping("/{id}")
-    @Operation(summary = "Редактировать информацию о  пользователе")
+    @Operation(summary = "Редактировать информацию о  пользователе", tags = "user")
     public MyUserDto updateInformation(@Valid @RequestBody MyUserDto myUserDto) {
         throw new RuntimeException();
     }
