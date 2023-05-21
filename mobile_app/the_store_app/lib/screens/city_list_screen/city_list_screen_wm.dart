@@ -19,9 +19,12 @@ abstract class ICityListScreenWidgetModel extends IWidgetModel
 
 CityListScreenWidgetModel defaultCityListScreenWidgetModelFactory(
     BuildContext context) {
-  return CityListScreenWidgetModel(CityListScreenModel(
-    errorHandler: context.read(),
-  ));
+  return CityListScreenWidgetModel(
+    CityListScreenModel(
+      errorHandler: context.read(),
+      client: context.read(),
+    ),
+  );
 }
 
 // TODO: cover with documentation

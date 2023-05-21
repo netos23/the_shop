@@ -1,7 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:the_store_app/entity/geo/city.dart';
 import 'city_list_screen_wm.dart';
@@ -69,7 +68,6 @@ class CityListScreenWidget
 
 class _CityPreloader extends StatelessWidget {
   const _CityPreloader({
-    super.key,
     required this.evenBackground,
     required this.oddBackground,
   });
@@ -90,9 +88,7 @@ class _CityPreloader extends StatelessWidget {
 }
 
 class _EmptySearch extends StatelessWidget {
-  const _EmptySearch({
-    super.key,
-  });
+  const _EmptySearch();
 
   @override
   Widget build(BuildContext context) {

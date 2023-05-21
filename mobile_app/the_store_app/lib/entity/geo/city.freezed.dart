@@ -14,14 +14,20 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+City _$CityFromJson(Map<String, dynamic> json) {
+  return _City.fromJson(json);
+}
+
 /// @nodoc
 mixin _$City {
-  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "cityName")
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "cityRegion")
   String get region => throw _privateConstructorUsedError;
+  @JsonKey(name: "cityCode")
   String get cityId => throw _privateConstructorUsedError;
-  double get lat => throw _privateConstructorUsedError;
-  double get lon => throw _privateConstructorUsedError;
+  double? get lat => throw _privateConstructorUsedError;
+  double? get lon => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CityCopyWith<City> get copyWith => throw _privateConstructorUsedError;
@@ -33,12 +39,11 @@ abstract class $CityCopyWith<$Res> {
       _$CityCopyWithImpl<$Res, City>;
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String region,
-      String cityId,
-      double lat,
-      double lon});
+      {@JsonKey(name: "cityName") String name,
+      @JsonKey(name: "cityRegion") String region,
+      @JsonKey(name: "cityCode") String cityId,
+      double? lat,
+      double? lon});
 }
 
 /// @nodoc
@@ -54,18 +59,13 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? region = null,
     Object? cityId = null,
-    Object? lat = null,
-    Object? lon = null,
+    Object? lat = freezed,
+    Object? lon = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -78,14 +78,14 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
           ? _value.cityId
           : cityId // ignore: cast_nullable_to_non_nullable
               as String,
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lon: null == lon
+              as double?,
+      lon: freezed == lon
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -97,12 +97,11 @@ abstract class _$$_CityCopyWith<$Res> implements $CityCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String region,
-      String cityId,
-      double lat,
-      double lon});
+      {@JsonKey(name: "cityName") String name,
+      @JsonKey(name: "cityRegion") String region,
+      @JsonKey(name: "cityCode") String cityId,
+      double? lat,
+      double? lon});
 }
 
 /// @nodoc
@@ -114,18 +113,13 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? region = null,
     Object? cityId = null,
-    Object? lat = null,
-    Object? lon = null,
+    Object? lat = freezed,
+    Object? lon = freezed,
   }) {
     return _then(_$_City(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -138,45 +132,47 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
           ? _value.cityId
           : cityId // ignore: cast_nullable_to_non_nullable
               as String,
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lon: null == lon
+              as double?,
+      lon: freezed == lon
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable(createToJson: false)
 class _$_City implements _City {
   _$_City(
-      {required this.id,
-      required this.name,
-      required this.region,
-      required this.cityId,
-      required this.lat,
-      required this.lon});
+      {@JsonKey(name: "cityName") required this.name,
+      @JsonKey(name: "cityRegion") required this.region,
+      @JsonKey(name: "cityCode") required this.cityId,
+      this.lat,
+      this.lon});
+
+  factory _$_City.fromJson(Map<String, dynamic> json) => _$$_CityFromJson(json);
 
   @override
-  final int id;
-  @override
+  @JsonKey(name: "cityName")
   final String name;
   @override
+  @JsonKey(name: "cityRegion")
   final String region;
   @override
+  @JsonKey(name: "cityCode")
   final String cityId;
   @override
-  final double lat;
+  final double? lat;
   @override
-  final double lon;
+  final double? lon;
 
   @override
   String toString() {
-    return 'City(id: $id, name: $name, region: $region, cityId: $cityId, lat: $lat, lon: $lon)';
+    return 'City(name: $name, region: $region, cityId: $cityId, lat: $lat, lon: $lon)';
   }
 
   @override
@@ -184,7 +180,6 @@ class _$_City implements _City {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_City &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.region, region) || other.region == region) &&
             (identical(other.cityId, cityId) || other.cityId == cityId) &&
@@ -192,9 +187,9 @@ class _$_City implements _City {
             (identical(other.lon, lon) || other.lon == lon));
   }
 
+  @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, region, cityId, lat, lon);
+  int get hashCode => Object.hash(runtimeType, name, region, cityId, lat, lon);
 
   @JsonKey(ignore: true)
   @override
@@ -205,25 +200,27 @@ class _$_City implements _City {
 
 abstract class _City implements City {
   factory _City(
-      {required final int id,
-      required final String name,
-      required final String region,
-      required final String cityId,
-      required final double lat,
-      required final double lon}) = _$_City;
+      {@JsonKey(name: "cityName") required final String name,
+      @JsonKey(name: "cityRegion") required final String region,
+      @JsonKey(name: "cityCode") required final String cityId,
+      final double? lat,
+      final double? lon}) = _$_City;
+
+  factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
   @override
-  int get id;
-  @override
+  @JsonKey(name: "cityName")
   String get name;
   @override
+  @JsonKey(name: "cityRegion")
   String get region;
   @override
+  @JsonKey(name: "cityCode")
   String get cityId;
   @override
-  double get lat;
+  double? get lat;
   @override
-  double get lon;
+  double? get lon;
   @override
   @JsonKey(ignore: true)
   _$$_CityCopyWith<_$_City> get copyWith => throw _privateConstructorUsedError;

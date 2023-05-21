@@ -2,14 +2,23 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'city.freezed.dart';
 
-@freezed
+part 'city.g.dart';
+
+@Freezed(
+  fromJson: true,
+  toJson: false,
+)
 class City with _$City {
   factory City({
-    required int id,
+    @JsonKey(name: "cityName")
     required String name,
+    @JsonKey(name: "cityRegion")
     required String region,
+    @JsonKey(name: "cityCode")
     required String cityId,
-    required double lat,
-    required double lon,
+    double? lat,
+    double? lon,
   }) = _City;
+
+  factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 }
