@@ -11,6 +11,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import ru.fbtw.thestore.backend.domain.user.MyUser;
+import ru.fbtw.thestore.backend.repository.UserRepository;
 import ru.fbtw.thestore.backend.services.JwtService;
 
 
@@ -20,6 +22,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
+    private final UserRepository userRepository;
 
 
     @Override
@@ -37,6 +40,7 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
         }
         jwt = authHeader;
         username = jwtService.extractUsername(jwt);
+        MyUser user = userRepository.findByUsername(username).orElseThrow();
 
         try {
             if (SecurityContextHolder.getContext().getAuthentication() == null) {
