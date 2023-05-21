@@ -18,6 +18,8 @@ services:
     depends_on:
       postgres:
         condition: service_started
+    env_file:
+      - ./backend/backend.env
     healthcheck:
       test: "curl --fail --silent backend:8080/actuator/health | grep UP || exit 1"
       interval: 30s
@@ -29,10 +31,8 @@ services:
     container_name: 'TP-shopdb'
     ports:
       - 5432:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mypass
-      POSTGRES_DB: shopdb
+    env_file:
+      - ./backend/backend.env
     volumes:
       - postgres-data:/var/lib/postgresql/shopdb_data
   ingress:
