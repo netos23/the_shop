@@ -14,6 +14,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import ru.fbtw.thestore.backend.domain.user.MyUser;
 import ru.fbtw.thestore.backend.repository.UserRepository;
 import ru.fbtw.thestore.backend.services.JwtService;
+import ru.fbtw.thestore.backend.services.UserService;
 
 
 import java.io.IOException;
@@ -22,7 +23,6 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
-    private final UserRepository userRepository;
 
 
     @Override
@@ -33,14 +33,13 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
-        final String username;
+        final MyUser user;
         if (authHeader == null) {
             filterChain.doFilter(request, response);
             return;
         }
         jwt = authHeader;
-        username = jwtService.extractUsername(jwt);
-        MyUser user = userRepository.findByUsername(username).orElseThrow();
+        user = jwtService.extractUser(jwt);
 
         try {
             if (SecurityContextHolder.getContext().getAuthentication() == null) {

@@ -39,13 +39,13 @@ public class OrderController {
     }
 
     @GetMapping("/{orderId}")
-    @Operation(summary = "Просмотр заказа одного")
+    @Operation(summary = "Просмотр заказа одного", tags = "Order")
     public MyOrderDto getOrderById(@PathVariable("orderId") Long orderId) {
         return orderService.getOrderById(orderId);
     }
 
     @PostMapping("/create")
-    @Operation(summary = "Создание нового заказа")
+    @Operation(summary = "Создание нового заказа", tags = "Order")
     public MyOrderDto createOrder(@Valid @RequestBody OrderRequest orderRequest) {
         throw new RuntimeException();
     }
