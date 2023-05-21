@@ -15,13 +15,15 @@ services:
     image: 'the-store-backend:1.0'
     build: ./backend/
     container_name: the-store-backend
+    ports:
+      - '8090:8080'
     depends_on:
       postgres:
         condition: service_started
     env_file:
       - ./backend/backend.env
     healthcheck:
-      test: "curl --fail --silent backend:8080/actuator/health | grep UP || exit 1"
+      test: "curl --fail --silent backend:8090/actuator/health | grep UP || exit 1"
       interval: 30s
       timeout: 5s
       retries: 5
