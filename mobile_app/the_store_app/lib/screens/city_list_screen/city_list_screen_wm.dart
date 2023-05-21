@@ -53,8 +53,12 @@ class CityListScreenWidgetModel
 
   Future<void> _getCities([String? search]) async {
     citiesState.loading(citiesState.value?.data);
-    final cities = await model.getCities(search);
-    citiesState.content(cities);
+    try {
+      final cities = await model.getCities(search);
+      citiesState.content(cities);
+    } catch (e) {
+      context.showSnackBar('Не удалось получить информацию о городах');
+    }
   }
 
   @override

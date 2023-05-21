@@ -17,8 +17,13 @@ class CityListScreenModel extends ElementaryModel {
     // repo call
 
     if (_cities.isEmpty) {
-      final cities = await client.getCities();
-      _cities.addAll(cities);
+      try {
+        final cities = await client.getCities();
+        _cities.addAll(cities);
+      } catch (error, stacktrace) {
+        handleError(error, stackTrace: stacktrace);
+        rethrow;
+      }
     }
 
     var cities = _cities;
