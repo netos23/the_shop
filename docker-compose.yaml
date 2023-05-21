@@ -48,4 +48,5 @@ services:
 volumes:
   letsencrypt-data:
   nginx-static-data:
+  postgres-data:
 
