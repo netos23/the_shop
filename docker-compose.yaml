@@ -28,7 +28,7 @@ services:
       start_period: 40s
   postgres:
     image: 'postgres:latest'
-    container_name: 'TP-shopdb'
+    container_name: 'the-store-db'
     ports:
       - 5432:5432
     env_file:
