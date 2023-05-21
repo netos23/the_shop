@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/order")
 @RequiredArgsConstructor
-@Tag(name = "Order Controller", description = "Контроллер для заказов")
+@Tag(name = "Order", description = "Контроллер для заказов")
 public class OrderController {
     private final OrderService orderService;
     @GetMapping("/{id}") // id юзера
