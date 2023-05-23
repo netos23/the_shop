@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:the_store_app/screens/profile_screens/profile_main_screen/profile_main_screen_widget.dart';
 import 'package:the_store_app/screens/screens.dart';
 
 part 'app_router.gr.dart';

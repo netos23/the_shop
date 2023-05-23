@@ -17,6 +17,8 @@ class App extends StatelessWidget {
           bodyMedium: AppTypography.mediumBodySmall12pt,
           labelLarge: AppTypography.mediumBodySmallWhite,
           titleMedium: AppTypography.title,
+          bodyLarge: AppTypography.mediumBodySmall16pt,
+          titleSmall: AppTypography.grayHintText,
         ),
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
@@ -30,6 +32,7 @@ class App extends StatelessWidget {
           onBackground: AppColor.black,
           surface: AppColor.white,
           onSurface: AppColor.black,
+          surfaceVariant: AppColor.grayTextField,
         ),
         appBarTheme: AppBarTheme(
           titleTextStyle: AppTypography.title.copyWith(
@@ -38,6 +41,7 @@ class App extends StatelessWidget {
           color: AppColor.white,
           elevation: 0,
         ),
+        scaffoldBackgroundColor: AppColor.white,
         extensions:  [
           const ExtraAppColors(
             surface: AppColor.gray,

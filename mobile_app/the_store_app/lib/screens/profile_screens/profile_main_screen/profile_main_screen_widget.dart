@@ -20,7 +20,7 @@ class ProfileMainScreenWidget
       appBar: AppBar(
         title: Text(
           "Профиль",
-          style: AppTypography.title,
+          style:wm.textTheme.titleMedium,
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -34,7 +34,7 @@ class ProfileMainScreenWidget
             height: 55,
             child: SizedBox(
               width: double.infinity,
-              child: ProfileButton(
+              child: _ProfileButton(
                 text: "Мои данные",
                 onTap: () => wm.myDataPressed(),
               ),
@@ -44,7 +44,7 @@ class ProfileMainScreenWidget
             height: 55,
             child: SizedBox(
               width: double.infinity,
-              child: ProfileButton(
+              child: _ProfileButton(
                 text: "Мои заказы",
                 onTap: () => wm.myOrdersPressed(),
               ),
@@ -54,7 +54,7 @@ class ProfileMainScreenWidget
             height: 55,
             child: SizedBox(
               width: double.infinity,
-              child: ProfileButton(
+              child: _ProfileButton(
                 text: "Адреса магазинов",
                 onTap: () => wm.pointsListPressed(),
               ),
@@ -79,7 +79,7 @@ class ProfileMainScreenWidget
                   ),
                   onPressed: () => wm.unAuthorize(),
                   child: Center(child: Text("ВЫЙТИ",
-                  style: AppTypography.mediumBodySmallWhite,)),
+                  style: wm.textTheme.labelLarge)),
                 ),
               ),
             ),
@@ -90,13 +90,13 @@ class ProfileMainScreenWidget
   }
 }
 
-class ProfileButton extends StatelessWidget {
-  const ProfileButton({
-    super.key,
+class _ProfileButton extends StatelessWidget {
+  const _ProfileButton({
+    Key? key,
     required this.onTap,
     required this.text,
 
-  });
+  }): super(key: key);
 
   final VoidCallback onTap;
   final String text;
@@ -117,7 +117,7 @@ class ProfileButton extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Text(
                     text,
-                    style: AppTypography.mediumBodySmall16pt,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
                 const Padding(
