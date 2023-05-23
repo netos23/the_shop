@@ -8,7 +8,11 @@ abstract class IProfileMyOrdersScreenWidgetModel extends IWidgetModel {
 }
 
 ProfileMyOrdersScreenWidgetModel defaultProfileMyOrdersScreenWidgetModelFactory(BuildContext context) {
-  return ProfileMyOrdersScreenWidgetModel(context.read());
+  return ProfileMyOrdersScreenWidgetModel(
+      ProfileMyOrdersScreenModel(
+      context.read()
+      )
+  );
 }
 
 // TODO: cover with documentation

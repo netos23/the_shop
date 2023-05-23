@@ -42,7 +42,7 @@ class App extends StatelessWidget {
             onSurface: AppColor.darkGray,
           ),
           ExtraAppTypography(
-            bodySmall: AppTypography.mediumBodySmall,
+            bodySmall: AppTypography.mediumBodySmall12pt,
           )
         ],
       ),

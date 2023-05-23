@@ -83,7 +83,7 @@ class ButtonsForMethod extends StatelessWidget {
               child: Center(
                 child: Text(
                   "ДОСТАВКА",
-                  style: AppTypography.mediumBodySmall,
+                  style: AppTypography.mediumBodySmall12pt,
                 ),
               )),
         ),

@@ -8,7 +8,11 @@ abstract class IProfileDataUpdateScreenWidgetModel extends IWidgetModel {
 }
 
 ProfileDataUpdateScreenWidgetModel defaultProfileDataUpdateScreenWidgetModelFactory(BuildContext context) {
-  return ProfileDataUpdateScreenWidgetModel(context.read());
+  return ProfileDataUpdateScreenWidgetModel(
+    ProfileDataUpdateScreenModel(
+      context.read(),
+    )
+  );
 }
 
 // TODO: cover with documentation

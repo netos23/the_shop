@@ -9,7 +9,9 @@ abstract class IOrderDetailsScreenWidgetModel extends IWidgetModel {
 
 OrderDetailsScreenWidgetModel defaultOrderDetailsScreenWidgetModelFactory(BuildContext context) {
   return OrderDetailsScreenWidgetModel(
-    context.read()
+    OrderDetailsScreenModel(
+      context.read()
+    )
   );
 }
 

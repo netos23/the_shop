@@ -8,7 +8,11 @@ abstract class IPointsListScreenWidgetModel extends IWidgetModel {
 }
 
 PointsListScreenWidgetModel defaultPointsListScreenWidgetModelFactory(BuildContext context) {
-  return PointsListScreenWidgetModel(context.read());
+  return PointsListScreenWidgetModel(
+    PointsListScreenModel(
+      context.read(),
+    )
+  );
 }
 
 // TODO: cover with documentation

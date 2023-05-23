@@ -15,7 +15,13 @@ final class AppTypography {
     letterSpacing: 0.4,
   );
 
-  static final TextStyle mediumBodySmall = GoogleFonts.montserrat(
+  static final TextStyle mediumBodySmall16pt = GoogleFonts.montserrat(
+    fontSize: 16,
+    letterSpacing: 0.4,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final TextStyle mediumBodySmall12pt = GoogleFonts.montserrat(
     fontSize: 12,
     letterSpacing: 0.4,
     fontWeight: FontWeight.w500,
