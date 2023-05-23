@@ -1,13 +1,12 @@
 import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyFilledButton extends StatelessWidget{
+class CustomFilledButton extends StatelessWidget{
 
   final VoidCallback? onTap;
   final String text;
 
-  const MyFilledButton({Key? key, required this.onTap, required this.text})
+  const CustomFilledButton({Key? key, required this.onTap, required this.text})
   : super(key: key);
   @override
   Widget build(BuildContext context) {

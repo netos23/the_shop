@@ -19,11 +19,12 @@ class StartingMethodScreenWidget
 
   @override
   Widget build(IStartingMethodScreenWidgetModel wm) {
+    final extracolors = wm.extraAppColors;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Способ получения",
-          style: AppTypography.title,
+          style: wm.textTheme.titleMedium,
           textAlign: TextAlign.center,
         ),
         centerTitle: true,
@@ -42,7 +43,7 @@ class StartingMethodScreenWidget
             child: ButtonsForMethod(
               lightColor: wm.colorScheme.onPrimary,
               darkColor: wm.colorScheme.primary,
-              borderColor: const Color(0xFF7D7D7D),
+              borderColor: extracolors!.onSurface,
               onDelivery: () => wm.onDelivery(),
               onPickup: () => wm.onPickup(),
             ),
@@ -83,7 +84,7 @@ class ButtonsForMethod extends StatelessWidget {
               child: Center(
                 child: Text(
                   "ДОСТАВКА",
-                  style: AppTypography.mediumBodySmall12pt,
+                  style: Theme.of(context).extension<ExtraAppTypography>()!.bodySmall,
                 ),
               )),
         ),

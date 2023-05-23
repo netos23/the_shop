@@ -13,7 +13,10 @@ class App extends StatelessWidget {
 
       theme: ThemeData(
         textTheme: TextTheme(
-          bodySmall: AppTypography.bodySmall
+          bodySmall: AppTypography.bodySmall,
+          bodyMedium: AppTypography.mediumBodySmall12pt,
+          labelLarge: AppTypography.mediumBodySmallWhite,
+          titleMedium: AppTypography.title,
         ),
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
