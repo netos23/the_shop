@@ -5,5 +5,4 @@ environment:
 
 dev_dependencies:
   melos: ^3.0.1
-dependencies:
-  smooth_page_indicator: ^1.1.0
+

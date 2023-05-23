@@ -2,7 +2,6 @@ import 'package:auto_route/annotations.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:the_store_app/screens/components/components.dart';
 import 'starting_method_screen_wm.dart';
 
@@ -19,11 +18,12 @@ class StartingMethodScreenWidget
 
   @override
   Widget build(IStartingMethodScreenWidgetModel wm) {
+    final extracolors = wm.extraAppColors;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Способ получения",
-          style: AppTypography.title,
+          style: wm.textTheme.titleMedium,
           textAlign: TextAlign.center,
         ),
         centerTitle: true,
@@ -42,7 +42,7 @@ class StartingMethodScreenWidget
             child: ButtonsForMethod(
               lightColor: wm.colorScheme.onPrimary,
               darkColor: wm.colorScheme.primary,
-              borderColor: const Color(0xFF7D7D7D),
+              borderColor: extracolors!.onSurface,
               onDelivery: () => wm.onDelivery(),
               onPickup: () => wm.onPickup(),
             ),
@@ -62,7 +62,6 @@ class ButtonsForMethod extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final extraColors = Theme.of(context).extension<ExtraAppColors>()!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -83,7 +82,7 @@ class ButtonsForMethod extends StatelessWidget {
               child: Center(
                 child: Text(
                   "ДОСТАВКА",
-                  style: AppTypography.mediumBodySmall,
+                  style: Theme.of(context).extension<ExtraAppTypography>()!.bodySmall,
                 ),
               )),
         ),
@@ -103,7 +102,7 @@ class ButtonsForMethod extends StatelessWidget {
             child: Center(
               child: Text(
                 "САМОВЫВОЗ",
-                style: AppTypography.mediumBodySmallWhite,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),

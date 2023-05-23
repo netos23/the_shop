@@ -19,28 +19,28 @@ class OnboardingScreenWidget
   Widget build(IOnboardingScreenWidgetModel wm) {
     final PageController controller = PageController();
     List<Widget> pages = [
-      MyPage(
+      OnboardingPage(
           text: "1",
           assetPath: "assets/images/basket2.png",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 400),
               curve: Curves.easeIn)),
-      MyPage(
+      OnboardingPage(
           text: "2",
           assetPath: "assets/images/productBasket.png",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 400),
               curve: Curves.easeIn)),
-      MyPage(
+      OnboardingPage(
           text: "3",
           assetPath: "assets/images/productBasket.png",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 400),
               curve: Curves.easeIn)),
-      MyPage(
+      OnboardingPage(
           text: "4",
           assetPath: "assets/images/productBasket.png",
           controller: controller,
@@ -60,7 +60,7 @@ class OnboardingScreenWidget
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,7 +80,7 @@ class OnboardingScreenWidget
                 padding: const EdgeInsets.all(16.0),
                 child: SizedBox(
                     height: 50,
-                    child: MyFilledButton(
+                    child: CustomFilledButton(
                         onTap: () => controller.nextPage(
                             duration: const Duration(milliseconds: 400),
                             curve: Curves.easeIn),
@@ -122,13 +122,13 @@ class OnboardingScreenWidget
   }
 }
 
-class MyPage extends StatelessWidget {
+class OnboardingPage extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final String assetPath;
   final PageController controller;
 
-  const MyPage(
+  const OnboardingPage(
       {Key? key,
       required this.text,
       required this.assetPath,
