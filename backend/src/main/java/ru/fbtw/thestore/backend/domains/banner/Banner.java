@@ -1,11 +1,13 @@
-package ru.fbtw.thestore.backend.domain.banner;
+package ru.fbtw.thestore.backend.domains.banner;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -16,7 +18,7 @@ public class Banner {
 	private Long id;
 
 	@Column(name = "order", nullable = false)
-	private Long order;
+	private Long order; //порядковый номер, на котором должен находиться баннер
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "banner_type", length = 120)
