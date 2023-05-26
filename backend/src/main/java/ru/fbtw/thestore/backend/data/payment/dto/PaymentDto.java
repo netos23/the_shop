@@ -1,15 +1,19 @@
 package ru.fbtw.thestore.backend.data.payment.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.payment.Payment} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.payment.Payment} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PaymentDto implements Serializable {
-	private final Long id;
-	private final String paymentName;
-	private final String picture;
+	private Long id;
+	private String paymentType;
+	private String picture;
 }

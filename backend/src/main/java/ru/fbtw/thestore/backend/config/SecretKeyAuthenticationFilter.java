@@ -11,10 +11,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import ru.fbtw.thestore.backend.domain.user.MyUser;
-import ru.fbtw.thestore.backend.repository.UserRepository;
+import ru.fbtw.thestore.backend.domains.user.MyUser;
 import ru.fbtw.thestore.backend.services.JwtService;
-import ru.fbtw.thestore.backend.services.UserService;
 
 
 import java.io.IOException;
@@ -55,6 +53,7 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         }
     }
-    //todo уточнить, где хранить токен
+
 }
+
 

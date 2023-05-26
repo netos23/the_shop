@@ -1,21 +1,38 @@
 package ru.fbtw.thestore.backend.data.delivery.dto;
 
-import lombok.Data;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.*;
+import ru.fbtw.thestore.backend.domains.order.MyOrder;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.util.Set;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.delivery.Shop} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.delivery.Shop} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShopDto implements Serializable {
-	private final Long id;
-	private final String shopName;
-	private final String shopAddress;
-	private final String shopPhone;
-	private final String shopWorkhours;
-	private final String shopPicture;
-	private final BigDecimal lat;
-	private final BigDecimal lon;
+	private Long id;
+	@NotBlank(message = "Phone number is required")
+	private String shopName;
+	@NotBlank(message = "Phone number is required")
+	private String shopAddress;
+	@Pattern(regexp = "^\\+7\\d{10}$",
+			message = "Phone number must be in the format +79999999999")
+	@NotBlank(message = "Phone number is required")
+	private String shopPhone;
+	@NotBlank(message = "Phone number is required")
+	private String shopWorkHours;
+	@NotBlank(message = "Phone number is required")
+	private String shopPicture;
+	@NotBlank(message = "Phone number is required")
+	private String lat;
+	@NotBlank(message = "Phone number is required")
+	private String lon;
+
 }

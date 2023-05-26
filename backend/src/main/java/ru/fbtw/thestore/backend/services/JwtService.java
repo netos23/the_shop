@@ -8,7 +8,7 @@ import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-import ru.fbtw.thestore.backend.domain.user.MyUser;
+import ru.fbtw.thestore.backend.domains.user.MyUser;
 
 import java.security.Key;
 import java.util.Date;

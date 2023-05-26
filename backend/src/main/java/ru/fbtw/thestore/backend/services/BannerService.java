@@ -62,7 +62,7 @@ public class BannerService {
     }
 
     @Transactional
-    private BannerDto updateBanner(BannerDto bannerDto) {
+    public BannerDto updateBanner(BannerDto bannerDto) {
         if (bannerDto.getBannerType().equals(BannerType.button)) {
             Banner beforeUpdate = bannerRepository.findById(bannerDto.getId()).orElseThrow();
             bannerMapper.partialUpdate(bannerDto, beforeUpdate);

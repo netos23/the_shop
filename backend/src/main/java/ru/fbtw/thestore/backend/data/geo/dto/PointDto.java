@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.geo.Point} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.geo.Point} entity
  */
 @Data
 @AllArgsConstructor

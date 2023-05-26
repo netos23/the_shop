@@ -8,7 +8,7 @@ import lombok.*;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.geo.City} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.geo.City} entity
  */
 @Getter
 @Setter

@@ -2,6 +2,7 @@ package ru.fbtw.thestore.backend.data.banner.mapper;
 
 import org.mapstruct.*;
 import ru.fbtw.thestore.backend.data.banner.dto.BannerDto;
+import ru.fbtw.thestore.backend.domains.banner.Banner;
 import ru.fbtw.thestore.backend.domains.banner.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")

@@ -7,7 +7,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import ru.fbtw.thestore.backend.repository.UserRepository;
+import ru.fbtw.thestore.backend.repositories.UserRepository;
 
 @Configuration
 @RequiredArgsConstructor

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.delivery.Delivery} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.delivery.Delivery} entity
  */
 @Getter
 @Setter
@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class DeliveryDto implements Serializable {
     private Long id;
-    private String deliveryName;
-    private String picture;
-    private BigDecimal price;
+    private String price;
+    private Long userId;
 }

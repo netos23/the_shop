@@ -5,10 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.catalog.Category} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.catalog.Category} entity
  */
 @Getter
 @Setter
@@ -22,8 +23,9 @@ public class CategoryDto implements Serializable {
     private String categoryName;
     @NotBlank(message = "Invalid picture: picture is BLANK")
     @NotNull(message = "Invalid picture: picture is NULL")
-    private String picture;
-    private Set<CategoryDto> children;
+    private String picturePath;
+
+
 
     /**
      *@NotBlank - строка может быть null, но не может состоять ТОЛЬКО из
