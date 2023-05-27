@@ -6,11 +6,14 @@ class CustomFormWidget extends StatefulWidget{
   const CustomFormWidget({
     super.key,
     required this.formFields,
-    required this.submitText
+    required this.submitText,
+    required this.submitAction,
+
   });
 
   final List<Widget> formFields;
   final String submitText;
+  final VoidCallback submitAction;
 
 
 
@@ -25,6 +28,7 @@ class _CustomFormWidgetState extends State<CustomFormWidget> {
 
   final _formKey = GlobalKey<FormState>();
 
+  get formKey => _formKey;
 
 
 
@@ -32,6 +36,20 @@ class _CustomFormWidgetState extends State<CustomFormWidget> {
   @override
   Widget build(BuildContext context) {
 
+
+    final submitButton = SizedBox(
+      height: 50,
+      child: CustomFilledButton(
+          onTap: (){
+            if (_formKey.currentState!.validate()){
+              widget.submitAction();
+            }
+          },
+          text: widget.submitText
+      ),
+    );
+
+    widget.formFields.add(submitButton);
 
     return Form(
 

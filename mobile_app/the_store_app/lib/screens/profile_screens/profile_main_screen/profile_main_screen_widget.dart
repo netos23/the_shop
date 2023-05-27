@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:the_store_app/screens/components/components.dart';
 import 'profile_main_screen_wm.dart';
 
 // TODO: cover with documentation
@@ -69,18 +70,10 @@ class ProfileMainScreenWidget
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: SizedBox(
                 width: double.infinity,
-                child: FilledButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                        )
-                    ),
-                  ),
-                  onPressed: () => wm.unAuthorize(),
-                  child: Center(child: Text("ВЫЙТИ",
-                  style: wm.textTheme.labelLarge)),
-                ),
+                child: CustomFilledButton(
+                  onTap: () => wm.unAuthorize(),
+                  text: "ВЫЙТИ",
+                )
               ),
             ),
           )

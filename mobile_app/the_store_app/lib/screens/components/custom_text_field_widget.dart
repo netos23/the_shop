@@ -1,17 +1,21 @@
 
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:the_store_app/internal/service/service.dart';
+import 'package:the_store_app/service/service.dart';
 
 class CustomTextField extends StatelessWidget{
 
 
   const CustomTextField({
     super.key,
-    required this.hintText,
-    required this.validatingController
+    required this.initValue,
+    required this.validatingController,
+    this.phoneNumber = false,
+
   });
 
-  final String hintText;
+  final bool phoneNumber;
+  final String initValue;
   final TextValidatingController validatingController;
 
   @override
@@ -19,39 +23,36 @@ class CustomTextField extends StatelessWidget{
 
 
     final fonts = Theme.of(context).textTheme;
+    final extraFonts = Theme.of(context).extension<ExtraAppTypography>();
+    final colors = Theme.of(context).colorScheme;
 
-    final fill = Theme.of(context).colorScheme.surfaceVariant;
-    final TextEditingController tx = TextEditingController();
-    return ValueListenableBuilder(
-        valueListenable: validatingController.textEditingController,
-        builder: (context, TextEditingValue value, __){
-        debugPrint("rebuild");
-          return Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            child: TextFormField(
-              style: fonts.bodyLarge,
-              controller: validatingController.textEditingController,
-              validator: validatingController.func,
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.zero,
-                ),
-                errorText: validatingController.errorText,
+    debugPrint(initValue);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+      child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        // initialValue: initValue,
+        style: fonts.bodyLarge,
+        controller: validatingController.textEditingController,
+        validator: validatingController.func,
+        keyboardType: phoneNumber? TextInputType.phone : TextInputType.text,
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.zero,
+          ),
+          errorStyle: extraFonts?.bodySmall.copyWith(color: colors.error),
+          fillColor: colors.surfaceVariant,
+          filled: true,
+          contentPadding: const EdgeInsets.only(left: 20),
+          hintText: initValue,
 
-                fillColor: fill,
-                filled: true,
-                contentPadding: const EdgeInsets.only(left: 20),
-                hintText: hintText,
-              ),
-            ),
-          );
-        }
-
+        ),
+      ),
     );
   }
+
+
 
 
 

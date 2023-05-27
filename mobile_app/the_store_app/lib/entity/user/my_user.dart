@@ -14,6 +14,7 @@ factory MyUserDto({
   required int id,
   required String userName,
   required String userPhone,
+  required String usedEmail,
   required bool userAnonimus,
   required int userFirebase,
 }) = _MyUserDto;

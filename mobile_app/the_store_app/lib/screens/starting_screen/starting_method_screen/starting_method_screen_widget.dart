@@ -64,6 +64,8 @@ class ButtonsForMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final extraColors = Theme.of(context).extension<ExtraAppColors>()!;
+    final fonts = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -84,7 +86,7 @@ class ButtonsForMethod extends StatelessWidget {
               child: Center(
                 child: Text(
                   "ДОСТАВКА",
-                  style: Theme.of(context).extension<ExtraAppTypography>()!.bodySmall,
+                  style: fonts.labelMedium,
                 ),
               )),
         ),
@@ -104,7 +106,7 @@ class ButtonsForMethod extends StatelessWidget {
             child: Center(
               child: Text(
                 "САМОВЫВОЗ",
-                style: AppTypography.mediumBodySmallWhite,
+                style: fonts.labelMedium?.copyWith(color: colors.onPrimary),
               ),
             ),
           ),

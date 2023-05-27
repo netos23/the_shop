@@ -22,4 +22,6 @@ class ExtraAppTypography extends ThemeExtension<ExtraAppTypography> {
       bodySmall: TextStyle.lerp(bodySmall, other?.bodySmall, t)!,
     );
   }
+
+
 }

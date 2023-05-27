@@ -23,7 +23,19 @@ class ProfileMyOrdersScreenWidget extends ElementaryWidget<IProfileMyOrdersScree
         centerTitle: true,
 
       ),
-
+      body: Column(
+        _OrderTile(),
+      ),
     );
   }
 }
+
+class _OrderTile extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+  
+}
+

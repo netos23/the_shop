@@ -10,7 +10,8 @@ class CustomFilledButton extends StatelessWidget{
   : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      width: double.infinity,
       child: FilledButton(
         style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -23,7 +24,7 @@ class CustomFilledButton extends StatelessWidget{
         child: Center(
           child: Text(
             text,
-            style: AppTypography.mediumBodySmallWhite,
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(color: Colors.white),
           ),
         ),
       ),

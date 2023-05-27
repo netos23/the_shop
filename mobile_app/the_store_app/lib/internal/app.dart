@@ -15,7 +15,7 @@ class App extends StatelessWidget {
         textTheme: TextTheme(
           bodySmall: AppTypography.bodySmall,
           bodyMedium: AppTypography.mediumBodySmall12pt,
-          labelLarge: AppTypography.mediumBodySmallWhite,
+          labelMedium: AppTypography.buttonMedium,
           titleMedium: AppTypography.title,
           bodyLarge: AppTypography.mediumBodySmall16pt,
           titleSmall: AppTypography.grayHintText,
@@ -41,6 +41,7 @@ class App extends StatelessWidget {
           color: AppColor.white,
           elevation: 0,
         ),
+
         scaffoldBackgroundColor: AppColor.white,
         extensions:  [
           const ExtraAppColors(
