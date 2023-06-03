@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+CatalogProductList _$CatalogProductListFromJson(Map<String, dynamic> json) {
+  return _CatalogProductList.fromJson(json);
+}
+
 /// @nodoc
 mixin _$CatalogProductList {
   int get count => throw _privateConstructorUsedError;
@@ -21,6 +25,7 @@ mixin _$CatalogProductList {
   int get size => throw _privateConstructorUsedError;
   List<ShortProduct> get products => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CatalogProductListCopyWith<CatalogProductList> get copyWith =>
       throw _privateConstructorUsedError;
@@ -123,7 +128,7 @@ class __$$_CatalogProductListCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_CatalogProductList implements _CatalogProductList {
   _$_CatalogProductList(
       {required this.count,
@@ -131,6 +136,9 @@ class _$_CatalogProductList implements _CatalogProductList {
       required this.size,
       required final List<ShortProduct> products})
       : _products = products;
+
+  factory _$_CatalogProductList.fromJson(Map<String, dynamic> json) =>
+      _$$_CatalogProductListFromJson(json);
 
   @override
   final int count;
@@ -162,6 +170,7 @@ class _$_CatalogProductList implements _CatalogProductList {
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, count, page, size,
       const DeepCollectionEquality().hash(_products));
@@ -172,6 +181,13 @@ class _$_CatalogProductList implements _CatalogProductList {
   _$$_CatalogProductListCopyWith<_$_CatalogProductList> get copyWith =>
       __$$_CatalogProductListCopyWithImpl<_$_CatalogProductList>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CatalogProductListToJson(
+      this,
+    );
+  }
 }
 
 abstract class _CatalogProductList implements CatalogProductList {
@@ -180,6 +196,9 @@ abstract class _CatalogProductList implements CatalogProductList {
       required final int page,
       required final int size,
       required final List<ShortProduct> products}) = _$_CatalogProductList;
+
+  factory _CatalogProductList.fromJson(Map<String, dynamic> json) =
+      _$_CatalogProductList.fromJson;
 
   @override
   int get count;

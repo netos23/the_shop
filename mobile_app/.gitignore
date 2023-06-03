@@ -38,6 +38,7 @@ mobile_app/core/android/local.properties
 
 # Symbolication related
 app.*.symbols
+commit.sh
 
 # Obfuscation related
 app.*.map.json

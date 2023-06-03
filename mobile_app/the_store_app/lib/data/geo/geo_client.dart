@@ -11,6 +11,6 @@ part 'geo_client.g.dart';
 abstract class GeoClient {
   factory GeoClient(Dio dio, {String baseUrl}) = _GeoClient;
 
-  @POST(GeoUrls.baseGeo)
+  @GET(GeoUrls.baseGeo)
   Future<List<City>> getCities();
 }

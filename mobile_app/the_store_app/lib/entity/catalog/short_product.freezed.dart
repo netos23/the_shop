@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ShortProduct _$ShortProductFromJson(Map<String, dynamic> json) {
+  return _ShortProduct.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ShortProduct {
   int get id => throw _privateConstructorUsedError;
@@ -22,6 +26,7 @@ mixin _$ShortProduct {
   Decimal? get productOldPrice => throw _privateConstructorUsedError;
   List<String> get pictures => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ShortProductCopyWith<ShortProduct> get copyWith =>
       throw _privateConstructorUsedError;
@@ -144,7 +149,7 @@ class __$$_ShortProductCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_ShortProduct implements _ShortProduct {
   _$_ShortProduct(
       {required this.id,
@@ -153,6 +158,9 @@ class _$_ShortProduct implements _ShortProduct {
       this.productOldPrice,
       required final List<String> pictures})
       : _pictures = pictures;
+
+  factory _$_ShortProduct.fromJson(Map<String, dynamic> json) =>
+      _$$_ShortProductFromJson(json);
 
   @override
   final int id;
@@ -190,6 +198,7 @@ class _$_ShortProduct implements _ShortProduct {
             const DeepCollectionEquality().equals(other._pictures, _pictures));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, productName, productPrice,
       productOldPrice, const DeepCollectionEquality().hash(_pictures));
@@ -199,6 +208,13 @@ class _$_ShortProduct implements _ShortProduct {
   @pragma('vm:prefer-inline')
   _$$_ShortProductCopyWith<_$_ShortProduct> get copyWith =>
       __$$_ShortProductCopyWithImpl<_$_ShortProduct>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ShortProductToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ShortProduct implements ShortProduct {
@@ -208,6 +224,9 @@ abstract class _ShortProduct implements ShortProduct {
       required final Decimal productPrice,
       final Decimal? productOldPrice,
       required final List<String> pictures}) = _$_ShortProduct;
+
+  factory _ShortProduct.fromJson(Map<String, dynamic> json) =
+      _$_ShortProduct.fromJson;
 
   @override
   int get id;
