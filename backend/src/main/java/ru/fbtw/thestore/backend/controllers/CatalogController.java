@@ -7,11 +7,11 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
-import ru.fbtw.thestore.backend.data.catalog.dto.CategoryDto;
-import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
-import ru.fbtw.thestore.backend.data.catalog.dto.ProductDto;
-import ru.fbtw.thestore.backend.data.catalog.dto.ProductPageDto;
-import ru.fbtw.thestore.backend.domain.catalog.enums.ProductSort;
+import ru.fbtw.thestore.backend.datas.catalog.dto.CategoryDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.CompactProductDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.ProductDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.ProductPageDto;
+import ru.fbtw.thestore.backend.domains.catalog.enums.ProductSort;
 import ru.fbtw.thestore.backend.services.CategoryService;
 
 import java.io.File;

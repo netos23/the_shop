@@ -6,7 +6,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.fbtw.thestore.backend.controllers.requests.PaymentRequest;
-import ru.fbtw.thestore.backend.data.payment.dto.PaymentDto;
+import ru.fbtw.thestore.backend.datas.payment.dto.PaymentDto;
 
 import java.util.List;
 

@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.fbtw.thestore.backend.data.geo.dto.CityDto;
-import ru.fbtw.thestore.backend.data.geo.dto.PointDto;
+import ru.fbtw.thestore.backend.datas.geo.dto.CityDto;
+import ru.fbtw.thestore.backend.datas.geo.dto.PointDto;
 import ru.fbtw.thestore.backend.services.GeoService;
 
 import java.util.List;

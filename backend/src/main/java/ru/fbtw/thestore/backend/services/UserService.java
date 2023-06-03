@@ -1,12 +1,11 @@
 package ru.fbtw.thestore.backend.services;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.fbtw.thestore.backend.domain.user.MyUser;
-import ru.fbtw.thestore.backend.repository.UserRepository;
+import ru.fbtw.thestore.backend.domains.user.MyUser;
+import ru.fbtw.thestore.backend.repositories.UserRepository;
 
 @Service
 @RequiredArgsConstructor
@@ -15,7 +14,7 @@ public class UserService implements UserDetailsService {
 
 	@Override
 	public MyUser loadUserByUsername(String username) throws UsernameNotFoundException {
-		return userRepository.findByUsername(username)
+		return userRepository.findByUserName(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден"));
 	}
 }

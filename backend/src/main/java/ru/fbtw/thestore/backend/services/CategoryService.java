@@ -6,19 +6,19 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.fbtw.thestore.backend.data.catalog.dto.CategoryDto;
-import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.CategoryDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.CompactProductDto;
 
 
-import ru.fbtw.thestore.backend.data.catalog.dto.ProductDto;
-import ru.fbtw.thestore.backend.data.catalog.mapper.CategoryMapper;
-import ru.fbtw.thestore.backend.data.catalog.mapper.CompactProductMapper;
-import ru.fbtw.thestore.backend.data.catalog.mapper.ProductMapper;
-import ru.fbtw.thestore.backend.domain.catalog.Category;
-import ru.fbtw.thestore.backend.domain.catalog.Product;
-import ru.fbtw.thestore.backend.domain.catalog.enums.ProductSort;
-import ru.fbtw.thestore.backend.repository.CategoryRepository;
-import ru.fbtw.thestore.backend.repository.ProductRepository;
+import ru.fbtw.thestore.backend.datas.catalog.dto.ProductDto;
+import ru.fbtw.thestore.backend.datas.catalog.mapper.CategoryMapper;
+import ru.fbtw.thestore.backend.datas.catalog.mapper.CompactProductMapper;
+import ru.fbtw.thestore.backend.datas.catalog.mapper.ProductMapper;
+import ru.fbtw.thestore.backend.domains.catalog.Category;
+import ru.fbtw.thestore.backend.domains.catalog.Product;
+import ru.fbtw.thestore.backend.domains.catalog.enums.ProductSort;
+import ru.fbtw.thestore.backend.repositories.CategoryRepository;
+import ru.fbtw.thestore.backend.repositories.ProductRepository;
 
 import java.util.List;
 

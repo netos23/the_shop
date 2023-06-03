@@ -4,13 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.fbtw.thestore.backend.controllers.requests.DeliveryRequest;
-import ru.fbtw.thestore.backend.data.delivery.dto.DeliveryDto;
-import ru.fbtw.thestore.backend.data.delivery.mapper.DeliveryMapper;
-import ru.fbtw.thestore.backend.domain.delivery.Delivery;
-import ru.fbtw.thestore.backend.repository.DeliveryRepository;
+import ru.fbtw.thestore.backend.datas.delivery.dto.DeliveryDto;
+import ru.fbtw.thestore.backend.datas.delivery.mapper.DeliveryMapper;
+import ru.fbtw.thestore.backend.domains.delivery.Delivery;
+import ru.fbtw.thestore.backend.repositories.DeliveryRepository;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

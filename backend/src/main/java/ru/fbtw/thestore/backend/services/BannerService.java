@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.fbtw.thestore.backend.data.banner.dto.BannerDto;
-import ru.fbtw.thestore.backend.data.banner.mapper.BannerMapper;
+import ru.fbtw.thestore.backend.datas.banner.dto.BannerDto;
+import ru.fbtw.thestore.backend.datas.banner.mapper.BannerMapper;
 import ru.fbtw.thestore.backend.domains.banner.*;
 import ru.fbtw.thestore.backend.repositories.*;
 
@@ -62,7 +62,7 @@ public class BannerService {
     }
 
     @Transactional
-    private BannerDto updateBanner(BannerDto bannerDto) {
+    public BannerDto updateBanner(BannerDto bannerDto) {
         if (bannerDto.getBannerType().equals(BannerType.button)) {
             Banner beforeUpdate = bannerRepository.findById(bannerDto.getId()).orElseThrow();
             bannerMapper.partialUpdate(bannerDto, beforeUpdate);

@@ -2,12 +2,12 @@ package ru.fbtw.thestore.backend.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.fbtw.thestore.backend.data.order.dto.MyOrderDto;
-import ru.fbtw.thestore.backend.data.order.mapper.MyOrderMapper;
-import ru.fbtw.thestore.backend.domain.order.MyOrder;
-import ru.fbtw.thestore.backend.domain.user.MyUser;
-import ru.fbtw.thestore.backend.repository.OrderRepository;
-import ru.fbtw.thestore.backend.repository.UserRepository;
+import ru.fbtw.thestore.backend.datas.order.dto.MyOrderDto;
+import ru.fbtw.thestore.backend.datas.order.mapper.MyOrderMapper;
+import ru.fbtw.thestore.backend.domains.order.MyOrder;
+import ru.fbtw.thestore.backend.domains.user.MyUser;
+import ru.fbtw.thestore.backend.repositories.OrderRepository;
+import ru.fbtw.thestore.backend.repositories.UserRepository;
 
 import java.util.List;
 

@@ -7,11 +7,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.fbtw.thestore.backend.controllers.requests.OrderRequest;
-import ru.fbtw.thestore.backend.data.order.dto.MyOrderDto;
+import ru.fbtw.thestore.backend.datas.order.dto.MyOrderDto;
 import ru.fbtw.thestore.backend.services.OrderService;
 
 
