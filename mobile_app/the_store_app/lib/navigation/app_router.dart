@@ -13,6 +13,9 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: OnboardingRoute.page),
         AutoRoute(
           page: CityListRoute.page,
+        ),
+        AutoRoute(
+          page: MapPointsRoute.page,
           initial: true,
         ),
         AutoRoute(page: StartingMethodRoute.page),

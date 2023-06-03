@@ -30,7 +30,8 @@ dependencies:
   firebase_remote_config: ^4.2.1
   firebase_performance: ^0.9.2+1
   firebase_auth: ^4.6.1
-
+  yandex_mapkit: ^3.2.0
+  shared_preferences: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -44,3 +45,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icon_cart.png

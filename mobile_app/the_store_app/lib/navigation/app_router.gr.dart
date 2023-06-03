@@ -48,6 +48,17 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MapPointsRoute.name: (routeData) {
+      final args = routeData.argsAs<MapPointsRouteArgs>(
+          orElse: () => const MapPointsRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: MapPointsScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
   };
 }
 
@@ -171,5 +182,46 @@ class OnboardingRouteArgs {
   @override
   String toString() {
     return 'OnboardingRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [MapPointsScreenWidget]
+class MapPointsRoute extends PageRouteInfo<MapPointsRouteArgs> {
+  MapPointsRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultMapPointsScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          MapPointsRoute.name,
+          args: MapPointsRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'MapPointsRoute';
+
+  static const PageInfo<MapPointsRouteArgs> page =
+      PageInfo<MapPointsRouteArgs>(name);
+}
+
+class MapPointsRouteArgs {
+  const MapPointsRouteArgs({
+    this.key,
+    this.wmFactory = defaultMapPointsScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'MapPointsRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }

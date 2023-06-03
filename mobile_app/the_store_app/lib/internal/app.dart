@@ -10,11 +10,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-
       theme: ThemeData(
-        textTheme: TextTheme(
-          bodySmall: AppTypography.bodySmall
-        ),
+        textTheme: TextTheme(bodySmall: AppTypography.bodySmall),
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: AppColor.black,
@@ -35,7 +32,20 @@ class App extends StatelessWidget {
           color: AppColor.white,
           elevation: 0,
         ),
-        extensions:  [
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            shape: const RoundedRectangleBorder()
+          ),
+        ),
+        tabBarTheme: const TabBarTheme(
+          labelColor: AppColor.black,
+          indicator: UnderlineTabIndicator(
+            borderSide: BorderSide(
+              color: AppColor.black,
+            )
+          )
+        ),
+        extensions: [
           const ExtraAppColors(
             surface: AppColor.gray,
             border: AppColor.border,
