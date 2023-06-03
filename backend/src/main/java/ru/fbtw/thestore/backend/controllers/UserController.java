@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.fbtw.thestore.backend.data.catalog.dto.ProductDto;
-import ru.fbtw.thestore.backend.data.user.dto.MyUserDto;
+import ru.fbtw.thestore.backend.datas.catalog.dto.ProductDto;
+import ru.fbtw.thestore.backend.datas.user.dto.MyUserDto;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class UserController {
 
 
     /** здесь id юзера, наверно, потому что таблицы в бд с корзиной нет
-    см {@link ru.fbtw.thestore.backend.domain.user.MyUser} entity
+    см {@link ru.fbtw.thestore.backend.domains.user.MyUser} entity
      */
     @GetMapping("/{id}/basket")
     @Operation(summary = "Корзина пользователя", tags = "user")
@@ -50,7 +50,7 @@ public class UserController {
         throw new RuntimeException();
     }
 
-    @GetMapping("/{id}")
+    @PutMapping("/{id}")
     @Operation(summary = "Редактировать информацию о  пользователе", tags = "user")
     public MyUserDto updateInformation(@Valid @RequestBody MyUserDto myUserDto) {
         throw new RuntimeException();

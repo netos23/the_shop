@@ -3,14 +3,14 @@ package ru.fbtw.thestore.backend.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.fbtw.thestore.backend.data.geo.dto.CityDto;
-import ru.fbtw.thestore.backend.data.geo.dto.PointDto;
-import ru.fbtw.thestore.backend.data.geo.mapper.CityMapper;
-import ru.fbtw.thestore.backend.data.geo.mapper.PointMapper;
-import ru.fbtw.thestore.backend.domain.geo.City;
-import ru.fbtw.thestore.backend.domain.geo.Point;
-import ru.fbtw.thestore.backend.repository.CityRepository;
-import ru.fbtw.thestore.backend.repository.PointRepository;
+import ru.fbtw.thestore.backend.datas.geo.dto.CityDto;
+import ru.fbtw.thestore.backend.datas.geo.dto.PointDto;
+import ru.fbtw.thestore.backend.datas.geo.mapper.CityMapper;
+import ru.fbtw.thestore.backend.datas.geo.mapper.PointMapper;
+import ru.fbtw.thestore.backend.domains.geo.City;
+import ru.fbtw.thestore.backend.domains.geo.Point;
+import ru.fbtw.thestore.backend.repositories.CityRepository;
+import ru.fbtw.thestore.backend.repositories.PointRepository;
 
 import java.util.List;
 

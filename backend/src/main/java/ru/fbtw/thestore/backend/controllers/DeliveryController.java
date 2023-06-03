@@ -3,11 +3,10 @@ package ru.fbtw.thestore.backend.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.fbtw.thestore.backend.controllers.requests.DeliveryRequest;
-import ru.fbtw.thestore.backend.data.delivery.dto.DeliveryDto;
+import ru.fbtw.thestore.backend.datas.delivery.dto.DeliveryDto;
 import ru.fbtw.thestore.backend.services.DeliveryService;
 
 @RestController
