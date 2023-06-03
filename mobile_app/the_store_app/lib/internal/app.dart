@@ -1,5 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:the_store_app/domain/delivery/delivery_service.dart';
+import 'package:the_store_app/internal/di_container.dart';
 import 'package:the_store_app/navigation/app_router.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +15,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
-        textTheme: TextTheme(bodySmall: AppTypography.bodySmall),
+        textTheme: GoogleFonts.montserratTextTheme(),
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: AppColor.black,
@@ -33,18 +37,14 @@ class App extends StatelessWidget {
           elevation: 0,
         ),
         filledButtonTheme: FilledButtonThemeData(
-          style: FilledButton.styleFrom(
-            shape: const RoundedRectangleBorder()
-          ),
+          style: FilledButton.styleFrom(shape: const RoundedRectangleBorder()),
         ),
         tabBarTheme: const TabBarTheme(
-          labelColor: AppColor.black,
-          indicator: UnderlineTabIndicator(
-            borderSide: BorderSide(
+            labelColor: AppColor.black,
+            indicator: UnderlineTabIndicator(
+                borderSide: BorderSide(
               color: AppColor.black,
-            )
-          )
-        ),
+            ))),
         extensions: [
           const ExtraAppColors(
             surface: AppColor.gray,
@@ -56,7 +56,18 @@ class App extends StatelessWidget {
           )
         ],
       ),
-      routerConfig: _appRouter.config(),
+      routerConfig: _appRouter.config(
+        deepLinkBuilder: (d) {
+          final service = DiContainer()<DeliveryService>();
+          final delivery = service.controller.valueOrNull;
+
+          return DeepLink(
+            [
+              if (delivery == null) MapPointsRoute() else HomeRoute(),
+            ],
+          );
+        },
+      ),
     );
   }
 }

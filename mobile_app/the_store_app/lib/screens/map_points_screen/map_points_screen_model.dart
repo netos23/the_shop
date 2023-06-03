@@ -1,44 +1,52 @@
 import 'package:decimal/decimal.dart';
 import 'package:elementary/elementary.dart';
+import 'package:the_store_app/data/shop/shop_client.dart';
+import 'package:the_store_app/domain/delivery/delivery_service.dart';
+import 'package:the_store_app/entity/delivery/delivery_method.dart';
 import 'package:the_store_app/entity/delivery/pickup_point.dart';
 
 // TODO: cover with documentation
 /// Default Elementary model for MapPointsScreen module
 class MapPointsScreenModel extends ElementaryModel {
-  MapPointsScreenModel({super.errorHandler});
+  MapPointsScreenModel({
+    required this.deliveryService,
+    required this.shopClient,
+    super.errorHandler,
+  });
 
-  Future<List<PickupPoint>> getPoints() async {
-    return [
-      PickupPoint(
-        id: 0,
-        shopName: 'Магнит',
-        shopAddress: 'Воронеж, Переверткина, 10',
-        shopPhone: '+783342343423',
-        shopWorkhours: '10:00-20:00 пн-пт; вс сб - выходной',
-        shopPicture: '',
-        lat: Decimal.fromJson('51.691894'),
-        lon: Decimal.fromJson('39.258121'),
+  final ShopClient shopClient;
+  final DeliveryService deliveryService;
+
+  final List<PickupPoint> _points = [];
+
+  Future<List<PickupPoint>> getPoints([String? search]) async {
+    if (_points.isEmpty) {
+      try {
+        final shops = await shopClient.getShops();
+        _points.addAll(shops);
+        return shops;
+      } catch (error, stacktrace) {
+        handleError(error, stackTrace: stacktrace);
+        rethrow;
+      }
+    }
+
+    Iterable<PickupPoint> points = _points;
+
+    if (search != null) {
+      points = points.where(
+        (shop) => shop.shopAddress.startsWith(search),
+      );
+    }
+
+    return points.toList();
+  }
+
+  void setPickupPoint(PickupPoint data) {
+    deliveryService.saveDeliveryMethod(
+      DeliveryMethod.shop(
+        point: data,
       ),
-      PickupPoint(
-        id: 1,
-        shopName: 'Магнит',
-        shopAddress: 'Воронеж, Переверткина, 10',
-        shopPhone: '+783342343423',
-        shopWorkhours: '10:00-20:00 пн-пт; вс сб - выходной',
-        shopPicture: '',
-        lat: Decimal.fromJson('51.693401'),
-        lon: Decimal.fromJson('39.255210'),
-      ),
-      PickupPoint(
-        id: 2,
-        shopName: 'Магнит',
-        shopAddress: 'Воронеж, Переверткина, 10',
-        shopPhone: '+783342343423',
-        shopWorkhours: '10:00-20:00 пн-пт; вс сб - выходной',
-        shopPicture: '',
-        lat: Decimal.fromJson('51.694215'),
-        lon: Decimal.fromJson('39.256107'),
-      ),
-    ];
+    );
   }
 }

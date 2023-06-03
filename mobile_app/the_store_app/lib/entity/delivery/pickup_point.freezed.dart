@@ -24,7 +24,7 @@ mixin _$PickupPoint {
   String get shopName => throw _privateConstructorUsedError;
   String get shopAddress => throw _privateConstructorUsedError;
   String get shopPhone => throw _privateConstructorUsedError;
-  String get shopWorkhours => throw _privateConstructorUsedError;
+  String get shopWorkHours => throw _privateConstructorUsedError;
   String get shopPicture => throw _privateConstructorUsedError;
   Decimal get lat => throw _privateConstructorUsedError;
   Decimal get lon => throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ abstract class $PickupPointCopyWith<$Res> {
       String shopName,
       String shopAddress,
       String shopPhone,
-      String shopWorkhours,
+      String shopWorkHours,
       String shopPicture,
       Decimal lat,
       Decimal lon});
@@ -69,7 +69,7 @@ class _$PickupPointCopyWithImpl<$Res, $Val extends PickupPoint>
     Object? shopName = null,
     Object? shopAddress = null,
     Object? shopPhone = null,
-    Object? shopWorkhours = null,
+    Object? shopWorkHours = null,
     Object? shopPicture = null,
     Object? lat = null,
     Object? lon = null,
@@ -91,9 +91,9 @@ class _$PickupPointCopyWithImpl<$Res, $Val extends PickupPoint>
           ? _value.shopPhone
           : shopPhone // ignore: cast_nullable_to_non_nullable
               as String,
-      shopWorkhours: null == shopWorkhours
-          ? _value.shopWorkhours
-          : shopWorkhours // ignore: cast_nullable_to_non_nullable
+      shopWorkHours: null == shopWorkHours
+          ? _value.shopWorkHours
+          : shopWorkHours // ignore: cast_nullable_to_non_nullable
               as String,
       shopPicture: null == shopPicture
           ? _value.shopPicture
@@ -124,7 +124,7 @@ abstract class _$$_PickupPointCopyWith<$Res>
       String shopName,
       String shopAddress,
       String shopPhone,
-      String shopWorkhours,
+      String shopWorkHours,
       String shopPicture,
       Decimal lat,
       Decimal lon});
@@ -145,7 +145,7 @@ class __$$_PickupPointCopyWithImpl<$Res>
     Object? shopName = null,
     Object? shopAddress = null,
     Object? shopPhone = null,
-    Object? shopWorkhours = null,
+    Object? shopWorkHours = null,
     Object? shopPicture = null,
     Object? lat = null,
     Object? lon = null,
@@ -167,9 +167,9 @@ class __$$_PickupPointCopyWithImpl<$Res>
           ? _value.shopPhone
           : shopPhone // ignore: cast_nullable_to_non_nullable
               as String,
-      shopWorkhours: null == shopWorkhours
-          ? _value.shopWorkhours
-          : shopWorkhours // ignore: cast_nullable_to_non_nullable
+      shopWorkHours: null == shopWorkHours
+          ? _value.shopWorkHours
+          : shopWorkHours // ignore: cast_nullable_to_non_nullable
               as String,
       shopPicture: null == shopPicture
           ? _value.shopPicture
@@ -195,7 +195,7 @@ class _$_PickupPoint implements _PickupPoint {
       required this.shopName,
       required this.shopAddress,
       required this.shopPhone,
-      required this.shopWorkhours,
+      required this.shopWorkHours,
       required this.shopPicture,
       required this.lat,
       required this.lon});
@@ -212,7 +212,7 @@ class _$_PickupPoint implements _PickupPoint {
   @override
   final String shopPhone;
   @override
-  final String shopWorkhours;
+  final String shopWorkHours;
   @override
   final String shopPicture;
   @override
@@ -222,7 +222,7 @@ class _$_PickupPoint implements _PickupPoint {
 
   @override
   String toString() {
-    return 'PickupPoint(id: $id, shopName: $shopName, shopAddress: $shopAddress, shopPhone: $shopPhone, shopWorkhours: $shopWorkhours, shopPicture: $shopPicture, lat: $lat, lon: $lon)';
+    return 'PickupPoint(id: $id, shopName: $shopName, shopAddress: $shopAddress, shopPhone: $shopPhone, shopWorkHours: $shopWorkHours, shopPicture: $shopPicture, lat: $lat, lon: $lon)';
   }
 
   @override
@@ -237,8 +237,8 @@ class _$_PickupPoint implements _PickupPoint {
                 other.shopAddress == shopAddress) &&
             (identical(other.shopPhone, shopPhone) ||
                 other.shopPhone == shopPhone) &&
-            (identical(other.shopWorkhours, shopWorkhours) ||
-                other.shopWorkhours == shopWorkhours) &&
+            (identical(other.shopWorkHours, shopWorkHours) ||
+                other.shopWorkHours == shopWorkHours) &&
             (identical(other.shopPicture, shopPicture) ||
                 other.shopPicture == shopPicture) &&
             (identical(other.lat, lat) || other.lat == lat) &&
@@ -248,7 +248,7 @@ class _$_PickupPoint implements _PickupPoint {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, shopName, shopAddress,
-      shopPhone, shopWorkhours, shopPicture, lat, lon);
+      shopPhone, shopWorkHours, shopPicture, lat, lon);
 
   @JsonKey(ignore: true)
   @override
@@ -270,7 +270,7 @@ abstract class _PickupPoint implements PickupPoint {
       required final String shopName,
       required final String shopAddress,
       required final String shopPhone,
-      required final String shopWorkhours,
+      required final String shopWorkHours,
       required final String shopPicture,
       required final Decimal lat,
       required final Decimal lon}) = _$_PickupPoint;
@@ -287,7 +287,7 @@ abstract class _PickupPoint implements PickupPoint {
   @override
   String get shopPhone;
   @override
-  String get shopWorkhours;
+  String get shopWorkHours;
   @override
   String get shopPicture;
   @override

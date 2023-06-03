@@ -1,18 +1,20 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:the_store_app/entity/delivery/pickup_point.dart';
+
 
 class PickupPointTile extends StatelessWidget {
   const PickupPointTile({
     Key? key,
     required this.point,
-    required this.color,
+    this.color,
     this.style,
     this.onTap,
   }) : super(key: key);
 
   final TextStyle? style;
   final PickupPoint point;
-  final Color color;
+  final Color? color;
   final VoidCallback? onTap;
 
   @override
@@ -21,7 +23,7 @@ class PickupPointTile extends StatelessWidget {
       onTap: onTap,
       child: Container(
         color: color,
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         // height: 260,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,9 +34,7 @@ class PickupPointTile extends StatelessWidget {
             ),
             Text(
               point.shopAddress,
-              style: style?.copyWith(
-                  fontWeight: FontWeight.w700
-              ),
+              style: style?.copyWith(fontWeight: FontWeight.w700),
             ),
             Text(
               point.shopName,
@@ -45,7 +45,7 @@ class PickupPointTile extends StatelessWidget {
               style: style,
             ),
             Text(
-              point.shopWorkhours,
+              point.shopWorkHours,
               style: style,
             ),
           ],

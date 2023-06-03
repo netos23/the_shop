@@ -12,7 +12,7 @@ class PickupPoint with _$PickupPoint {
     required String shopName,
     required String shopAddress,
     required String shopPhone,
-    required String shopWorkhours,
+    required String shopWorkHours,
     required String shopPicture,
     required Decimal lat,
     required Decimal lon,

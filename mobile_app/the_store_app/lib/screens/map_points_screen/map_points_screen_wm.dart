@@ -1,11 +1,15 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_store_app/domain/delivery/delivery_service.dart';
 import 'package:the_store_app/entity/delivery/pickup_point.dart';
+import 'package:the_store_app/internal/di_container.dart';
+import 'package:the_store_app/navigation/app_router.dart';
 import 'package:the_store_app/screens/map_points_screen/components/pickup_point_bottom_sheet.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 import 'map_points_screen_model.dart';
@@ -28,9 +32,13 @@ abstract class IMapPointsScreenWidgetModel extends IWidgetModel
 
 MapPointsScreenWidgetModel defaultMapPointsScreenWidgetModelFactory(
     BuildContext context) {
-  return MapPointsScreenWidgetModel(MapPointsScreenModel(
-    errorHandler: context.read(),
-  ));
+  return MapPointsScreenWidgetModel(
+    MapPointsScreenModel(
+      errorHandler: context.read(),
+      deliveryService: DiContainer()<DeliveryService>(),
+      shopClient: context.read(),
+    ),
+  );
 }
 
 // TODO: cover with documentation
@@ -58,44 +66,60 @@ class MapPointsScreenWidgetModel
   @override
   void initWidgetModel() {
     super.initWidgetModel();
+    pickupPointState.loading();
+    searchController.addListener(_makeSearch);
+  }
+
+  Future<void> _makeSearch() async {
+    try {
+      final points = await model.getPoints(searchController.text);
+      pickupPointState.content(points);
+
+      if (points.isEmpty) {
+        return;
+      }
+
+      final lat = points.map((p) => p.lat).toList()..sort();
+      final lon = points.map((p) => p.lon).toList()..sort();
+
+      _moveToPoint(
+        lat: lat[lat.length ~/ 2].toDouble(),
+        lon: lon[lon.length ~/ 2].toDouble(),
+      );
+    } catch (e) {
+      context.showSnackBar('Не удалось загрузить магазины.');
+    }
   }
 
   @override
   Future<void> onMapCreated(YandexMapController controller) async {
     _mapController = controller;
 
-    final points = await model.getPoints();
-    pickupPointState.content(points);
-
-    final lat = points.map((p) => p.lat).toList()..sort();
-    final lon = points.map((p) => p.lon).toList()..sort();
-
-    _moveToPoint(
-      lat: lat[lat.length ~/ 2].toDouble(),
-      lon: lon[lon.length ~/ 2].toDouble(),
-    );
+    await _makeSearch();
   }
 
   void _moveToPoint({
     required double lat,
     required double lon,
-    double zoom = 20,
+    double zoom = 15,
   }) {
     _mapController?.moveCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-            zoom: zoom,
-            target: Point(
-              latitude: lat,
-              longitude: lon,
-            ),
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+          zoom: zoom,
+          target: Point(
+            latitude: lat,
+            longitude: lon,
           ),
         ),
-        animation: MapAnimation());
+      ),
+      animation: const MapAnimation(),
+    );
   }
 
   @override
   void dispose() {
+    searchController.removeListener(_makeSearch);
     pickupPointState.dispose();
     super.dispose();
   }
@@ -201,7 +225,7 @@ class MapPointsScreenWidgetModel
 
   @override
   Future<void> openStore(PickupPoint point) async {
-    if(tabController.index == 1){
+    if (tabController.index == 1) {
       tabController.index = 0;
     }
 
@@ -210,7 +234,7 @@ class MapPointsScreenWidgetModel
       lon: point.lon.toDouble(),
       zoom: 17,
     );
-    final data = showModalBottomSheet(
+    final data = await showModalBottomSheet<PickupPoint>(
       context: context,
       clipBehavior: Clip.antiAlias,
       shape: const RoundedRectangleBorder(
@@ -224,6 +248,16 @@ class MapPointsScreenWidgetModel
       builder: (context) => PickupBottomSheet(point: point),
     );
     // TODO(netos23): persist
+    if (data != null) {
+      model.setPickupPoint(data);
+
+      if (router.canPop()) {
+        router.popUntilRoot();
+        return;
+      }
+
+      router.replace(HomeRoute());
+    }
   }
 
   PlacemarkMapObject _mapPickupPoint(PickupPoint point) {
@@ -240,8 +274,7 @@ class MapPointsScreenWidgetModel
           image: BitmapDescriptor.fromAssetImage(
             'assets/icon_cart.png',
           ),
-          scale: 1.5,
-          rotationType: RotationType.rotate,
+          scale: 0.9,
           isFlat: true,
         ),
       ),

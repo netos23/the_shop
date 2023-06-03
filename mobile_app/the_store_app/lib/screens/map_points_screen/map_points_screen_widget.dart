@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:the_store_app/screens/map_points_screen/components/pickup_point_tile_loader.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 import 'components/pickup_point_tile.dart';
 import 'map_points_screen_wm.dart';
@@ -19,6 +20,7 @@ class MapPointsScreenWidget
   @override
   Widget build(IMapPointsScreenWidgetModel wm) {
     return Scaffold(
+      backgroundColor: wm.colorScheme.background,
       appBar: AppBar(
         title: const Text('Пункты самовывоза'),
         bottom: TabBar(
@@ -54,6 +56,29 @@ class _ListPage extends StatelessWidget {
 
     return EntityStateNotifierBuilder(
       listenableEntityState: wm.pickupPointState,
+      loadingBuilder: (context, _) {
+        return CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.only(top: 10),
+              sliver: SliverToBoxAdapter(
+                child: SearchWidget(
+                  controller: wm.searchController,
+                ),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return PickupPointTileLoader(
+                    color: index.isEven ? evenBackground : oddBackground,
+                  );
+                },
+              ),
+            )
+          ],
+        );
+      },
       builder: (context, mapObjects) {
         final points = mapObjects ?? [];
         return CustomScrollView(
@@ -66,31 +91,26 @@ class _ListPage extends StatelessWidget {
                 ),
               ),
             ),
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    return PickupPointTile(
-                      onTap: () => wm.openStore(points[index]),
-                      point: points[index],
-                      color: index.isEven ? evenBackground : oddBackground,
-                      style: wm.textTheme.bodyMedium
-                          ?.copyWith(color: wm.colorScheme.primary),
-                    );
-                  },
-                  childCount: points.length,
-                ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return PickupPointTile(
+                    onTap: () => wm.openStore(points[index]),
+                    point: points[index],
+                    color: index.isEven ? evenBackground : oddBackground,
+                    style: wm.textTheme.bodyMedium
+                        ?.copyWith(color: wm.colorScheme.primary),
+                  );
+                },
+                childCount: points.length,
               ),
-            ),
+            )
           ],
         );
       },
     );
   }
 }
-
-
 
 class _MapPage extends StatelessWidget {
   const _MapPage({

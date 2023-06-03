@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'catalog_client.dart';
+part of 'shop_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'catalog_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _CatalogClient implements CatalogClient {
-  _CatalogClient(
+class _ShopClient implements ShopClient {
+  _ShopClient(
     this._dio, {
     this.baseUrl,
   });
@@ -19,25 +19,27 @@ class _CatalogClient implements CatalogClient {
   String? baseUrl;
 
   @override
-  Future<CatalogProductListDto> getProducts() async {
+  Future<List<PickupPoint>> getShops() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CatalogProductListDto>(Options(
-      method: 'POST',
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<PickupPoint>>(Options(
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/catalog/products',
+              '/shop/points',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = CatalogProductListDto.fromJson(_result.data!);
+    var value = _result.data!
+        .map((dynamic i) => PickupPoint.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

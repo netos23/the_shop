@@ -15,6 +15,7 @@ class ValueStreamWrapper<T> implements DisposeLifecycleComponent {
   ValueStreamWrapper();
 
   void add(T value) {
+    _value = value;
     _controller.add(value);
   }
 
