@@ -1,9 +1,10 @@
 package ru.fbtw.thestore.backend.data.banner.dto;
 
-import lombok.Data;
+
+import lombok.*;
 import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
-import ru.fbtw.thestore.backend.domain.banner.Banner;
-import ru.fbtw.thestore.backend.domain.banner.BannerType;
+import ru.fbtw.thestore.backend.domains.banner.Banner;
+import ru.fbtw.thestore.backend.domains.banner.BannerType;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -11,13 +12,19 @@ import java.util.Set;
 /**
  * A DTO for the {@link Banner} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BannerDto implements Serializable {
-	private final Long id;
-	private final Long order;
-	private final BannerType bannerType;
-	private final String title;
-	private final Set<CompactProductDto> products;
-	private final Set<String> images;
-	private final String markdown;
+	private Long id;
+	private Long order;
+	private BannerType bannerType;
+	private String title;
+	private Set<CompactProductDto> products;
+	private Set<String> images;
+	private String markdown;
+	//если id нет, то создать новый баннер, если есть - обновить текущий
+	//в зависимости от типа баннера я иду в нужную бд и достаю баннер
 }

@@ -1,4 +1,4 @@
-package ru.fbtw.thestore.backend.domain.banner;
+package ru.fbtw.thestore.backend.domains.banner;
 
 public enum BannerType {
 	button,
