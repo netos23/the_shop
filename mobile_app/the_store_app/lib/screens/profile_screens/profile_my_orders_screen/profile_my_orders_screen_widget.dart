@@ -24,7 +24,6 @@ class ProfileMyOrdersScreenWidget extends ElementaryWidget<IProfileMyOrdersScree
 
       ),
       body: Column(
-        _OrderTile(),
       ),
     );
   }

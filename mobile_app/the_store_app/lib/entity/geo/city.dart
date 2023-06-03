@@ -6,7 +6,7 @@ part 'city.g.dart';
 
 @Freezed(
   fromJson: true,
-  toJson: false,
+  toJson: true,
 )
 class City with _$City {
   factory City({

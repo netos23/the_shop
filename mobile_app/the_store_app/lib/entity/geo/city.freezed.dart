@@ -29,6 +29,7 @@ mixin _$City {
   double? get lat => throw _privateConstructorUsedError;
   double? get lon => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CityCopyWith<City> get copyWith => throw _privateConstructorUsedError;
 }
@@ -145,7 +146,7 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
 }
 
 /// @nodoc
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class _$_City implements _City {
   _$_City(
       {@JsonKey(name: "cityName") required this.name,
@@ -196,6 +197,13 @@ class _$_City implements _City {
   @pragma('vm:prefer-inline')
   _$$_CityCopyWith<_$_City> get copyWith =>
       __$$_CityCopyWithImpl<_$_City>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CityToJson(
+      this,
+    );
+  }
 }
 
 abstract class _City implements City {

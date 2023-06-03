@@ -23,6 +23,7 @@ class ShortProductDto {
   final Decimal? productOldPrice;
   final List<String> pictures;
 
+
   factory ShortProductDto.fromJson(Json json) =>
       _$ShortProductDtoFromJson(json);
 }

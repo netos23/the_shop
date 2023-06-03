@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:the_store_app/data/geo/geo_client.dart';
+import 'package:the_store_app/data/user/user_client.dart';
 
 
 class AppDependency extends StatelessWidget {
@@ -47,6 +48,7 @@ class AppDependency extends StatelessWidget {
         Provider<GeoClient>(
           create: (context) => GeoClient(context.read()),
         ),
+        Provider<UserClient>(create: (context) => UserClient(context.read())),
 
         Provider.value(
           value: errorHandler,

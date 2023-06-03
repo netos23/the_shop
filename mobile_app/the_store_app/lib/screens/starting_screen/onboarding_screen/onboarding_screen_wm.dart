@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_store_app/data/catalog/models/short_product.dart';
 import 'package:the_store_app/navigation/app_router.dart';
 import 'onboarding_screen_model.dart';
 import 'onboarding_screen_widget.dart';
