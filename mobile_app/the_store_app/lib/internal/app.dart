@@ -13,8 +13,12 @@ class App extends StatelessWidget {
 
       theme: ThemeData(
         textTheme: TextTheme(
-          bodySmall: AppTypography.bodySmall
+          bodySmall: AppTypography.bodySmall,
+          bodyMedium: AppTypography.mediumBodySmall,
+          labelLarge: AppTypography.mediumBodySmallWhite,
+          titleMedium: AppTypography.title,
         ),
+
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: AppColor.black,
@@ -43,7 +47,8 @@ class App extends StatelessWidget {
           ),
           ExtraAppTypography(
             bodySmall: AppTypography.mediumBodySmall,
-          )
+          ),
+
         ],
       ),
       routerConfig: _appRouter.config(),
