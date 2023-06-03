@@ -5,7 +5,9 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.fbtw.thestore.backend.data.user.dto.Sex;
 import ru.fbtw.thestore.backend.domains.catalog.Product;
+import ru.fbtw.thestore.backend.domains.delivery.Delivery;
 import ru.fbtw.thestore.backend.domains.geo.City;
 import ru.fbtw.thestore.backend.domains.order.MyOrder;
 
@@ -27,8 +29,12 @@ public class MyUser implements UserDetails {
     @Column(name = "user_id", nullable = false)
     private Long id;
 
+    @Column(name = "user_sex", nullable = false, length = 7)
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
+
     @Column(name = "user_name", nullable = false, length = 100)
-    private String userName;
+    private String username;
 
     @Column(name = "user_email", nullable = false, length = 200)
     private String userEmail;
@@ -46,7 +52,7 @@ public class MyUser implements UserDetails {
             CascadeType.PERSIST,
             CascadeType.MERGE
     },
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     @JoinTable(name = "user_basket",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
@@ -57,7 +63,7 @@ public class MyUser implements UserDetails {
             CascadeType.PERSIST,
             CascadeType.MERGE
     },
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     @JoinTable(name = "user_favourites",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
@@ -65,10 +71,14 @@ public class MyUser implements UserDetails {
     private Set<Product> favourites = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.MERGE,
-            mappedBy = "user", fetch = FetchType.EAGER)
+            mappedBy = "user", fetch = FetchType.LAZY)
     private Set<MyOrder> orders = new HashSet<>();
 
-    @ManyToOne
+    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY,
+            mappedBy = "user")
+    private Set<Delivery> deliveries;
+
+    @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinColumn(name="city_id")
     private City city;
 
@@ -76,7 +86,7 @@ public class MyUser implements UserDetails {
             CascadeType.PERSIST,
             CascadeType.MERGE
     },
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")

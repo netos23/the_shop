@@ -1,17 +1,18 @@
 package ru.fbtw.thestore.backend.domains.catalog;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.Hibernate;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
-
+/**DONE!*/
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "category")
 public class Category {
@@ -23,19 +24,12 @@ public class Category {
     @Column(name = "category_name", nullable = false, length = 100)
     private String categoryName;
 
-    @Column(name = "category_picture",  length = 300)
-    private String picture;
+    @Column(name = "picture_path", nullable = false, length = 300)
+    private String picturePath;
 
     @OneToMany(cascade = CascadeType.MERGE,
-            mappedBy = "category", fetch = FetchType.EAGER)
+            mappedBy = "category", fetch = FetchType.LAZY)
     private Set<Product> products = new HashSet<>();
-
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Category> children = new LinkedHashSet<>();
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "parent_category_id")
-    private Category parent;
 
     @Override
     public boolean equals(Object o) {

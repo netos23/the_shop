@@ -9,7 +9,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.fbtw.thestore.backend.datas.banner.dto.BannerDto;
+import ru.fbtw.thestore.backend.data.banner.dto.BannerDto;
 import ru.fbtw.thestore.backend.services.BannerService;
 
 

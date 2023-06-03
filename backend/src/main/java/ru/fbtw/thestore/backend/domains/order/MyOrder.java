@@ -1,10 +1,10 @@
 package ru.fbtw.thestore.backend.domains.order;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import ru.fbtw.thestore.backend.domains.catalog.Product;
 import ru.fbtw.thestore.backend.domains.delivery.Delivery;
+import ru.fbtw.thestore.backend.domains.delivery.Shop;
 import ru.fbtw.thestore.backend.domains.payment.Payment;
 import ru.fbtw.thestore.backend.domains.user.MyUser;
 
@@ -14,6 +14,9 @@ import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "my_order")
 public class MyOrder {
@@ -26,14 +29,9 @@ public class MyOrder {
     private BigDecimal orderTotal;
 
     @Column(name = "order_status", nullable = false, length = 10)
-    private String orderStatus;
+    private boolean orderStatus; //оплачен или нет
 
-    @Column(name = "payment_status", nullable = false, length = 35)
-    private String paymentStatus;
-    @Column(name = "delivery_status", nullable = false, length = 35)
-    private String deliveryStatus;
-
-    @ManyToOne
+    @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinColumn(name = "user_id")
     private MyUser user;
 
@@ -45,17 +43,18 @@ public class MyOrder {
     @JoinColumn(name = "payment_id")
     private Payment payment;
 
+    @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
+    @JoinColumn(name = "shop_id")
+    private Shop shop;
+
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     },
-            fetch = FetchType.EAGER)
+            fetch = FetchType.LAZY)
     @JoinTable(name = "order_product",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private Set<Product> products = new HashSet<>();
-
-
-
 }

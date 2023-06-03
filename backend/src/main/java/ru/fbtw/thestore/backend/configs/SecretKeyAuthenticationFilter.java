@@ -53,6 +53,7 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         }
     }
-    //todo уточнить, где хранить токен
+
 }
+
 

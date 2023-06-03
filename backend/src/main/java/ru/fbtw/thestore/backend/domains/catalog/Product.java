@@ -1,15 +1,18 @@
 package ru.fbtw.thestore.backend.domains.catalog;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.Hibernate;
+import ru.fbtw.thestore.backend.domains.delivery.Delivery;
 
 import java.math.BigDecimal;
 import java.util.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "product")
 public class Product {
@@ -27,8 +30,8 @@ public class Product {
     @Column(name = "product_old_price", nullable = false, precision = 5, scale = 3)
     private BigDecimal productOldPrice;
 
-    @Column(name = "product_volume", nullable = false)
-    private Integer productVolume;
+    @Column(name = "basket_quantity", nullable = false)
+    private Integer basketQuantity;  //количество продуктов в корзине
 
     @Column(name = "product_description", nullable = false, length = 300)
     private String productDescription;
@@ -36,19 +39,12 @@ public class Product {
     @Column(name = "product_amount", nullable = false)
     private Integer productAmount;
 
-    //один продукт относится строго к одной категории!
-    @ManyToOne
+    @Column(name = "picture_path", nullable = false, length = 300)
+    private String picturePath;
+
+    @ManyToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinColumn(name = "category_id")
     private Category category;
-
-
-    @ElementCollection
-    @Column(name = "picture", length = 300)
-    @CollectionTable(name = "product_pictures", joinColumns = @JoinColumn(name = "product_id"))
-    private List<String> pictures = new ArrayList<>();
-
-    @OneToMany(mappedBy = "product", orphanRemoval = true)
-    private Set<ProductParam> productParams = new LinkedHashSet<>();
 
     @Override
     public boolean equals(Object o) {
