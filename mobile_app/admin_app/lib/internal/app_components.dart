@@ -8,9 +8,7 @@ import 'package:admin_app/data/service/auth_service.dart';
 import 'package:admin_app/data/service/banner_service.dart';
 import 'package:admin_app/data/service/cart_service.dart';
 import 'package:admin_app/data/service/catalog_service.dart';
-import 'package:admin_app/domain/use_case/cart_use_case.dart';
 import 'package:admin_app/domain/use_case/profile_use_case.dart';
-import 'package:admin_app/feature/order_history/api/order_history_service.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 const timeout = Duration(seconds: 30);
@@ -29,17 +27,12 @@ class AppComponents {
   late final CartService _cartService = CartService(dio);
   late final BannerService bannerService = BannerService(dio);
   late final CatalogService catalogService = CatalogService(dio);
-  late final OrderHistoryService orderHistoryService = OrderHistoryService(dio);
   late final GeolocationDadataRepository dadataRepository =
       GeolocationDadataRepository(
     DadataSuggestions(tokenDaData),
   );
   late final ProfileUseCase profileUseCase =
       ProfileUseCase(tokenRepository, AuthRepository(authService));
-  late final CartUseCase cartUseCase = CartUseCase(
-    _cartService,
-    profileUseCase,
-  );
 
   Future<void> init() async {
     dio.options
@@ -59,6 +52,5 @@ class AppComponents {
     );
 
     profileUseCase.init();
-    cartUseCase.init();
   }
 }

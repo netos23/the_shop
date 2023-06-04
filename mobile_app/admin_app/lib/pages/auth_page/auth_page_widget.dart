@@ -24,7 +24,7 @@ class AuthPageWidget extends ElementaryWidget<IAuthPageWidgetModel> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          localizations.enter,
+          'Вход',
         ),
       ),
       body: Padding(
