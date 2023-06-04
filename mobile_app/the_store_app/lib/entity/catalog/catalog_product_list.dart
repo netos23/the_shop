@@ -4,6 +4,8 @@ import 'short_product.dart';
 
 part 'catalog_product_list.freezed.dart';
 
+part 'catalog_product_list.g.dart';
+
 @freezed
 class CatalogProductList with _$CatalogProductList {
   factory CatalogProductList({
@@ -12,4 +14,7 @@ class CatalogProductList with _$CatalogProductList {
     required int size,
     required List<ShortProduct> products,
   }) = _CatalogProductList;
+
+  factory CatalogProductList.fromJson(Map<String, dynamic> json) =>
+      _$CatalogProductListFromJson(json);
 }

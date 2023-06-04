@@ -1,35 +1,28 @@
 import 'package:core/core.dart';
+import 'package:elementary/elementary.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:the_store_app/firebase_options.dart';
 import 'package:the_store_app/internal/app.dart';
 import 'package:the_store_app/internal/app_dependency.dart';
+import 'package:the_store_app/internal/di_container.dart';
 
 import 'error_handler/default_error_handler.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-/*  await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );*/
+  );
 
-  final errorHandler = DefaultErrorHandler();
+  await DiContainer().asyncInit();
 
   FlutterError.onError = (details) {
     if (!kIsWeb) {
-      // FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+      FirebaseCrashlytics.instance.recordFlutterFatalError(details);
     }
-    FlutterError.presentError(details);
-    // logger.e('Error occurred', details);
-  };
-
-  PlatformDispatcher.instance.onError = (error, stack) {
-    errorHandler.handleError(
-      error,
-      stackTrace: stack,
-      fatal: true,
-    );
-    return true;
   };
 
   runApp(
@@ -46,7 +39,6 @@ void main() {
         baseUrl: 'https://the-store.fbtw.ru/',
         timeout: const Duration(seconds: 15),
       ),
-      errorHandler: errorHandler,
       child: App(),
     ),
   );

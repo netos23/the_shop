@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.swp
+
 .DS_Store
 .atom/
 .buildlog/
@@ -24,6 +25,9 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
+mobile_app/the_store_app/android/local.properties
+mobile_app/admin_app/android/local.properties
+mobile_app/core/android/local.properties
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -34,6 +38,7 @@ migrate_working_dir/
 
 # Symbolication related
 app.*.symbols
+commit.sh
 
 # Obfuscation related
 app.*.map.json

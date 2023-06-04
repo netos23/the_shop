@@ -2,7 +2,7 @@ package ru.fbtw.thestore.backend.data.catalog.mapper;
 
 import org.mapstruct.*;
 import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
-import ru.fbtw.thestore.backend.domain.catalog.Product;
+import ru.fbtw.thestore.backend.domains.catalog.Product;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface CompactProductMapper {

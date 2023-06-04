@@ -1,7 +1,7 @@
 package ru.fbtw.thestore.backend.data.catalog.dto;
 
 import lombok.Data;
-import ru.fbtw.thestore.backend.domain.catalog.ProductParam;
+import ru.fbtw.thestore.backend.domains.catalog.ProductParam;
 
 import java.io.Serializable;
 

@@ -1,14 +1,18 @@
 package ru.fbtw.thestore.backend.data.catalog.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductPageDto implements Serializable {
-	final int count;
-	final int page;
-	final int pageSize;
-	final List<CompactProductDto> products;
+	private int count;
+	private int page;
+	private int pageSize;
+	private List<CompactProductDto> products;
 }

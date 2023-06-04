@@ -1,26 +1,28 @@
 package ru.fbtw.thestore.backend.data.order.dto;
 
-import lombok.Data;
+import lombok.*;
 import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
 import ru.fbtw.thestore.backend.data.delivery.dto.DeliveryDto;
+import ru.fbtw.thestore.backend.data.delivery.dto.ShopDto;
 import ru.fbtw.thestore.backend.data.payment.dto.PaymentDto;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Set;
 
 /**
- * A DTO for the {@link ru.fbtw.thestore.backend.domain.order.MyOrder} entity
+ * A DTO for the {@link ru.fbtw.thestore.backend.domains.order.MyOrder} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MyOrderDto implements Serializable {
-	private final Long id;
-	private final BigDecimal orderTotal;
-	private final String orderStatus;
-	private final Long userId;
-	private final DeliveryDto delivery;
-	private final String deliveryStatus;
-	private final PaymentDto payment;
-	private final String paymentStatus;
-	private final Set<CompactProductDto> products;
+	private Long id;
+	private ShopDto shop;
+	private String orderTotal;
+	private boolean orderStatus;
+	private DeliveryDto delivery;
+	private PaymentDto payment;
+	private Set<CompactProductDto> products;
 }

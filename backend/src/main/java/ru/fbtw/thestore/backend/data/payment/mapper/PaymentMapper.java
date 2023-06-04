@@ -2,7 +2,7 @@ package ru.fbtw.thestore.backend.data.payment.mapper;
 
 import org.mapstruct.*;
 import ru.fbtw.thestore.backend.data.payment.dto.PaymentDto;
-import ru.fbtw.thestore.backend.domain.payment.Payment;
+import ru.fbtw.thestore.backend.domains.payment.Payment;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface PaymentMapper {

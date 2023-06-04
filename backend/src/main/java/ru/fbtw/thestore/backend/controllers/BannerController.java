@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.fbtw.thestore.backend.data.banner.dto.BannerDto;
-import ru.fbtw.thestore.backend.data.delivery.dto.DeliveryDto;
 import ru.fbtw.thestore.backend.services.BannerService;
 
 

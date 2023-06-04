@@ -20,4 +20,17 @@ final class AppTypography {
     letterSpacing: 0.4,
     fontWeight: FontWeight.w500,
   );
+
+  static final TextStyle mediumBodySmallBold = GoogleFonts.montserrat(
+    fontSize: 12,
+    letterSpacing: 0.4,
+    fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle mediumBodySmallWhite = GoogleFonts.montserrat(
+    fontSize: 12,
+    letterSpacing: 0.4,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+  );
 }

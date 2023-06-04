@@ -2,7 +2,7 @@ package ru.fbtw.thestore.backend.data.user.mapper;
 
 import org.mapstruct.*;
 import ru.fbtw.thestore.backend.data.user.dto.MyUserDto;
-import ru.fbtw.thestore.backend.domain.user.MyUser;
+import ru.fbtw.thestore.backend.domains.user.MyUser;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring")
 public interface MyUserMapper {
