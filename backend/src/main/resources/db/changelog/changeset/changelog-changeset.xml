@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="Create_tables--2" author="Sofia Chernikova">
+        <sqlFile path="changeset/tables/create-table-shop.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-category.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-product.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-city.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/create-table-user.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-role.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/create-table-user_role.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-user_product.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-user_favourites.sql" relativeToChangelogFile="true"/>
+
+        <sqlFile path="changeset/tables/create-table-delivery.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-payment.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-order.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/create-table-order_product.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changeset/tables/insert-into-tables.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>

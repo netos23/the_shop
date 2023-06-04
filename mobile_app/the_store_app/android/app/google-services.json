@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "238483623448",
+    "project_id": "the-store-f98ac",
+    "storage_bucket": "the-store-f98ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238483623448:android:b1441151a0a7377f763d6d",
+        "android_client_info": {
+          "package_name": "ru.fbtw.the_store_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238483623448-hh15jgcjuq4v600a3mp083vt9hr78abc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuY24prKJptJxD1zzrwgI6MTyqgXCv6NA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238483623448-hh15jgcjuq4v600a3mp083vt9hr78abc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "238483623448-rjl46sanalpini7dn4gv1cf4f05sh8sn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ru.fbtw.theStoreApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
