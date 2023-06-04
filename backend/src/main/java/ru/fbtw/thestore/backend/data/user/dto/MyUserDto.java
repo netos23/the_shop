@@ -34,7 +34,7 @@ public class MyUserDto implements Serializable {
 	@NotBlank(message = "Phone number is required")
 	private String userPhone;
 	private boolean userAnonimus;
-	private Long userFirebase;
+	private String userFirebase;
 	private Set<MyOrderDto> orders;
 	private Set<ProductDto> basket;
 	private Set<ProductDto> favourites;

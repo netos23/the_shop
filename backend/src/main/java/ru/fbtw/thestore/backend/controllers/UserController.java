@@ -1,6 +1,7 @@
 package ru.fbtw.thestore.backend.controllers;
 
 import io.swagger.v3.oas.annotations.Operation;
+
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -55,6 +56,24 @@ public class UserController {
     public MyUserDto addToBasket(@PathVariable("id") Long userId, @RequestBody Long productId) {
         return userService.addToBasket(userId, productId);
     }
+    @DeleteMapping("/{id}/basket/delete")
+    @Operation(summary = "Removing a product from basket", responses = {
+            @ApiResponse(responseCode = "200", description = "The user has been found and product removed", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = MyUserDto.class))
+            }),
+            @ApiResponse(responseCode = "404", description = "The user is not found", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            }),
+            @ApiResponse(responseCode = "500", description = "The user has no product in basket", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            })
+    })
+    public MyUserDto deleteProductFromBasket(@PathVariable("id") Long userId, @RequestBody Long productId) {
+        return userService.deleteProductFromBasket(userId, productId);
+    }
 
     @GetMapping("/{id}/favourites")
     @Operation(summary = "Viewing a user's favourites", responses = {
@@ -93,6 +112,24 @@ public class UserController {
     public MyUserDto addToFavourites(@PathVariable("id") Long userId, @RequestBody Long productId) {
         return userService.addToFavourites(userId, productId);
     }
+    @DeleteMapping("/{id}/favourites/delete")
+    @Operation(summary = "Removing a product from favourites", responses = {
+            @ApiResponse(responseCode = "200", description = "The user has been found and and product removed", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = MyUserDto.class))
+            }),
+            @ApiResponse(responseCode = "404", description = "The user is not found", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            }),
+            @ApiResponse(responseCode = "500", description = "The user has no favourites", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            })
+    })
+    public MyUserDto deleteProductFromFavourites(@PathVariable("id") Long userId, @RequestBody Long productId) {
+        return userService.deleteProductFromFavourites(userId, productId);
+    }
 
     @GetMapping("/{id}")
     @Operation(summary = "Viewing information about user", responses = {
@@ -127,6 +164,23 @@ public class UserController {
     public MyUserDto updateInformation(@PathVariable("id") Long id, @Valid @RequestBody MyUserDto myUserDto) {
         return userService.updateInformation(id, myUserDto);
     }
+    @DeleteMapping("/{id}")
+    @Operation(summary = "Delete users' profile", responses = {
+            @ApiResponse(responseCode = "200", description = "The user has been deleted", content = {
+                    @Content(mediaType = "application/json")
+            }),
+            @ApiResponse(responseCode = "404", description = "The user is not found", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            }),
+            @ApiResponse(responseCode = "500", description = "An error occurred while deleting", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            })
+    })
+    public void deleteUser(@PathVariable("id") Long id) {
+       userService.deleteUser(id);
+    }
 
     @GetMapping("/{id}/orders") // id юзера
     @Operation(summary = "Demonstration of the user's order list", responses = {
@@ -141,6 +195,10 @@ public class UserController {
     })
     public MyUserDto getAllOrders(@PathVariable("id") Long id) {
         return userService.getAllOrders(id);
+    }
+    @PostMapping("/registration")
+    public String userRegistration(@RequestHeader(name = "Authorization") String authHeader){
+        return userService.userRegistration(authHeader);
     }
 
 }

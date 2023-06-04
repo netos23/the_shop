@@ -81,8 +81,7 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public MyUser extractUser(String jwt) {
-        String username = extractUsername(jwt);
-        return userService.loadUserByUsername(username);
+    public MyUser extractUser(String uuid) {
+        return userService.findUserByUserFirebase(uuid).get();
     }
 }
