@@ -3,7 +3,9 @@ import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:the_store_app/domain/geo/city_service.dart';
 import 'package:the_store_app/entity/geo/city.dart';
+import 'package:the_store_app/internal/di_container.dart';
 import 'package:the_store_app/navigation/app_router.dart';
 import 'city_list_screen_model.dart';
 import 'city_list_screen_widget.dart';
@@ -14,7 +16,7 @@ abstract class ICityListScreenWidgetModel extends IWidgetModel
 
   TextEditingController get searchController;
 
-  void onSelect(int index);
+  void onSelect(City city);
 }
 
 CityListScreenWidgetModel defaultCityListScreenWidgetModelFactory(
@@ -24,6 +26,7 @@ CityListScreenWidgetModel defaultCityListScreenWidgetModelFactory(
       errorHandler: context.read(),
       client: context.read(),
     ),
+    DiContainer()<CityService>(),
   );
 }
 
@@ -38,7 +41,12 @@ class CityListScreenWidgetModel
   @override
   final searchController = TextEditingController();
 
-  CityListScreenWidgetModel(super.model);
+  final CityService cityService;
+
+  CityListScreenWidgetModel(
+    super.model,
+    this.cityService,
+  );
 
   @override
   void initWidgetModel() {
@@ -62,8 +70,19 @@ class CityListScreenWidgetModel
   }
 
   @override
-  void onSelect(int index) {
-    context.router.navigate(StartingMethodRoute());
+  Future<void> onSelect(City city) async {
+    cityService.saveCity(city);
+    final deliveryMethod = await context.router.push(
+      StartingMethodRoute(),
+    );
+
+    if (deliveryMethod != null) {
+      if (context.router.canPop()) {
+        router.pop();
+      } else {
+        router.replace(HomeRoute());
+      }
+    }
   }
 
   @override

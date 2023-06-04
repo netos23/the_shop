@@ -36,6 +36,7 @@ Future<void> main() async {
         debugShowCheckedModeBanner: false,
       ),
       config: AppConfig(
+        dadataKey: '603bb84c98131f6cc1c0a20dd1a34f349307b086',
         baseUrl: 'https://the-store.fbtw.ru/',
         timeout: const Duration(seconds: 15),
       ),

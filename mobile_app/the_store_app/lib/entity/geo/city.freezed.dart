@@ -20,15 +20,16 @@ City _$CityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$City {
-  @JsonKey(name: "cityName")
+  @JsonKey(name: 'cityName')
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "cityRegion")
+  @JsonKey(name: 'cityRegion')
   String get region => throw _privateConstructorUsedError;
-  @JsonKey(name: "cityCode")
+  @JsonKey(name: 'cityCode')
   String get cityId => throw _privateConstructorUsedError;
   double? get lat => throw _privateConstructorUsedError;
   double? get lon => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CityCopyWith<City> get copyWith => throw _privateConstructorUsedError;
 }
@@ -39,9 +40,9 @@ abstract class $CityCopyWith<$Res> {
       _$CityCopyWithImpl<$Res, City>;
   @useResult
   $Res call(
-      {@JsonKey(name: "cityName") String name,
-      @JsonKey(name: "cityRegion") String region,
-      @JsonKey(name: "cityCode") String cityId,
+      {@JsonKey(name: 'cityName') String name,
+      @JsonKey(name: 'cityRegion') String region,
+      @JsonKey(name: 'cityCode') String cityId,
       double? lat,
       double? lon});
 }
@@ -97,9 +98,9 @@ abstract class _$$_CityCopyWith<$Res> implements $CityCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "cityName") String name,
-      @JsonKey(name: "cityRegion") String region,
-      @JsonKey(name: "cityCode") String cityId,
+      {@JsonKey(name: 'cityName') String name,
+      @JsonKey(name: 'cityRegion') String region,
+      @JsonKey(name: 'cityCode') String cityId,
       double? lat,
       double? lon});
 }
@@ -145,25 +146,25 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
 }
 
 /// @nodoc
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class _$_City implements _City {
   _$_City(
-      {@JsonKey(name: "cityName") required this.name,
-      @JsonKey(name: "cityRegion") required this.region,
-      @JsonKey(name: "cityCode") required this.cityId,
+      {@JsonKey(name: 'cityName') required this.name,
+      @JsonKey(name: 'cityRegion') required this.region,
+      @JsonKey(name: 'cityCode') required this.cityId,
       this.lat,
       this.lon});
 
   factory _$_City.fromJson(Map<String, dynamic> json) => _$$_CityFromJson(json);
 
   @override
-  @JsonKey(name: "cityName")
+  @JsonKey(name: 'cityName')
   final String name;
   @override
-  @JsonKey(name: "cityRegion")
+  @JsonKey(name: 'cityRegion')
   final String region;
   @override
-  @JsonKey(name: "cityCode")
+  @JsonKey(name: 'cityCode')
   final String cityId;
   @override
   final double? lat;
@@ -196,26 +197,33 @@ class _$_City implements _City {
   @pragma('vm:prefer-inline')
   _$$_CityCopyWith<_$_City> get copyWith =>
       __$$_CityCopyWithImpl<_$_City>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CityToJson(
+      this,
+    );
+  }
 }
 
 abstract class _City implements City {
   factory _City(
-      {@JsonKey(name: "cityName") required final String name,
-      @JsonKey(name: "cityRegion") required final String region,
-      @JsonKey(name: "cityCode") required final String cityId,
+      {@JsonKey(name: 'cityName') required final String name,
+      @JsonKey(name: 'cityRegion') required final String region,
+      @JsonKey(name: 'cityCode') required final String cityId,
       final double? lat,
       final double? lon}) = _$_City;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
   @override
-  @JsonKey(name: "cityName")
+  @JsonKey(name: 'cityName')
   String get name;
   @override
-  @JsonKey(name: "cityRegion")
+  @JsonKey(name: 'cityRegion')
   String get region;
   @override
-  @JsonKey(name: "cityCode")
+  @JsonKey(name: 'cityCode')
   String get cityId;
   @override
   double? get lat;

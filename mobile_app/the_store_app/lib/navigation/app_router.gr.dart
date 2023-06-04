@@ -45,6 +45,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ProfileTabPage(),
       );
     },
+    FavouritesRoute.name: (routeData) {
+      final args = routeData.argsAs<FavouritesRouteArgs>(
+          orElse: () => const FavouritesRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: FavouritesScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
     CityListRoute.name: (routeData) {
       final args = routeData.argsAs<CityListRouteArgs>(
           orElse: () => const CityListRouteArgs());
@@ -56,12 +67,45 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    BasketRoute.name: (routeData) {
+      final args = routeData.argsAs<BasketRouteArgs>(
+          orElse: () => const BasketRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: BasketScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
     StartingMethodRoute.name: (routeData) {
       final args = routeData.argsAs<StartingMethodRouteArgs>(
           orElse: () => const StartingMethodRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return AutoRoutePage<DeliveryMethod>(
         routeData: routeData,
         child: StartingMethodScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
+    CatalogRoute.name: (routeData) {
+      final args = routeData.argsAs<CatalogRouteArgs>(
+          orElse: () => const CatalogRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CatalogScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
+    MapPointsRoute.name: (routeData) {
+      final args = routeData.argsAs<MapPointsRouteArgs>(
+          orElse: () => const MapPointsRouteArgs());
+      return AutoRoutePage<DeliveryMethod>(
+        routeData: routeData,
+        child: MapPointsScreenWidget(
           key: args.key,
           wmFactory: args.wmFactory,
         ),
@@ -74,17 +118,7 @@ abstract class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: OnboardingScreenWidget(
           key: args.key,
-          wmFactory: args.wmFactory,
-        ),
-      );
-    },
-    MapPointsRoute.name: (routeData) {
-      final args = routeData.argsAs<MapPointsRouteArgs>(
-          orElse: () => const MapPointsRouteArgs());
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: MapPointsScreenWidget(
-          key: args.key,
+          pages: args.pages,
           wmFactory: args.wmFactory,
         ),
       );
@@ -100,23 +134,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    FavouritesRoute.name: (routeData) {
-      final args = routeData.argsAs<FavouritesRouteArgs>(
-          orElse: () => const FavouritesRouteArgs());
-      return AutoRoutePage<dynamic>(
+    AddressRoute.name: (routeData) {
+      final args = routeData.argsAs<AddressRouteArgs>(
+          orElse: () => const AddressRouteArgs());
+      return AutoRoutePage<DeliveryMethod>(
         routeData: routeData,
-        child: FavouritesScreenWidget(
-          key: args.key,
-          wmFactory: args.wmFactory,
-        ),
-      );
-    },
-    CatalogRoute.name: (routeData) {
-      final args = routeData.argsAs<CatalogRouteArgs>(
-          orElse: () => const CatalogRouteArgs());
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: CatalogScreenWidget(
+        child: AddressScreenWidget(
           key: args.key,
           wmFactory: args.wmFactory,
         ),
@@ -139,17 +162,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: ShowCaseScreenWidget(
-          key: args.key,
-          wmFactory: args.wmFactory,
-        ),
-      );
-    },
-    BasketRoute.name: (routeData) {
-      final args = routeData.argsAs<BasketRouteArgs>(
-          orElse: () => const BasketRouteArgs());
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: BasketScreenWidget(
           key: args.key,
           wmFactory: args.wmFactory,
         ),
@@ -229,6 +241,47 @@ class ProfileTab extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [FavouritesScreenWidget]
+class FavouritesRoute extends PageRouteInfo<FavouritesRouteArgs> {
+  FavouritesRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultFavouritesScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          FavouritesRoute.name,
+          args: FavouritesRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'FavouritesRoute';
+
+  static const PageInfo<FavouritesRouteArgs> page =
+      PageInfo<FavouritesRouteArgs>(name);
+}
+
+class FavouritesRouteArgs {
+  const FavouritesRouteArgs({
+    this.key,
+    this.wmFactory = defaultFavouritesScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'FavouritesRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
 /// [CityListScreenWidget]
 class CityListRoute extends PageRouteInfo<CityListRouteArgs> {
   CityListRoute({
@@ -266,6 +319,46 @@ class CityListRouteArgs {
   @override
   String toString() {
     return 'CityListRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [BasketScreenWidget]
+class BasketRoute extends PageRouteInfo<BasketRouteArgs> {
+  BasketRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultBasketScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          BasketRoute.name,
+          args: BasketRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'BasketRoute';
+
+  static const PageInfo<BasketRouteArgs> page = PageInfo<BasketRouteArgs>(name);
+}
+
+class BasketRouteArgs {
+  const BasketRouteArgs({
+    this.key,
+    this.wmFactory = defaultBasketScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'BasketRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }
 
@@ -311,33 +404,33 @@ class StartingMethodRouteArgs {
 }
 
 /// generated route for
-/// [OnboardingScreenWidget]
-class OnboardingRoute extends PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({
+/// [CatalogScreenWidget]
+class CatalogRoute extends PageRouteInfo<CatalogRouteArgs> {
+  CatalogRoute({
     Key? key,
     WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
             BuildContext)
-        wmFactory = defaultOnboardingScreenWidgetModelFactory,
+        wmFactory = defaultCatalogScreenWidgetModelFactory,
     List<PageRouteInfo>? children,
   }) : super(
-          OnboardingRoute.name,
-          args: OnboardingRouteArgs(
+          CatalogRoute.name,
+          args: CatalogRouteArgs(
             key: key,
             wmFactory: wmFactory,
           ),
           initialChildren: children,
         );
 
-  static const String name = 'OnboardingRoute';
+  static const String name = 'CatalogRoute';
 
-  static const PageInfo<OnboardingRouteArgs> page =
-      PageInfo<OnboardingRouteArgs>(name);
+  static const PageInfo<CatalogRouteArgs> page =
+      PageInfo<CatalogRouteArgs>(name);
 }
 
-class OnboardingRouteArgs {
-  const OnboardingRouteArgs({
+class CatalogRouteArgs {
+  const CatalogRouteArgs({
     this.key,
-    this.wmFactory = defaultOnboardingScreenWidgetModelFactory,
+    this.wmFactory = defaultCatalogScreenWidgetModelFactory,
   });
 
   final Key? key;
@@ -347,7 +440,7 @@ class OnboardingRouteArgs {
 
   @override
   String toString() {
-    return 'OnboardingRouteArgs{key: $key, wmFactory: $wmFactory}';
+    return 'CatalogRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }
 
@@ -393,6 +486,82 @@ class MapPointsRouteArgs {
 }
 
 /// generated route for
+/// [OnboardingScreenWidget]
+class OnboardingRoute extends PageRouteInfo<OnboardingRouteArgs> {
+  OnboardingRoute({
+    Key? key,
+    List<Widget> pages = const [
+      OnboardingPage(
+          text: 'ПОКУПАЙТЕ ПРОДУКТЫ НЕ ВЫХОДЯ ИЗ ДОМА ИЛИ '
+              'ПОЛУЧАЙТЕ БОНУСЫ ЗА ПРОГУЛКУ ЗА НИМИ.',
+          assetPath: 'assets/images/basket2.png'),
+      OnboardingPage(
+          text: 'УДОБНАЯ НАВИГАЦИЯ ВНУТРИ МАГАЗИНА НЕ ПОЗВОЛИТ '
+              'ВАМ ПОТЕРЯТЬСЯ ИЛИ ЧТО ТО ЗАБЫТЬ.',
+          assetPath: 'assets/images/vegitabales.png'),
+      OnboardingPage(
+          text: 'ДЕЛИТЕСЬ КОРЗИНОЙ С БЛИЗКИМИ И ДРУЗЬЯМИ.',
+          assetPath: 'assets/images/quadrocopter.png'),
+      OnboardingPage(
+          text: 'ПРИЯТНОЙ РАБОТЫ С ПРИЛОЖЕНИЕМ.',
+          assetPath: 'assets/images/shop_cart.png')
+    ],
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultOnboardingScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          OnboardingRoute.name,
+          args: OnboardingRouteArgs(
+            key: key,
+            pages: pages,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'OnboardingRoute';
+
+  static const PageInfo<OnboardingRouteArgs> page =
+      PageInfo<OnboardingRouteArgs>(name);
+}
+
+class OnboardingRouteArgs {
+  const OnboardingRouteArgs({
+    this.key,
+    this.pages = const [
+      OnboardingPage(
+          text: 'ПОКУПАЙТЕ ПРОДУКТЫ НЕ ВЫХОДЯ ИЗ ДОМА ИЛИ '
+              'ПОЛУЧАЙТЕ БОНУСЫ ЗА ПРОГУЛКУ ЗА НИМИ.',
+          assetPath: 'assets/images/basket2.png'),
+      OnboardingPage(
+          text: 'УДОБНАЯ НАВИГАЦИЯ ВНУТРИ МАГАЗИНА НЕ ПОЗВОЛИТ '
+              'ВАМ ПОТЕРЯТЬСЯ ИЛИ ЧТО ТО ЗАБЫТЬ.',
+          assetPath: 'assets/images/vegitabales.png'),
+      OnboardingPage(
+          text: 'ДЕЛИТЕСЬ КОРЗИНОЙ С БЛИЗКИМИ И ДРУЗЬЯМИ.',
+          assetPath: 'assets/images/quadrocopter.png'),
+      OnboardingPage(
+          text: 'ПРИЯТНОЙ РАБОТЫ С ПРИЛОЖЕНИЕМ.',
+          assetPath: 'assets/images/shop_cart.png')
+    ],
+    this.wmFactory = defaultOnboardingScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final List<Widget> pages;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'OnboardingRouteArgs{key: $key, pages: $pages, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
 /// [HomeScreenWidget]
 class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
   HomeRoute({
@@ -433,33 +602,33 @@ class HomeRouteArgs {
 }
 
 /// generated route for
-/// [FavouritesScreenWidget]
-class FavouritesRoute extends PageRouteInfo<FavouritesRouteArgs> {
-  FavouritesRoute({
+/// [AddressScreenWidget]
+class AddressRoute extends PageRouteInfo<AddressRouteArgs> {
+  AddressRoute({
     Key? key,
     WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
             BuildContext)
-        wmFactory = defaultFavouritesScreenWidgetModelFactory,
+        wmFactory = defaultAddressScreenWidgetModelFactory,
     List<PageRouteInfo>? children,
   }) : super(
-          FavouritesRoute.name,
-          args: FavouritesRouteArgs(
+          AddressRoute.name,
+          args: AddressRouteArgs(
             key: key,
             wmFactory: wmFactory,
           ),
           initialChildren: children,
         );
 
-  static const String name = 'FavouritesRoute';
+  static const String name = 'AddressRoute';
 
-  static const PageInfo<FavouritesRouteArgs> page =
-      PageInfo<FavouritesRouteArgs>(name);
+  static const PageInfo<AddressRouteArgs> page =
+      PageInfo<AddressRouteArgs>(name);
 }
 
-class FavouritesRouteArgs {
-  const FavouritesRouteArgs({
+class AddressRouteArgs {
+  const AddressRouteArgs({
     this.key,
-    this.wmFactory = defaultFavouritesScreenWidgetModelFactory,
+    this.wmFactory = defaultAddressScreenWidgetModelFactory,
   });
 
   final Key? key;
@@ -469,48 +638,7 @@ class FavouritesRouteArgs {
 
   @override
   String toString() {
-    return 'FavouritesRouteArgs{key: $key, wmFactory: $wmFactory}';
-  }
-}
-
-/// generated route for
-/// [CatalogScreenWidget]
-class CatalogRoute extends PageRouteInfo<CatalogRouteArgs> {
-  CatalogRoute({
-    Key? key,
-    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-            BuildContext)
-        wmFactory = defaultCatalogScreenWidgetModelFactory,
-    List<PageRouteInfo>? children,
-  }) : super(
-          CatalogRoute.name,
-          args: CatalogRouteArgs(
-            key: key,
-            wmFactory: wmFactory,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'CatalogRoute';
-
-  static const PageInfo<CatalogRouteArgs> page =
-      PageInfo<CatalogRouteArgs>(name);
-}
-
-class CatalogRouteArgs {
-  const CatalogRouteArgs({
-    this.key,
-    this.wmFactory = defaultCatalogScreenWidgetModelFactory,
-  });
-
-  final Key? key;
-
-  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-      BuildContext) wmFactory;
-
-  @override
-  String toString() {
-    return 'CatalogRouteArgs{key: $key, wmFactory: $wmFactory}';
+    return 'AddressRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }
 
@@ -593,45 +721,5 @@ class ShowCaseRouteArgs {
   @override
   String toString() {
     return 'ShowCaseRouteArgs{key: $key, wmFactory: $wmFactory}';
-  }
-}
-
-/// generated route for
-/// [BasketScreenWidget]
-class BasketRoute extends PageRouteInfo<BasketRouteArgs> {
-  BasketRoute({
-    Key? key,
-    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-            BuildContext)
-        wmFactory = defaultBasketScreenWidgetModelFactory,
-    List<PageRouteInfo>? children,
-  }) : super(
-          BasketRoute.name,
-          args: BasketRouteArgs(
-            key: key,
-            wmFactory: wmFactory,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'BasketRoute';
-
-  static const PageInfo<BasketRouteArgs> page = PageInfo<BasketRouteArgs>(name);
-}
-
-class BasketRouteArgs {
-  const BasketRouteArgs({
-    this.key,
-    this.wmFactory = defaultBasketScreenWidgetModelFactory,
-  });
-
-  final Key? key;
-
-  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
-      BuildContext) wmFactory;
-
-  @override
-  String toString() {
-    return 'BasketRouteArgs{key: $key, wmFactory: $wmFactory}';
   }
 }

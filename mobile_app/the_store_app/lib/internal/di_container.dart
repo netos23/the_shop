@@ -3,7 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:elementary/elementary.dart';
 import 'package:kiwi/kiwi.dart';
 import 'package:the_store_app/domain/delivery/delivery_service.dart';
+import 'package:the_store_app/domain/geo/city_service.dart';
 import 'package:the_store_app/entity/delivery/delivery_method.dart';
+import 'package:the_store_app/entity/geo/city.dart';
 import 'package:the_store_app/error_handler/default_error_handler.dart';
 
 class DiContainer implements AsyncInitLifecycleComponent {
@@ -30,6 +32,14 @@ class DiContainer implements AsyncInitLifecycleComponent {
     final deliveryService = DeliveryService(deliveryRepo: deliveryRepository);
     container.registerInstance(deliveryService);
 
+    // geo
+    final cityRepository = Repository<City>(
+      key: 'selected-city',
+      jsonFactory: City.fromJson,
+    );
+    final cityService = CityService(cityRepo: cityRepository);
+    container.registerInstance(cityService);
+
     // dio
     container.registerSingleton(
       (_) => Dio(),
@@ -37,6 +47,7 @@ class DiContainer implements AsyncInitLifecycleComponent {
 
     await Future.wait([
       deliveryService.asyncInit(),
+      cityService.asyncInit(),
     ]);
   }
 
