@@ -11,9 +11,12 @@
 1) Team lead, flutter developer - [Никита Морозов](https://github.com/netos23)
 2) flutter developer - [Руслан Халилов](https://github.com/LordOfTheApples123)
 3) Backend - [Софья Черникова](https://github.com/SofChernikova)
-4) QA - [Карл Х Флорексил](https://github.com/jkalh)
+4) Database Manager - [Карл Х Флорексил](https://github.com/jkalh)
 
 ## Ссылки
+* [Ссылки на клиентское apk](apk/client_apk.apk)
+* [Ссылки на админское apk](apk/admin_app.apk)
+* [Видео презентация защиты](docs/presentation_video.mp4)
 * [Видео презентация кода](https://youtu.be/AdDRyPspMdw)
 * [Презентация](docs/Презентация.pdf)
 * [Письмо сопроводительное](docs/letter.pdf)
@@ -27,3 +30,8 @@
 * [Курсовая работа](docs/Курсовая.pdf)
 * [Первичная презентация(1 аттестация)](docs/Презентация_ТП.pdf)
 * [Видеопрезентация](docs/video.mov)
+
+## Аналитика
+![Debug view](docs/analitics/analitics1.png)
+![Debug view](docs/analitics/analitics2.png)
+![Debug view](docs/analitics/analitics0.png)

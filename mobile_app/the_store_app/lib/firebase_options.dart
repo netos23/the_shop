@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -58,7 +55,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBuY24prKJptJxD1zzrwgI6MTyqgXCv6NA',
-    appId: '1:238483623448:android:b1441151a0a7377f763d6d',
+    appId: '1:238483623448:android:a20d268d23fd313c763d6d',
     messagingSenderId: '238483623448',
     projectId: 'the-store-f98ac',
     storageBucket: 'the-store-f98ac.appspot.com',
@@ -66,12 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCF2DR10youYWlOVSqwotzhfdJMHwFj_gI',
-    appId: '1:238483623448:ios:5b32aa8828f9a588763d6d',
+    appId: '1:238483623448:ios:6e247b2f3943ca74763d6d',
     messagingSenderId: '238483623448',
     projectId: 'the-store-f98ac',
     storageBucket: 'the-store-f98ac.appspot.com',
-    iosClientId:
-        '238483623448-rjl46sanalpini7dn4gv1cf4f05sh8sn.apps.googleusercontent.com',
-    iosBundleId: 'ru.fbtw.theStoreApp',
+    iosClientId: '238483623448-8pet3r8neig70rv8tp5ht3igpkhvui5m.apps.googleusercontent.com',
+    iosBundleId: 'ru.fbtw.farmApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCF2DR10youYWlOVSqwotzhfdJMHwFj_gI',
+    appId: '1:238483623448:ios:b257456bb549a41f763d6d',
+    messagingSenderId: '238483623448',
+    projectId: 'the-store-f98ac',
+    storageBucket: 'the-store-f98ac.appspot.com',
+    iosClientId: '238483623448-l1duu3hiq40i9iafej62d35nnudvdja8.apps.googleusercontent.com',
+    iosBundleId: 'ru.fbtw.farmApp.RunnerTests',
   );
 }

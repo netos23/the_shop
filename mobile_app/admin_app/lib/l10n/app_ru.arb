@@ -1,0 +1,1691 @@
+{
+  "@@last_modified": "2020-05-21T17:15:46.390611",
+  "@@locale": "ru",
+  "loginByPhone": "Войти с помощью телефона",
+  "@loginByPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginByEmail": "Войти с помощью e-mail",
+  "@loginByEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginBySocialNetwork": "Войти с помощью социальных сетей",
+  "@loginBySocialNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotPassword": "Забыли пароль?",
+  "@forgotPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "restorePassword": "Восстановление пароля",
+  "@restorePassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTitle": "Вы действительно хотите\nвыйти из аккаунта?",
+  "@logoutTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutYes": "Да",
+  "@logoutYes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutNo": "Нет",
+  "@logoutNo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameIsRequired": "Необходимо указать имя",
+  "@nameIsRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "technology": "технология",
+  "@technology": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "byLoggingIn": "Регистрируясь, я соглашаюсь с условиями",
+  "@byLoggingIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Пароль",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "Ошибка",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "ОК",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "skip": "Пропустить",
+  "@skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "Email",
+  "@email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourEmail": "Ваш e-mail",
+  "@yourEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userAgreement": "политики конфиденциальности",
+  "@userAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userAgreementTitle": "Политика конфиденциальности",
+  "@userAgreementTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "and": " и ",
+  "@and": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offerAgreement": "договором оферты",
+  "@offerAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourPhone": "Ваш телефон",
+  "@yourPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendCode": "Получить код",
+  "@sendCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkSms": "Проверьте СМС-сообщения",
+  "@checkSms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkCart": "ПРОВЕРЯЕМ КОРЗИНУ",
+  "@checkCart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCodeViaSms": "Мы отправили вам код с помощью СМС. Введите его в поле ниже.",
+  "@weSentCodeViaSms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkEmail": "Проверьте свой email",
+  "@checkEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCodeViaEmail": "Мы отправили вам код с помощью email. Введите его в поле ниже.",
+  "@weSentCodeViaEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCode": "Мы отправили вам код по SMS. Введите его в поле ниже.",
+  "@weSentCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCode": "Получить код повторно",
+  "@resendCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCodeWait": "Подождите",
+  "@resendCodeWait": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCodeSec": "сек.",
+  "@resendCodeSec": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirm": "Подтвердить",
+  "@confirm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personalData": "Личные данные",
+  "@personalData": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "man": "Мужчина",
+  "@man": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantGoToSiteNo": "Нет",
+  "@wantGoToSiteNo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantGoToSiteYes": "Да",
+  "@wantGoToSiteYes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "woman": "Женщина",
+  "@woman": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "отменить",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourName": "Ваше имя",
+  "@yourName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourAge": "Возраст",
+  "@yourAge": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "over51": "старше 51",
+  "@over51": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToScan": "Перейти к сканированию",
+  "@goToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToProducts": "ПЕРЕЙТИ К ТОВАРАМ",
+  "@goToProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyBasket": "Корзина пока пустая :( \n Ждем, когда ты ее наполнишь!",
+  "@emptyBasket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "minimalPrice": "Минимальная сумма заказа {moneyMin}",
+  "@minimalPrice": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "expectedPrice": "Добавьте товаров еще на {moneyMin}",
+  "@expectedPrice": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "discount": "Скидка: {moneyMin}",
+  "@discount": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "description": "Описание",
+  "@description": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "specifications": "Характеристики",
+  "@specifications": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "choseCityName": "Введите название города",
+  "@choseCityName": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "emptyProductsSearch": "Мы не можем найти то, что ты ищешь :(\nПопробуй изменить запрос.",
+  "@emptyProductsSearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "emptySearch": "По Вашему запросу товаров не найдено",
+  "@emptySearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "historySearch": "История поиска",
+  "@historySearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "clear": "Очистить",
+  "@clear": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "oftenSearch": "Часто ищут",
+  "@oftenSearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "toFavourites": "В ИЗБРАННОЕ",
+  "@toFavourites": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "inFavourites": "В ИЗБРАННОМ",
+  "@inFavourites": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "inBasket": "В КОРЗИНЕ",
+  "@inBasket": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "total": "Итого: ",
+  "@total": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "promoCode": "ПРОМОКОД",
+  "@promoCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "applyPromoCode": "ПРИМЕНИТЬ",
+  "@applyPromoCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weNeedThisData": "Эти данные нужны нам для того, чтобы давать вам более качественные рекомендации по выбору размера",
+  "@weNeedThisData": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "models": "3D Модель",
+  "@models": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "basket": "Корзина",
+  "@basket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "profile": "Профиль",
+  "@profile3d": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "catalog": "Каталог",
+  "@catalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "save": "Сохранить",
+  "@save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youNeedToScan": "Для сканирования понадобятся",
+  "@youNeedToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aRoomWithUniformLighting": "Помещение с равномерным освещением",
+  "@aRoomWithUniformLighting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newNotCrumpledA4Sheet": "Новый, не мятый лист А4",
+  "@newNotCrumpledA4Sheet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newUpdateRespect": "Вышло новое обновление приложения STREET BEAT",
+  "@newUpdateRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smoothFloorDarkerThanA4Sheet": "Ровный пол темнее листа А4",
+  "@smoothFloorDarkerThanA4Sheet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blackSocksOrTights": "Чёрные носки или колготки",
+  "@blackSocksOrTights": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "beforeScan": "Перед сканированием",
+  "@beforeScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wearBlackSocksOrTights": "Наденьте чёрные высокие носки или колготки",
+  "@wearBlackSocksOrTights": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openMap": "Открыть карту",
+  "@openMap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openYourShinToTheKnee": "Откройте голень до колена",
+  "@openYourShinToTheKnee": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "placeYourFoot": "Поставьте ногу по центру листа A4 вдоль длинной стороны (стопа не должна выходить за края листа) и не шевелите ей",
+  "@placeYourFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forAccurateScanning": "Для точного сканирования",
+  "@forAccurateScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "freeUpSpace": "Освободите пространство вокруг листа А4 (уберите посторонние предметы, чтобы Вам ничего не мешало)",
+  "@freeUpSpace": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doNotMoveYourFoot": "Во время сканирования не шевелите стопой, стоящей на листе А4",
+  "@doNotMoveYourFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloadLastVersion": "Скачайте последнюю версию",
+  "@downloadLastVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloadUpdate": "Скачать обновление",
+  "@downloadUpdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "shiftYourBody": "Перенесите вес тела на сканируемую ногу",
+  "@shiftYourBody": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scan": "Сканирование",
+  "@scan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toScan": "Для сканирования необходимо сфотографировать стопу с 5 ракурсов, начиная с 1",
+  "@toScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startScanning": "Начать сканирование",
+  "@startScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "start": "Начать",
+  "@start": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "next": "Далее",
+  "@next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "footSelection": "Выбор ноги",
+  "@footSelection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseTheFoot": "Выберите ногу, с которой вам будет удобнее начать",
+  "@chooseTheFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanLeftFoot": "Отсканируйте левую ногу",
+  "@scanLeftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanRightFoot": "Отсканируйте правую ногу",
+  "@scanRightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanningWillStart": "Сканирование начнётся сразу после вашего выбора",
+  "@scanningWillStart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueWithLeftFoot": "Поставьте левую ногу на бумагу, нажмите кнопку и продолжайте сканирование.",
+  "@continueWithLeftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueWithRightFoot": "Поставьте правую ногу на бумагу, нажмите кнопку и продолжайте сканирование.",
+  "@continueWithRightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clickIfYouWantToEdit": "Нажмите, чтобы изменить",
+  "@clickIfYouWantToEdit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "collectionOnlineShoes": "Коллекция обуви с онлайн примеркой",
+  "@collectionOnlineShoes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "findPerfectMath": "Найди свою идеальную пару",
+  "@findPerfectMath": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatIsYourName": "Как вас зовут?",
+  "@whatIsYourName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "modelsFrom": "Модель построена",
+  "@modelsFrom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "update": "Обновить сканирование",
+  "@update": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "linearFootLength": "Линейная длина стопы",
+  "@linearFootLength": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "linearWidthOfFoot": "Линейная ширина стопы",
+  "@linearWidthOfFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "footGirthInBunches": "Обхват стопы в пучках",
+  "@footGirthInBunches": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "liftingGirth": "Обхват в подъёме",
+  "@liftingGirth": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "left": "Левая",
+  "@left": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "right": "Правая",
+  "@right": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "parameters": "Параметры (мм)",
+  "@parameters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rescan": "Повторить сканирование",
+  "@rescan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "modelNotBuilt": "Модель не построена",
+  "@modelNotBuilt": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorWithModels": "При построении возникла ошибка.\nПовторите сканирование",
+  "@errorWithModels": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "processing": "Обрабатываем фото...",
+  "@processing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "makeModels": "Модель ваших ног строится и будет готова\nменее чем через минуту",
+  "@makeModels": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "infoAbout": "О разработчиках",
+  "@infoAbout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offerContract": "Договор оферты",
+  "@offerContract": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Настройки",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryTerms": "Условия доставки",
+  "@deliveryTerms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "historyOrders": "История заказов",
+  "@historyOrders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutDevelopers": "Информация о разработчиках",
+  "@aboutDevelopers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noNetworkError": "Нет сети",
+  "@noNetworkError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unauthProfile": "Для перехода в профиль войдите или зарегистрируйтесь",
+  "@unauthProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unauthCatalog": "Online примерка будет доступна после сканирования ног и регистрации",
+  "@unauthCatalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantScan": "Хочу сделать сканирование!",
+  "@wantScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchCaps": "ПОИСК",
+  "@searchCaps": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "search": "Поиск",
+  "@search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerForBonus": "Войдите, чтобы воспользоваться бонусной программой ",
+  "@registerForBonus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showFullCatalog": "Показать весь каталог",
+  "@showFullCatalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showFullItems": "Показать всё",
+  "@showFullItems": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filter": "Фильтры",
+  "@filter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "popular": "По популярности",
+  "@popular": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sort": "Сортировка товаров",
+  "@sort": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "possibleTypesDelivery": "Cпособ доставки",
+  "@possibleTypesDelivery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeCity": "УКАЗАТЬ ДРУГОЙ ГОРОД",
+  "@changeCity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryAddress": "Адрес доставки",
+  "@deliveryAddress": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "address": "Адрес",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackCall": "Нужен звонок оператора",
+  "@feedbackCall": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "comment": "Здесь можно оставить \nкомментарий\n(но это необязательно)",
+  "@comment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "payment": "Способ оплаты",
+  "@payment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart0": "Нажимая кнопку, Вы соглашаетесь c ",
+  "@orderAgreementPart0": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart1": "Политикой конфиденциальности Компании",
+  "@orderAgreementPart1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart2": " и ",
+  "@orderAgreementPart2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart3": "Договором публичной оферты",
+  "@orderAgreementPart3": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "street": "Улица, дом, квартира",
+  "@street": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderProcessing": "Обрабатываем заказ...",
+  "@orderProcessing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "products": "Товары",
+  "@products": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delivery": "Доставка",
+  "@delivery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAvailableSoon": "Ваш заказ скоро поступит в обработку",
+  "@orderAvailableSoon": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ordering": "ОФОРМИТЬ ЗАКАЗ",
+  "@ordering": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderingScreen": "Оформление заказа",
+  "@orderingScreen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phone": "Телефон",
+  "@phone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "required": "Это поле необходимо заполнить",
+  "@required": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fullname": "Полное имя",
+  "@fullname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forMen": "Мужчинам",
+  "@forMen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forWomen": "Женщинам",
+  "@forWomen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tighter": "Плотнее",
+  "@tighter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "freer": "Свободнее",
+  "@freer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "greatSize": "Отлично",
+  "@greatSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "neuralNetwork": "Нейросеть определила: хорошее прилегание во всех зонах обеих ног",
+  "@neuralNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "favorite": "В избранное",
+  "@favorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tobasket": "В корзину",
+  "@tobasket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gender": "Пол",
+  "@gender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanning": "Информация о сканировании",
+  "@aboutScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainOffice": "Главный офис",
+  "@mainOffice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeToTechSupport": "Написать в техподдержку",
+  "@writeToTechSupport": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "legalInfo": "Юридическая финормация",
+  "@legalInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "legalInfoData": "ООО “ФИТТИН” \nОГРН: 1153668053736 \nКПП: 366201001 \nОКПО: 42607354",
+  "@legalInfoData": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgram": "Программа лояльности",
+  "@loyaltyProgram": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgramDescription": "Скидки и условия доставки уточняйте при подтверждении заказа у оператора",
+  "@loyaltyProgramDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addressInfo": "Воронежская область, г. Воронеж,\nул. Текстильщиков, 5Б,\nиндекс 394026",
+  "@addressInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerDescriptionShowCase": "Зарегистрируйся, чтобы примерить обувь онлайн.",
+  "@registerDescriptionShowCase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "respect": "STREET BEAT",
+  "@respect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requiredFields": "поля обязательные для заполнения",
+  "@requiredFields": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmed": "Подтверждено",
+  "@confirmed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "agreement": "Соглашение",
+  "@agreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectPhone": "Некорректный телефон",
+  "@incorrectPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectEmail": "Некорректный email",
+  "@incorrectEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "camera": "Камера",
+  "@camera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gallery": "Галерея",
+  "@gallery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showCase": "Витрина",
+  "@showCase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "favorites": "Избранное",
+  "@favorites": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendAppRating": "Отправить отзыв",
+  "@sendAppRating": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseRateOurApp": "Вам нравится\nнаше приложение?",
+  "@pleaseRateOurApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goodRate": "Хорошо",
+  "@goodRate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "badRate": "Плохо",
+  "@badRate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perfect": "Отлично",
+  "@perfect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perfectFootSize": "В нашем сервисе мы рассчитываем степень прилегания обуви к ноге и на основании алгоритмов машинного обучения выводим градации ощущений именно Вашей ноги в выбранной модели обуви.",
+  "@perfectFootSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutService": "Выбирая размер, наш сервис подскажет насколько  подходит выбранный Вами вариант и как обувь будет прилегать к ноге.",
+  "@aboutService": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanningAlgorithm": "Наш алгоритм автоматически определяет два подходящих размера обводя их зеленой рамкой. Первый будет плотнее прилегать к Вашей ноге а второй держаться свободнее.",
+  "@aboutScanningAlgorithm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanningInfo": "Благодаря нашему алгоритму у Вас есть уникальная возможность оценить, ощущения Ваших ног в каждом размере обуви, и самостоятельно сделать окончательный выбор с учетом того, как Вы предпочитаете носить обувь, плотнее или свободнее.",
+  "@aboutScanningInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "differentSizes": "У каждого пользователя параметры каждой ноги может отличаться, поэтому ощущения в одном и том же размере могут быть разными.",
+  "@differentSizes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutShopping": "С помощью нашего сервиса пользователь сможет полностью перейти на покупки обуви онлайн, заменив долгие походы в магазин, на комфортную онлайн примерку дома.",
+  "@aboutShopping": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableInOneProductShop": "Доступно в 1 мамркетплейсе",
+  "@availableInOneProductShop": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableProductShopsCount": "Доступно в {count} маркетплейсах",
+  "@availableProductShopsCount": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "allProducts": "Все товары",
+  "@allProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "infoDetail": "Инфо о товаре",
+  "@infoDetail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inShop": "В магазин",
+  "@inShop": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buyFavoriteMarket": "Покупайте в любимых маркетплейсах",
+  "@buyFavoriteMarket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buyShoesAtRespect": "Покупайте обувь в STREET BEAT",
+  "@buyShoesAtRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "prepositionWith": "с",
+  "@prepositionWith": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "withService": "помощью сервиса",
+  "@withService": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tryOnOnline": "примеряйте online",
+  "@tryOnOnline": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scaning": "Сканирование",
+  "@scaning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doScan": "Сканировать",
+  "@doScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanAtRespect": "Сканируй ноги в магазинах STREET BEAT",
+  "@scanAtRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanAtRespectDescription": "Приходите, и мы подберем идеальную обувь!",
+  "@scanAtRespectDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutGoToScan": "Пройти сканирование",
+  "@aboutGoToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "turnOnSound": "Включите звук, в приложении есть голосовые подсказки",
+  "@turnOnSound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nothingToShow": "Ничего не найдено",
+  "@nothingToShow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "couldNotFindAnything": "Ничего не смогли найти по вашему запросу",
+  "@couldNotFindAnything": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disableFilters": "Отключить фильтры",
+  "@disableFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reset": "Сбросить",
+  "@reset": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allFilters": "Все фильтры",
+  "@allFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeFilters": "Активные фильтры",
+  "@activeFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showProducts": "Показать товары",
+  "@showProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "versionAbout": "Версия приложения",
+  "@versionAbout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myInfo": "Моя информация",
+  "@myInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "legModel3d": "3D модель ног",
+  "@legModel3d": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutUs": "О нас",
+  "@aboutUs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "empty": "Здесь пока ничего нет",
+  "@empty": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToFavorites": "Чтобы добавить товар в избранное, нажмите на сердечко в карточке товара",
+  "@addToFavorites": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addFavorite": "Товар добавлен в избранное",
+  "@addFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeFavorite": "Товар удален из избранного",
+  "@removeFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorFavorite": "Не удалось изменить избранное",
+  "@errorFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "watchedRecently": "Вы недавно смотрели",
+  "@watchedRecently": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommended": "Рекомендуемые товары",
+  "@recommended": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exchange": "Возрат и обмен",
+  "@exchange": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notificationHistory": "История уведомлений",
+  "@notificationHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "storeMap": "Карта магазинов",
+  "@storeMap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scannerLocations": "Места сканирования",
+  "@scannerLocations": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyProducts": "Нам жаль, но мы ничего не смогли \n найти по вашему запросу",
+  "@emptyProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lookSomethingElse": "Поискать что-то другое",
+  "@lookSomethingElse": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appVersion": "Версия:",
+  "@appVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appUpdate": "Обновление приложения",
+  "@appUpdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginOrRegister": "Войти / Зарегистрироваться",
+  "@loginOrRegister": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "serverVersion": "Версия сервера",
+  "@serverVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsCodeInsert": "Код был вставлен автоматически.",
+  "@smsCodeInsert": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noNetwork": "Нет подключения к сети",
+  "@noNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegs": "Как сканировать ноги",
+  "@howToScanLegs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegsText1": "Перенесите вес тела и согните сканируемую ногу в колене",
+  "@howToScanLegsText1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegsText2": "Совмещайте рамки с листом бумаги по кругу",
+  "@howToScanLegsText2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "angleIndicator": "Индикатор ракурса",
+  "@angleIndicator": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "angleIndicatorText": "Начните сканирование с внутренней стороны стопы, как показывает мигающий индикатор.",
+  "@angleIndicatorText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "all": "Все",
+  "@all": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "leftFoot": "Левая нога",
+  "@leftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rightFoot": "Правая нога",
+  "@rightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "flashing": "мигающий",
+  "@flashing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicOfferAgreement": "publicOfferAgreement",
+  "@publicOfferAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "finalPrice": "Итого",
+  "unableToAddMoreProducts": "Невозможно добавить\n больше товаров",
+  "@unableToAddMoreProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "itHasOnly": "В наличии только",
+  "@itHasOnly": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "okay": "Понятно",
+  "@okay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "promotionalCodeIsApplied": "Применен промокод:",
+  "@promotionalCodeIsApplied": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bonuses": "Бонусы",
+  "@bonuses": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "willReceive": "Будет начисленно",
+  "@willReceive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableForDebiting": "Доступно для списания",
+  "@availableForDebiting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "willBeDebited": "Будет списано",
+  "@willBeDebited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancelCaps": "ОТМЕНИТЬ",
+  "@cancelCaps": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeOffBonusesForPurchase": "СПИСАТЬ БОНУСЫ ЗА ПОКУПКУ",
+  "@writeOffBonusesForPurchase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "isNotAvailable": "Нет в наличии",
+  "@isNotAvailable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "order": "Заказ",
+  "@order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forFree": "Бесплатно",
+  "@forFree": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "OrderDate": "Дата заказа",
+  "@OrderDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderStatus": "Статус заказа:",
+  "@orderStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "paymentStatus": "Статус оплаты",
+  "@paymentStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "payForTheOrder": "ОПЛАТИТЬ ЗАКАЗ",
+  "@payForTheOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatAnOrder": "ПОВТОРИТЬ ЗАКАЗ",
+  "@repeatAnOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myOrders": "Мои заказы",
+  "@myOrders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHaventBoughtAnythingYet": "Вы ещё ничего не купили",
+  "@youHaventBoughtAnythingYet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToShopping": "ПЕРЕЙТИ К ПОКУПКАМ",
+  "@goToShopping": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommendedProducts": "Рекомендуемые товары",
+  "@recommendedProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youDontHaveAnyNewNotifications": "У вас нет новых уведомлений",
+  "@youDontHaveAnyNewNotifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToTheShowcase": "Перейти на витрину",
+  "@goToTheShowcase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "customUrl": "Кастомный url",
+  "@customUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doYouReallyWantToLogOutOfYourProfile": "Вы действительно хотите выйти из профиля?",
+  "@doYouReallyWantToLogOutOfYourProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exit": "ВЫЙТИ",
+  "@exit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doYouReallyWantToDeleteYourAccount": "Вы действительно хотите удалить свой аккаунт?",
+  "@doYouReallyWantToDeleteYourAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "УДАЛИТЬ",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteYourAccount": "Удалить свой аккаунт",
+  "@deleteYourAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgramStatus": "Статус программы лояльности",
+  "@loyaltyProgramStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myBalance": "Мой баланс",
+  "@myBalance": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bonusesOf": "бонусов",
+  "@bonusesOf": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryAndPayment": "Доставка и оплата",
+  "@deliveryAndPayment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messageSMS": "Отправить смс",
+  "@messageSMS": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messageEmail": "Отправить сообщение",
+  "@messageEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "getTheCode": "Получить код",
+  "@getTheCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Войти",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thankYou": "Спасибо",
+  "@thankYou": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "YourOrderHasBeenConfirmed": "Ваш заказ подтвержден",
+  "@YourOrderHasBeenConfirmed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderDetailsCanBeFoundInTheProfile": "Детали заказа находятся в профиле",
+  "@orderDetailsCanBeFoundInTheProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toOrder": "К заказу",
+  "@toOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "paymentNotMadePleasePayTheOrder": "Заказ не оплачен, пожалуйста оплатите заказ",
+  "@paymentNotMadePleasePayTheOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "PleaseSelectOneOfThem": "Пожалуйста выберите один",
+  "@PleaseSelectOneOfThem": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noResult": "Нет результат",
+  "@noResult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendYourDeliveryTime": "Укажите время доставки",
+  "@sendYourDeliveryTime": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "SelectTheOption": "Выбрать вариант",
+  "@SelectTheOption": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settelment": "Населенный пункт",
+  "@settelment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theDeliveryDate": "Дата доставки",
+  "@theDeliveryDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "select": "Выбрать",
+  "@select": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "post": "Почта",
+  "@post": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectAAddressOfThatStore": "Выберите адрес магазина",
+  "@selectAAddressOfThatStore": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectAFacility": "Выберите объект",
+  "@selectAFacility": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectTheAddressOfThePickupPoint": "Выберите адрес пункта выдачи",
+  "@selectTheAddressOfThePickupPoint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myDetails": "Мои данные",
+  "@myDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameAndSurname": "Имя и фамилия",
+  "@nameAndSurname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "birthday": "день рождения",
+  "@birthday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectDate": "Выберите дату",
+  "@selectDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "male": "муж",
+  "@male": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "female": "жен",
+  "@female": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callAConsultant": "ПОЗВОНИТЬ КОНСУЛЬТАНТУ",
+  "@callAConsultant": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatsapp": "writeToWhatsApp",
+  "@whatsapp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlinePayment": "Онлайн оплата",
+  "show": "Показать",
+  "@show": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "product": "продукт",
+  "@product": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "product5": "продуктов",
+  "@product5": {
+    "type": "text",
+    "placeholders": {}
+  },"product2": "продукта",
+  "@product2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "workInProgress": "Эта страница находится в разработке",
+  "sendCodeTimer": "Отправить код повторно через",
+  "@sendCodeTimer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkEnterCode": "Проверьте введенный код или попробуйте",
+  "@checkEnterCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enter": "ВОЙТИ",
+  "@enter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rateApp": "Пожалуйста, оцените наше приложение",
+  "@rateApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatImprove": "Расскажите, что улучшить?",
+  "@whatImprove": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourComments": "Ваш комментарий",
+  "@yourComments": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendComment": "ОТПРАВИТЬ",
+  "@sendComment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ascPrice": "По возрастанию цены",
+  "@ascPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "descPrice": "По убыванию цены",
+  "@descPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "none": "Сортировать",
+  "@none": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "descDiscount": "По размеру скидки",
+  "@descDiscount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authRequired": "Чтобы воспользоваться профилем, Вам необходимо войти или зарегистрироваться.",
+  "@authRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registration": "Регистрация",
+  "@registration": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userIsAlreadyExists": "Пользователь с таким именем уже существует",
+  "@userIsAlreadyExists": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userIsNotRegistered": "Данный пользователь не был зарегистрирован",
+  "@userIsNotRegistered": {
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "blog": "Блог",
+  "@blog": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
