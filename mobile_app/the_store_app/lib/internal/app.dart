@@ -20,8 +20,8 @@ class App extends StatelessWidget {
           style: ButtonStyle(
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero,
-                  )),
+                borderRadius: BorderRadius.zero,
+              )),
               side: MaterialStateProperty.all<BorderSide>(const BorderSide(
                 width: 1,
                 color: AppColor.border,
@@ -62,7 +62,6 @@ class App extends StatelessWidget {
           color: AppColor.white,
           elevation: 0,
         ),
-
         scaffoldBackgroundColor: AppColor.white,
         tabBarTheme: const TabBarTheme(
           labelColor: AppColor.black,

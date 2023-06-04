@@ -39,7 +39,6 @@ final class AppTypography {
     fontSize: 12,
     letterSpacing: 1.3,
     fontWeight: FontWeight.w500,
-
   );
 
   static final TextStyle grayHintText = GoogleFonts.montserrat(

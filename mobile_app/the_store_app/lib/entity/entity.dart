@@ -4,4 +4,3 @@ export 'order/order.dart';
 export 'payment/payment.dart';
 export 'delivery/delivery.dart';
 export 'product/product.dart';
-

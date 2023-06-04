@@ -43,7 +43,7 @@ class SearchWidget extends StatelessWidget {
           border: border,
           fillColor: fill,
           filled: true,
-          prefixIcon:  Icon(
+          prefixIcon: Icon(
             Icons.search,
             color: textColor,
           ),

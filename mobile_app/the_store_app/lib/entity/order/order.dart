@@ -7,15 +7,15 @@ part 'order.g.dart';
 
 @freezed
 class Order with _$Order {
-    factory Order({
-      required int id,
-      PickupPoint? shop,
-      required String orderTotal,
-      required bool orderStatus,
-      Delivery? delivery,
-      required Payment paymentDTO,
-      required List<ShortProduct> products,
-}) = _Order;
+  factory Order({
+    required int id,
+    PickupPoint? shop,
+    required String orderTotal,
+    required bool orderStatus,
+    Delivery? delivery,
+    required Payment paymentDTO,
+    required List<ShortProduct> products,
+  }) = _Order;
 
-    factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+  factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 }

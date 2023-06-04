@@ -5,14 +5,15 @@ part 'store_user.g.dart';
 
 @freezed
 class StoreUser with _$StoreUser {
-    factory StoreUser({
-      String? username,
-      String? userEmail,
-      String? userPhone,
-      String? gender,
-      bool? userAnonimus,
-      int? userFirebase,
-}) = _StoreUser;
+  factory StoreUser({
+    String? username,
+    String? userEmail,
+    String? userPhone,
+    String? gender,
+    bool? userAnonimus,
+    int? userFirebase,
+  }) = _StoreUser;
 
-    factory StoreUser.fromJson(Map<String, dynamic> json) => _$StoreUserFromJson(json);
+  factory StoreUser.fromJson(Map<String, dynamic> json) =>
+      _$StoreUserFromJson(json);
 }

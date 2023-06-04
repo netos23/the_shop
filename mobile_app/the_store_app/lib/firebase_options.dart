@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '238483623448',
     projectId: 'the-store-f98ac',
     storageBucket: 'the-store-f98ac.appspot.com',
-    iosClientId: '238483623448-rjl46sanalpini7dn4gv1cf4f05sh8sn.apps.googleusercontent.com',
+    iosClientId:
+        '238483623448-rjl46sanalpini7dn4gv1cf4f05sh8sn.apps.googleusercontent.com',
     iosBundleId: 'ru.fbtw.theStoreApp',
   );
 }

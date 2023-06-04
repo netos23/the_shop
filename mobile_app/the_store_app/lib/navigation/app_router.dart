@@ -2,8 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:the_store_app/entity/delivery/delivery_method.dart';
-
-import 'package:the_store_app/screens/screens.dart';
+import 'package:the_store_app/screen/screens.dart';
 
 part 'app_router.gr.dart';
 

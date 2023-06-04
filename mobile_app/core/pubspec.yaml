@@ -12,6 +12,10 @@ dependencies:
   decimal: ^2.3.2
   dio: ^5.1.1
   elementary: ^2.0.0
+  firebase_analytics: ^10.4.2
+  firebase_auth: ^4.6.2
+  firebase_core: ^2.13.1
+  firebase_remote_config: ^4.2.2
   flutter:
     sdk: flutter
   freezed_annotation: ^2.2.0

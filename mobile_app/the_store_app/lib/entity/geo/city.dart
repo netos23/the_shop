@@ -9,14 +9,11 @@ part 'city.g.dart';
   fromJson: true,
   toJson: true,
 )
-class City  with _$City implements Serializable<City> {
+class City with _$City implements Serializable<City> {
   factory City({
-    @JsonKey(name: 'cityName')
-    required String name,
-    @JsonKey(name: 'cityRegion')
-    required String region,
-    @JsonKey(name: 'cityCode')
-    required String cityId,
+    @JsonKey(name: 'cityName') required String name,
+    @JsonKey(name: 'cityRegion') required String region,
+    @JsonKey(name: 'cityCode') required String cityId,
     double? lat,
     double? lon,
   }) = _City;

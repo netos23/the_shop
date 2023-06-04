@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:the_store_app/internal/logger.dart';
 
 class DefaultErrorHandler extends ErrorHandler implements LifecycleComponent {
-
   @override
   void init() {
     PlatformDispatcher.instance.onError = (error, stack) {

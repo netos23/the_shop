@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBarItem extends BottomNavigationBarItem {
@@ -7,17 +6,17 @@ class CustomBottomNavigationBarItem extends BottomNavigationBarItem {
     required String label,
     String? badgeChar,
   }) : super(
-    icon: _NavigationBarIcon(
-      icon: icon,
-      badgeChar: badgeChar,
-    ),
-    label: label,
-    activeIcon: _NavigationBarIcon(
-      icon: icon,
-      badgeChar: badgeChar,
-    ),
-    backgroundColor: Colors.transparent,
-  );
+          icon: _NavigationBarIcon(
+            icon: icon,
+            badgeChar: badgeChar,
+          ),
+          label: label,
+          activeIcon: _NavigationBarIcon(
+            icon: icon,
+            badgeChar: badgeChar,
+          ),
+          backgroundColor: Colors.transparent,
+        );
 }
 
 class _NavigationBarIcon extends StatelessWidget {

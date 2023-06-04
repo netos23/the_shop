@@ -11,7 +11,6 @@ import 'package:the_store_app/internal/di_container.dart';
 import 'package:the_store_app/data/order/order_client.dart';
 import 'package:the_store_app/data/user/user_client.dart';
 
-
 class AppDependency extends StatelessWidget {
   const AppDependency({
     Key? key,
@@ -37,7 +36,7 @@ class AppDependency extends StatelessWidget {
         ),
         Provider(
           create: (context) {
-            final  dio = DiContainer()<Dio>();
+            final dio = DiContainer()<Dio>();
 
             dio.options
               ..baseUrl = config.baseUrl
@@ -45,7 +44,7 @@ class AppDependency extends StatelessWidget {
               ..receiveTimeout = config.timeout
               ..sendTimeout = config.timeout;
 
-            if(kDebugMode) {
+            if (kDebugMode) {
               dio.interceptors.add(PrettyDioLogger());
             }
 
