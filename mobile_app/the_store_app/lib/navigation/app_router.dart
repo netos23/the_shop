@@ -2,14 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:the_store_app/entity/delivery/delivery_method.dart';
-import 'package:the_store_app/screens/address_screen/address_screen.dart';
-import 'package:the_store_app/screens/basket_screen/basket_screen.dart';
-import 'package:the_store_app/screens/catalog_screen/catalog_screen.dart';
-import 'package:the_store_app/screens/favourites_screen/favourites_screen.dart';
-import 'package:the_store_app/screens/home_screen/home_screen.dart';
-import 'package:the_store_app/screens/profile_screen/profile_screen.dart';
+
 import 'package:the_store_app/screens/screens.dart';
-import 'package:the_store_app/screens/show_case_screen/show_case_screen.dart';
 
 part 'app_router.gr.dart';
 
@@ -76,7 +70,19 @@ class AppRouter extends _$AppRouter {
                 AutoRoute(
                   initial: true,
                   page: ProfileRoute.page,
-                )
+                ),
+                AutoRoute(
+                  page: ProfileDataUpdateRoute.page,
+                ),
+                AutoRoute(
+                  page: OrderDetailsRoute.page,
+                ),
+                AutoRoute(
+                  page: MapPointsRoute.page,
+                ),
+                AutoRoute(
+                  page: ProfileMyOrdersRoute.page,
+                ),
               ],
             ),
           ],

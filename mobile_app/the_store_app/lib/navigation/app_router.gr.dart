@@ -167,6 +167,50 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    ProfileDataUpdateRoute.name: (routeData) {
+      final args = routeData.argsAs<ProfileDataUpdateRouteArgs>(
+          orElse: () => const ProfileDataUpdateRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProfileDataUpdateScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
+    ProfileMyOrdersRoute.name: (routeData) {
+      final args = routeData.argsAs<ProfileMyOrdersRouteArgs>(
+          orElse: () => const ProfileMyOrdersRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProfileMyOrdersScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
+    ProfileMainRoute.name: (routeData) {
+      final args = routeData.argsAs<ProfileMainRouteArgs>(
+          orElse: () => const ProfileMainRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProfileMainScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
+    OrderDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<OrderDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: OrderDetailsScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+          index: args.index,
+        ),
+      );
+    },
   };
 }
 
@@ -721,5 +765,174 @@ class ShowCaseRouteArgs {
   @override
   String toString() {
     return 'ShowCaseRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [ProfileDataUpdateScreenWidget]
+class ProfileDataUpdateRoute extends PageRouteInfo<ProfileDataUpdateRouteArgs> {
+  ProfileDataUpdateRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultProfileDataUpdateScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ProfileDataUpdateRoute.name,
+          args: ProfileDataUpdateRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileDataUpdateRoute';
+
+  static const PageInfo<ProfileDataUpdateRouteArgs> page =
+      PageInfo<ProfileDataUpdateRouteArgs>(name);
+}
+
+class ProfileDataUpdateRouteArgs {
+  const ProfileDataUpdateRouteArgs({
+    this.key,
+    this.wmFactory = defaultProfileDataUpdateScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'ProfileDataUpdateRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [ProfileMyOrdersScreenWidget]
+class ProfileMyOrdersRoute extends PageRouteInfo<ProfileMyOrdersRouteArgs> {
+  ProfileMyOrdersRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultProfileMyOrdersScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ProfileMyOrdersRoute.name,
+          args: ProfileMyOrdersRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileMyOrdersRoute';
+
+  static const PageInfo<ProfileMyOrdersRouteArgs> page =
+      PageInfo<ProfileMyOrdersRouteArgs>(name);
+}
+
+class ProfileMyOrdersRouteArgs {
+  const ProfileMyOrdersRouteArgs({
+    this.key,
+    this.wmFactory = defaultProfileMyOrdersScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'ProfileMyOrdersRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [ProfileMainScreenWidget]
+class ProfileMainRoute extends PageRouteInfo<ProfileMainRouteArgs> {
+  ProfileMainRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultProfileMainScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ProfileMainRoute.name,
+          args: ProfileMainRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileMainRoute';
+
+  static const PageInfo<ProfileMainRouteArgs> page =
+      PageInfo<ProfileMainRouteArgs>(name);
+}
+
+class ProfileMainRouteArgs {
+  const ProfileMainRouteArgs({
+    this.key,
+    this.wmFactory = defaultProfileMainScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'ProfileMainRouteArgs{key: $key, wmFactory: $wmFactory}';
+  }
+}
+
+/// generated route for
+/// [OrderDetailsScreenWidget]
+class OrderDetailsRoute extends PageRouteInfo<OrderDetailsRouteArgs> {
+  OrderDetailsRoute({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultOrderDetailsScreenWidgetModelFactory,
+    required int index,
+    List<PageRouteInfo>? children,
+  }) : super(
+          OrderDetailsRoute.name,
+          args: OrderDetailsRouteArgs(
+            key: key,
+            wmFactory: wmFactory,
+            index: index,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'OrderDetailsRoute';
+
+  static const PageInfo<OrderDetailsRouteArgs> page =
+      PageInfo<OrderDetailsRouteArgs>(name);
+}
+
+class OrderDetailsRouteArgs {
+  const OrderDetailsRouteArgs({
+    this.key,
+    this.wmFactory = defaultOrderDetailsScreenWidgetModelFactory,
+    required this.index,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  final int index;
+
+  @override
+  String toString() {
+    return 'OrderDetailsRouteArgs{key: $key, wmFactory: $wmFactory, index: $index}';
   }
 }

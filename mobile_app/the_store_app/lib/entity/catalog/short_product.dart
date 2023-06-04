@@ -5,13 +5,17 @@ part 'short_product.freezed.dart';
 
 part 'short_product.g.dart';
 
-@freezed
+@Freezed(
+  toJson: true,
+  fromJson: true,
+)
 class ShortProduct with _$ShortProduct {
   factory ShortProduct({
     required int id,
     required String productName,
     required Decimal productPrice,
     Decimal? productOldPrice,
+    required int basketQuantity,
     required List<String> pictures,
   }) = _ShortProduct;
 

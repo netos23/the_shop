@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:the_store_app/data/geo/geo_client.dart';
 import 'package:the_store_app/data/shop/shop_client.dart';
 import 'package:the_store_app/internal/di_container.dart';
+import 'package:the_store_app/data/order/order_client.dart';
+import 'package:the_store_app/data/user/user_client.dart';
 
 
 class AppDependency extends StatelessWidget {
@@ -53,6 +55,8 @@ class AppDependency extends StatelessWidget {
         Provider(
           create: (context) => GeoClient(context.read()),
         ),
+        Provider<OrderClient>(create: (context) => OrderClient(context.read())),
+        Provider<UserClient>(create: (context) => UserClient(context.read())),
         Provider(
           create: (context) => ShopClient(context.read()),
         ),

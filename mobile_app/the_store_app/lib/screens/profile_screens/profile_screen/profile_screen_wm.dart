@@ -1,6 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'profile_screen_model.dart';
 import 'profile_screen_widget.dart';
 

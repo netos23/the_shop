@@ -24,6 +24,7 @@ mixin _$ShortProduct {
   String get productName => throw _privateConstructorUsedError;
   Decimal get productPrice => throw _privateConstructorUsedError;
   Decimal? get productOldPrice => throw _privateConstructorUsedError;
+  int get basketQuantity => throw _privateConstructorUsedError;
   List<String> get pictures => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ abstract class $ShortProductCopyWith<$Res> {
       String productName,
       Decimal productPrice,
       Decimal? productOldPrice,
+      int basketQuantity,
       List<String> pictures});
 }
 
@@ -63,6 +65,7 @@ class _$ShortProductCopyWithImpl<$Res, $Val extends ShortProduct>
     Object? productName = null,
     Object? productPrice = null,
     Object? productOldPrice = freezed,
+    Object? basketQuantity = null,
     Object? pictures = null,
   }) {
     return _then(_value.copyWith(
@@ -82,6 +85,10 @@ class _$ShortProductCopyWithImpl<$Res, $Val extends ShortProduct>
           ? _value.productOldPrice
           : productOldPrice // ignore: cast_nullable_to_non_nullable
               as Decimal?,
+      basketQuantity: null == basketQuantity
+          ? _value.basketQuantity
+          : basketQuantity // ignore: cast_nullable_to_non_nullable
+              as int,
       pictures: null == pictures
           ? _value.pictures
           : pictures // ignore: cast_nullable_to_non_nullable
@@ -103,6 +110,7 @@ abstract class _$$_ShortProductCopyWith<$Res>
       String productName,
       Decimal productPrice,
       Decimal? productOldPrice,
+      int basketQuantity,
       List<String> pictures});
 }
 
@@ -121,6 +129,7 @@ class __$$_ShortProductCopyWithImpl<$Res>
     Object? productName = null,
     Object? productPrice = null,
     Object? productOldPrice = freezed,
+    Object? basketQuantity = null,
     Object? pictures = null,
   }) {
     return _then(_$_ShortProduct(
@@ -140,6 +149,10 @@ class __$$_ShortProductCopyWithImpl<$Res>
           ? _value.productOldPrice
           : productOldPrice // ignore: cast_nullable_to_non_nullable
               as Decimal?,
+      basketQuantity: null == basketQuantity
+          ? _value.basketQuantity
+          : basketQuantity // ignore: cast_nullable_to_non_nullable
+              as int,
       pictures: null == pictures
           ? _value._pictures
           : pictures // ignore: cast_nullable_to_non_nullable
@@ -156,6 +169,7 @@ class _$_ShortProduct implements _ShortProduct {
       required this.productName,
       required this.productPrice,
       this.productOldPrice,
+      required this.basketQuantity,
       required final List<String> pictures})
       : _pictures = pictures;
 
@@ -170,6 +184,8 @@ class _$_ShortProduct implements _ShortProduct {
   final Decimal productPrice;
   @override
   final Decimal? productOldPrice;
+  @override
+  final int basketQuantity;
   final List<String> _pictures;
   @override
   List<String> get pictures {
@@ -180,7 +196,7 @@ class _$_ShortProduct implements _ShortProduct {
 
   @override
   String toString() {
-    return 'ShortProduct(id: $id, productName: $productName, productPrice: $productPrice, productOldPrice: $productOldPrice, pictures: $pictures)';
+    return 'ShortProduct(id: $id, productName: $productName, productPrice: $productPrice, productOldPrice: $productOldPrice, basketQuantity: $basketQuantity, pictures: $pictures)';
   }
 
   @override
@@ -195,13 +211,21 @@ class _$_ShortProduct implements _ShortProduct {
                 other.productPrice == productPrice) &&
             (identical(other.productOldPrice, productOldPrice) ||
                 other.productOldPrice == productOldPrice) &&
+            (identical(other.basketQuantity, basketQuantity) ||
+                other.basketQuantity == basketQuantity) &&
             const DeepCollectionEquality().equals(other._pictures, _pictures));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, productName, productPrice,
-      productOldPrice, const DeepCollectionEquality().hash(_pictures));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      productName,
+      productPrice,
+      productOldPrice,
+      basketQuantity,
+      const DeepCollectionEquality().hash(_pictures));
 
   @JsonKey(ignore: true)
   @override
@@ -223,6 +247,7 @@ abstract class _ShortProduct implements ShortProduct {
       required final String productName,
       required final Decimal productPrice,
       final Decimal? productOldPrice,
+      required final int basketQuantity,
       required final List<String> pictures}) = _$_ShortProduct;
 
   factory _ShortProduct.fromJson(Map<String, dynamic> json) =
@@ -236,6 +261,8 @@ abstract class _ShortProduct implements ShortProduct {
   Decimal get productPrice;
   @override
   Decimal? get productOldPrice;
+  @override
+  int get basketQuantity;
   @override
   List<String> get pictures;
   @override

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:the_store_app/screens/components/components.dart';
+import 'package:the_store_app/screens/components/custom_filled_button_widget.dart';
 import 'onboarding_screen_wm.dart';
 
 // TODO: cover with documentation

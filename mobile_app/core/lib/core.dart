@@ -5,5 +5,6 @@ export 'src/config/debug_config.dart';
 export 'src/util/snack_bar_util.dart';
 export 'src/util/lifecycle_component.dart';
 export 'src/util/value_stream_wrapper.dart';
+export 'src/util/typedefs.dart';
 export 'src/persistence/repository.dart';
 export 'src/persistence/serializable.dart';

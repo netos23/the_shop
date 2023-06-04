@@ -14,6 +14,7 @@ _$_ShortProduct _$$_ShortProductFromJson(Map<String, dynamic> json) =>
       productOldPrice: json['productOldPrice'] == null
           ? null
           : Decimal.fromJson(json['productOldPrice'] as String),
+      basketQuantity: json['basketQuantity'] as int,
       pictures:
           (json['pictures'] as List<dynamic>).map((e) => e as String).toList(),
     );
@@ -24,5 +25,6 @@ Map<String, dynamic> _$$_ShortProductToJson(_$_ShortProduct instance) =>
       'productName': instance.productName,
       'productPrice': instance.productPrice,
       'productOldPrice': instance.productOldPrice,
+      'basketQuantity': instance.basketQuantity,
       'pictures': instance.pictures,
     };

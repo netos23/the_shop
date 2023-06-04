@@ -16,12 +16,28 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  )),
+              side: MaterialStateProperty.all<BorderSide>(const BorderSide(
+                width: 1,
+                color: AppColor.border,
+              ))),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(shape: const RoundedRectangleBorder()),
+        ),
         textTheme: GoogleFonts.montserratTextTheme(
           TextTheme(
             bodySmall: AppTypography.bodySmall,
-            bodyMedium: AppTypography.mediumBodySmall,
-            labelLarge: AppTypography.mediumBodySmallWhite,
+            bodyMedium: AppTypography.mediumBodySmall12pt,
+            labelMedium: AppTypography.buttonMedium,
             titleMedium: AppTypography.title,
+            bodyLarge: AppTypography.mediumBodySmall16pt,
+            titleSmall: AppTypography.grayHintText,
           ),
         ),
         colorScheme: const ColorScheme(
@@ -29,6 +45,7 @@ class App extends StatelessWidget {
           primary: AppColor.black,
           onPrimary: AppColor.white,
           secondary: AppColor.black50,
+          secondaryContainer: AppColor.darkerGray, //for darker text
           onSecondary: AppColor.black,
           error: AppColor.red,
           onError: AppColor.white,
@@ -36,6 +53,7 @@ class App extends StatelessWidget {
           onBackground: AppColor.black,
           surface: AppColor.white,
           onSurface: AppColor.black,
+          surfaceVariant: AppColor.grayTextField,
         ),
         appBarTheme: AppBarTheme(
           titleTextStyle: AppTypography.title.copyWith(
@@ -44,9 +62,8 @@ class App extends StatelessWidget {
           color: AppColor.white,
           elevation: 0,
         ),
-        filledButtonTheme: FilledButtonThemeData(
-          style: FilledButton.styleFrom(shape: const RoundedRectangleBorder()),
-        ),
+
+        scaffoldBackgroundColor: AppColor.white,
         tabBarTheme: const TabBarTheme(
           labelColor: AppColor.black,
           indicator: UnderlineTabIndicator(
@@ -62,7 +79,7 @@ class App extends StatelessWidget {
             onSurface: AppColor.darkGray,
           ),
           ExtraAppTypography(
-            bodySmall: AppTypography.mediumBodySmall,
+            bodySmall: AppTypography.mediumBodySmall12pt,
           ),
         ],
       ),
