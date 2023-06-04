@@ -1,5 +1,8 @@
 package ru.fbtw.thestore.backend.configs;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseToken;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,7 +25,6 @@ import java.io.IOException;
 public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
 
-
     @Override
     protected void doFilterInternal(
             @NotNull HttpServletRequest request,
@@ -36,10 +38,15 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        jwt = authHeader;
-        user = jwtService.extractUser(jwt);
+        jwt = authHeader.substring(7);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
 
         try {
+            FirebaseToken decodedToken = auth.verifyIdToken(jwt);
+            String uid = decodedToken.getUid();
+            // ID пользователя успешно получен из токена
+            user = jwtService.extractUser(uid);
+
             if (SecurityContextHolder.getContext().getAuthentication() == null) {
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                         authHeader, user, user.getAuthorities()
@@ -47,8 +54,10 @@ public class SecretKeyAuthenticationFilter extends OncePerRequestFilter {
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
+        } catch (FirebaseAuthException e) {
+
         } catch (NullPointerException e) {
-            System.out.println(e.getMessage());
+            //Error extracting user data from JWT:
         } finally {
             filterChain.doFilter(request, response);
         }

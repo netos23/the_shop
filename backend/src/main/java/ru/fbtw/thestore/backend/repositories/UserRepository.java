@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import ru.fbtw.thestore.backend.domains.user.MyUser;
 
 import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<MyUser, Long> {
     Optional<MyUser> findByUsername(String username);
@@ -28,4 +29,15 @@ public interface UserRepository extends JpaRepository<MyUser, Long> {
             SELECT product_id FROM user_basket
             WHERE user_id=:userId AND product_id=:productId""", nativeQuery = true)
     Optional<Long> isAlreadyInBasket(@Param("userId") Long userId, @Param("productId") Long productId);
+
+    @Modifying
+    @Query(value = "DELETE FROM user_basket WHERE user_id = :userId AND product_id = :productId",
+            nativeQuery = true)
+    void deleteProductFromBasket(@Param("userId") Long userId, @Param("productId") Long productId);
+    @Modifying
+    @Query(value = "DELETE FROM user_favourites WHERE user_id = :userId AND product_id = :productId",
+            nativeQuery = true)
+    void deleteProductFromFavourites(@Param("userId") Long userId, @Param("productId") Long productId);
+
+    Optional<MyUser> findByUserFirebase(String uuid);
 }

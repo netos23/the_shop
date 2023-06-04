@@ -27,4 +27,14 @@ public class CategoryService {
         Category category = categoryMapper.toEntity(categoryDto);
         categoryRepository.save(category);
     }
+
+    @Transactional
+    public void deleteAllCategories(){
+        categoryRepository.deleteAll();
+    }
+    @Transactional
+    public void updateAllCategories(List<CategoryDto> categories){
+        List<Category> updateCategories = categories.stream().map(categoryMapper::toEntity).toList();
+        categoryRepository.saveAll(updateCategories);
+    }
 }

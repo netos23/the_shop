@@ -2,4 +2,5 @@
 .idea/
 /mobile_app/the_store_app/build/
 .gitignore
+commit.sh
 /commit.sh

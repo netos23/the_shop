@@ -24,7 +24,9 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService {
-    /**DONE!*/
+    /**
+     * DONE!
+     */
     private final UserRepository userRepository;
     private final MyUserMapper userMapper;
     private final MyOrderMapper orderMapper;
@@ -42,6 +44,7 @@ public class UserService implements UserDetailsService {
         MyUser user = userRepository.findById(id).orElseThrow();
         return userMapper.toDto(user);
     }
+
     public MyUser findUserById(Long id) {
         return userRepository.findById(id).orElseThrow();
     }
@@ -66,15 +69,15 @@ public class UserService implements UserDetailsService {
 
         ProductDto productDto = productService.getProductById(productId);
 
-        if(!isAlreadyInBasket(userId, productId)){
+        if (!isAlreadyInBasket(userId, productId)) {
             userRepository.addToBasket(user.getId(), productDto.getId());
         }
         productDto.setBasketQuantity(productDto.getBasketQuantity() + 1);
         productService.updateBasketQuantity(productId);
 
         Set<ProductDto> productDtos = new HashSet<>();
-        if(user.getBasket().size() != 0){
-            for (Product product: user.getBasket()) {
+        if (user.getBasket().size() != 0) {
+            for (Product product : user.getBasket()) {
                 productDtos.add(productMapper.toDto(product));
             }
         }
@@ -128,8 +131,8 @@ public class UserService implements UserDetailsService {
         userRepository.addToFavourites(user.getId(), productDto.getId());
 
         Set<ProductDto> productDtos = new HashSet<>();
-        if(user.getFavourites().size() != 0){
-            for (Product product: user.getFavourites()) {
+        if (user.getFavourites().size() != 0) {
+            for (Product product : user.getFavourites()) {
                 productDtos.add(productMapper.toDto(product));
             }
         }
@@ -145,6 +148,7 @@ public class UserService implements UserDetailsService {
 
     public MyUserDto getInformation(Long id) {
         MyUser user = userRepository.findById(id).orElseThrow();
+        String username = user.getUsername();
 
         return MyUserDto.builder()
                 .id(user.getId())
@@ -174,8 +178,78 @@ public class UserService implements UserDetailsService {
                 .build();
     }
 
-    private boolean isAlreadyInBasket(Long userId, Long productId){
+    private boolean isAlreadyInBasket(Long userId, Long productId) {
         Optional<Long> id = userRepository.isAlreadyInBasket(userId, productId);
         return id.isPresent();
+    }
+
+    @Transactional
+    public MyUserDto deleteProductFromBasket(Long userId, Long productId) {
+        MyUserDto myUserDto;
+        MyUser user = findUserById(userId);
+
+        Set<ProductDto> productDtos = new HashSet<>();
+        for (Product product : user.getBasket()) {
+            if (product.getId() == productId) {
+               Integer quantity = productService.updateBasketQuantityAfterRemove(productId);
+
+                if (quantity == 0) {
+                    userRepository.deleteProductFromBasket(userId, productId);
+                    continue;
+                }
+
+                if (quantity > 0) {
+                    ProductDto productDto = productMapper.toDto(product);
+                    productDto.setBasketQuantity(quantity);
+                    productDtos.add(productDto);
+                }
+            }
+            else productDtos.add(productMapper.toDto(product));
+        }
+
+        myUserDto = MyUserDto.builder()
+                .id(user.getId())
+                .basket(productDtos)
+                .build();
+
+        return myUserDto;
+    }
+    @Transactional
+    public MyUserDto deleteProductFromFavourites(Long userId, Long productId) {
+        MyUserDto myUserDto;
+        MyUser user = findUserById(userId);
+
+        Set<ProductDto> productDtos = new HashSet<>();
+        for (Product product : user.getFavourites()) {
+
+            if (product.getId() == productId) {
+                userRepository.deleteProductFromFavourites(userId, productId);
+            } else{
+                productDtos.add(productMapper.toDto(product));
+            }
+        }
+
+        myUserDto = MyUserDto.builder()
+                .id(user.getId())
+                .favourites(productDtos)
+                .build();
+
+        return myUserDto;
+    }
+    @Transactional
+    public void deleteUser(Long userId){
+        userRepository.deleteById(userId);
+    }
+
+    public Optional<MyUser> findUserByUserFirebase(String uuid){
+        return userRepository.findByUserFirebase(uuid);
+    }
+
+    public String userRegistration(String authHeader) {
+        MyUser user = MyUser.builder()
+                .userAnonimus(true)
+                .build();
+        userRepository.save(user);
+        return "OK";
     }
 }

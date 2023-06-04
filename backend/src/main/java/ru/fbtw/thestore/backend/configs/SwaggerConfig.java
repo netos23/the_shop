@@ -1,4 +1,4 @@
-package ru.fbtw.thestore.backend.config;
+package ru.fbtw.thestore.backend.configs;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
                 contact = @Contact(name = "Софья Черникова"),
                 version = "1.0.3"),
         servers = {
-                @Server(url = "https://the-store.fbtw.ru/")
+                @Server(url = "http://localhost:8080")
         })
 public class SwaggerConfig {
         //https://the-store.fbtw.ru/  http://localhost:8080
