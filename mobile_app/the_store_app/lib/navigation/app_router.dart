@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:the_store_app/entity/delivery/delivery_method.dart';
-import 'package:the_store_app/screens/address_screen/address_screen.dart';
-import 'package:the_store_app/screens/basket_screen/basket_screen.dart';
-import 'package:the_store_app/screens/catalog_screen/catalog_screen.dart';
-import 'package:the_store_app/screens/favourites_screen/favourites_screen.dart';
-import 'package:the_store_app/screens/home_screen/home_screen.dart';
-import 'package:the_store_app/screens/profile_screen/profile_screen.dart';
-import 'package:the_store_app/screens/screens.dart';
-import 'package:the_store_app/screens/show_case_screen/show_case_screen.dart';
+import 'package:the_store_app/screen/address_screen/address_screen.dart';
+import 'package:the_store_app/screen/basket_screen/basket_screen.dart';
+import 'package:the_store_app/screen/catalog_screen/catalog_screen.dart';
+import 'package:the_store_app/screen/favourites_screen/favourites_screen.dart';
+import 'package:the_store_app/screen/home_screen/home_screen.dart';
+import 'package:the_store_app/screen/profile_screen/profile_screen.dart';
+import 'package:the_store_app/screen/screens.dart';
+import 'package:the_store_app/screen/show_case_screen/show_case_screen.dart';
 
 part 'app_router.gr.dart';
 

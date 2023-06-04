@@ -1,7 +1,10 @@
 import 'package:core/core.dart';
 import 'package:dio/dio.dart';
 import 'package:elementary/elementary.dart';
+import 'package:flutter/foundation.dart';
 import 'package:kiwi/kiwi.dart';
+import 'package:the_store_app/domain/auth/native_auth_srvice.dart';
+import 'package:the_store_app/domain/auth/web_auth_service.dart';
 import 'package:the_store_app/domain/delivery/delivery_service.dart';
 import 'package:the_store_app/domain/geo/city_service.dart';
 import 'package:the_store_app/entity/delivery/delivery_method.dart';
@@ -39,6 +42,12 @@ class DiContainer implements AsyncInitLifecycleComponent {
     );
     final cityService = CityService(cityRepo: cityRepository);
     container.registerInstance(cityService);
+
+    // auth
+    final authService = kIsWeb
+        ? StoreWebAuthService(errorHandler: errorHandler)
+        : StoreNativeAuthService(errorHandler: errorHandler);
+    container.registerInstance(authService);
 
     // dio
     container.registerSingleton(
