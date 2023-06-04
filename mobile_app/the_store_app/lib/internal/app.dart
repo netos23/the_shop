@@ -24,7 +24,7 @@ class App extends StatelessWidget {
                   )),
               side: MaterialStateProperty.all<BorderSide>(const BorderSide(
                 width: 1,
-                color: AppColor.border,
+                color: AppColor.black,
               ))),
         ),
         filledButtonTheme: FilledButtonThemeData(
@@ -99,7 +99,11 @@ class App extends StatelessWidget {
           } else {
             page = HomeRoute();
           }
-
+//TODO
+          //todo убрать нахуй
+          page = FavouritesRoute();
+          //TODO
+          //todo
           return DeepLink(
             [page],
           );

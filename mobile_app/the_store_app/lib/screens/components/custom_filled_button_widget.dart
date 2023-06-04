@@ -12,7 +12,8 @@ class CustomFilledButton extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: FilledButton(
-        style: Theme.of(context).outlinedButtonTheme.style,
+        style: Theme.of(context).filledButtonTheme.style,
+
         onPressed: onTap,
         child: Center(
           child: Text(
