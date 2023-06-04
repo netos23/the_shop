@@ -42,11 +42,5 @@ class MapPointsScreenModel extends ElementaryModel {
     return points.toList();
   }
 
-  void setPickupPoint(PickupPoint data) {
-    deliveryService.saveDeliveryMethod(
-      DeliveryMethod.shop(
-        point: data,
-      ),
-    );
-  }
+
 }

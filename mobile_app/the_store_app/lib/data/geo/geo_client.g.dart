@@ -32,7 +32,7 @@ class _GeoClient implements GeoClient {
     )
             .compose(
               _dio.options,
-              '/geo',
+              '/geo/city',
               queryParameters: queryParameters,
               data: _data,
             )

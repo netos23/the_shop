@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:the_store_app/entity/delivery/delivery_method.dart';
 import 'package:the_store_app/screens/map_points_screen/components/pickup_point_tile_loader.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
 import 'components/pickup_point_tile.dart';
@@ -9,7 +10,7 @@ import 'map_points_screen_wm.dart';
 
 // TODO: cover with documentation
 /// Main widget for MapPointsScreen module
-@RoutePage()
+@RoutePage<DeliveryMethod>()
 class MapPointsScreenWidget
     extends ElementaryWidget<IMapPointsScreenWidgetModel> {
   const MapPointsScreenWidget({

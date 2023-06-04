@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
@@ -249,14 +248,7 @@ class MapPointsScreenWidgetModel
     );
     // TODO(netos23): persist
     if (data != null) {
-      model.setPickupPoint(data);
-
-      if (router.canPop()) {
-        router.popUntilRoot();
-        return;
-      }
-
-      router.replace(HomeRoute());
+      router.pop(data);
     }
   }
 
@@ -272,7 +264,7 @@ class MapPointsScreenWidgetModel
       icon: PlacemarkIcon.single(
         PlacemarkIconStyle(
           image: BitmapDescriptor.fromAssetImage(
-            'assets/icon_cart.png',
+            'assets/images/icon_cart.png',
           ),
           scale: 0.9,
           isFlat: true,

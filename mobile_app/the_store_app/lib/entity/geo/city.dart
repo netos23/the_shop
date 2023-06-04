@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'city.freezed.dart';
@@ -6,15 +7,15 @@ part 'city.g.dart';
 
 @Freezed(
   fromJson: true,
-  toJson: false,
+  toJson: true,
 )
-class City with _$City {
+class City  with _$City implements Serializable<City> {
   factory City({
-    @JsonKey(name: "cityName")
+    @JsonKey(name: 'cityName')
     required String name,
-    @JsonKey(name: "cityRegion")
+    @JsonKey(name: 'cityRegion')
     required String region,
-    @JsonKey(name: "cityCode")
+    @JsonKey(name: 'cityCode')
     required String cityId,
     double? lat,
     double? lon,

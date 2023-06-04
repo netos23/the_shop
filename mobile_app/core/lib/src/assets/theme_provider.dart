@@ -27,7 +27,8 @@ mixin ThemeProvider {
 
   ColorScheme get colorScheme => theme.colorScheme;
 
-  ExtraAppTypography get extraAppTypography => theme.extension();
+  ExtraAppTypography? get extraAppTypography =>
+      theme.extension<ExtraAppTypography>();
 
-  ExtraAppColors get extraAppColors => theme.extension();
+  ExtraAppColors? get extraAppColors => theme.extension<ExtraAppColors>();
 }

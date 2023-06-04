@@ -37,7 +37,7 @@ class _NavigationBarIcon extends StatelessWidget {
       children: [
         Icon(
           icon,
-          size: 30,
+          size: 25,
         ),
         Visibility(
           visible: badgeChar != null && badgeChar != '0',

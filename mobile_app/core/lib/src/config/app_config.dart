@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 
 class AppConfig extends ChangeNotifier {
   String _baseUrl;
+  String _dadataKey;
+
+  set dadataKey(String value) {
+    notifyListeners();
+    _dadataKey = value;
+  }
 
   String get baseUrl => _baseUrl;
+
+  String get dadataKey => _dadataKey;
 
   set baseUrl(String value) {
     notifyListeners();
@@ -19,13 +27,13 @@ class AppConfig extends ChangeNotifier {
     _timeout = value;
   }
 
-
-
   AppConfig({
     required String baseUrl,
     required Duration timeout,
+    required String dadataKey,
   })  : _baseUrl = baseUrl,
-        _timeout = timeout;
+        _timeout = timeout,
+        _dadataKey = dadataKey;
 
   @override
   bool operator ==(Object other) =>
