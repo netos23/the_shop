@@ -1,27 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+import 'package:the_store_app/internal/logger.dart';
 
 class TextValidatingController{
 
   final String? Function(String?) func;
-  bool changed;
+
 
   TextEditingController textEditingController = TextEditingController();
 
 
 
-  TextValidatingController({required this.func}):
-  changed = false;
+  TextValidatingController({required this.func});
 
 
-
-  String? get errorText{
-
-    var text = textEditingController.value.text;
-
-    debugPrint(text);
-    return func(text);
-
-  }
 
   void dispose(){
     textEditingController.dispose();

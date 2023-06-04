@@ -20,7 +20,6 @@ MyUserDto _$MyUserDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MyUserDto {
-  int get id => throw _privateConstructorUsedError;
   String? get username => throw _privateConstructorUsedError;
   String? get userEmail => throw _privateConstructorUsedError;
   String? get userPhone => throw _privateConstructorUsedError;
@@ -30,7 +29,7 @@ mixin _$MyUserDto {
   List<MyOrderDto>? get orders => throw _privateConstructorUsedError;
   List<ProductDto>? get basket => throw _privateConstructorUsedError;
   List<ProductDto>? get favourites => throw _privateConstructorUsedError;
-  City get city => throw _privateConstructorUsedError;
+  City? get city => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,8 +43,7 @@ abstract class $MyUserDtoCopyWith<$Res> {
       _$MyUserDtoCopyWithImpl<$Res, MyUserDto>;
   @useResult
   $Res call(
-      {int id,
-      String? username,
+      {String? username,
       String? userEmail,
       String? userPhone,
       String? gender,
@@ -54,9 +52,9 @@ abstract class $MyUserDtoCopyWith<$Res> {
       List<MyOrderDto>? orders,
       List<ProductDto>? basket,
       List<ProductDto>? favourites,
-      City city});
+      City? city});
 
-  $CityCopyWith<$Res> get city;
+  $CityCopyWith<$Res>? get city;
 }
 
 /// @nodoc
@@ -72,7 +70,6 @@ class _$MyUserDtoCopyWithImpl<$Res, $Val extends MyUserDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? username = freezed,
     Object? userEmail = freezed,
     Object? userPhone = freezed,
@@ -82,13 +79,9 @@ class _$MyUserDtoCopyWithImpl<$Res, $Val extends MyUserDto>
     Object? orders = freezed,
     Object? basket = freezed,
     Object? favourites = freezed,
-    Object? city = null,
+    Object? city = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -125,17 +118,21 @@ class _$MyUserDtoCopyWithImpl<$Res, $Val extends MyUserDto>
           ? _value.favourites
           : favourites // ignore: cast_nullable_to_non_nullable
               as List<ProductDto>?,
-      city: null == city
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as City,
+              as City?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CityCopyWith<$Res> get city {
-    return $CityCopyWith<$Res>(_value.city, (value) {
+  $CityCopyWith<$Res>? get city {
+    if (_value.city == null) {
+      return null;
+    }
+
+    return $CityCopyWith<$Res>(_value.city!, (value) {
       return _then(_value.copyWith(city: value) as $Val);
     });
   }
@@ -149,8 +146,7 @@ abstract class _$$_MyUserDtoCopyWith<$Res> implements $MyUserDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String? username,
+      {String? username,
       String? userEmail,
       String? userPhone,
       String? gender,
@@ -159,10 +155,10 @@ abstract class _$$_MyUserDtoCopyWith<$Res> implements $MyUserDtoCopyWith<$Res> {
       List<MyOrderDto>? orders,
       List<ProductDto>? basket,
       List<ProductDto>? favourites,
-      City city});
+      City? city});
 
   @override
-  $CityCopyWith<$Res> get city;
+  $CityCopyWith<$Res>? get city;
 }
 
 /// @nodoc
@@ -176,7 +172,6 @@ class __$$_MyUserDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? username = freezed,
     Object? userEmail = freezed,
     Object? userPhone = freezed,
@@ -186,13 +181,9 @@ class __$$_MyUserDtoCopyWithImpl<$Res>
     Object? orders = freezed,
     Object? basket = freezed,
     Object? favourites = freezed,
-    Object? city = null,
+    Object? city = freezed,
   }) {
     return _then(_$_MyUserDto(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -229,10 +220,10 @@ class __$$_MyUserDtoCopyWithImpl<$Res>
           ? _value._favourites
           : favourites // ignore: cast_nullable_to_non_nullable
               as List<ProductDto>?,
-      city: null == city
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as City,
+              as City?,
     ));
   }
 }
@@ -241,8 +232,7 @@ class __$$_MyUserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MyUserDto implements _MyUserDto {
   _$_MyUserDto(
-      {required this.id,
-      this.username,
+      {this.username,
       this.userEmail,
       this.userPhone,
       this.gender,
@@ -251,7 +241,7 @@ class _$_MyUserDto implements _MyUserDto {
       final List<MyOrderDto>? orders,
       final List<ProductDto>? basket,
       final List<ProductDto>? favourites,
-      required this.city})
+      this.city})
       : _orders = orders,
         _basket = basket,
         _favourites = favourites;
@@ -259,8 +249,6 @@ class _$_MyUserDto implements _MyUserDto {
   factory _$_MyUserDto.fromJson(Map<String, dynamic> json) =>
       _$$_MyUserDtoFromJson(json);
 
-  @override
-  final int id;
   @override
   final String? username;
   @override
@@ -304,11 +292,11 @@ class _$_MyUserDto implements _MyUserDto {
   }
 
   @override
-  final City city;
+  final City? city;
 
   @override
   String toString() {
-    return 'MyUserDto(id: $id, username: $username, userEmail: $userEmail, userPhone: $userPhone, gender: $gender, userAnonimus: $userAnonimus, userFirebase: $userFirebase, orders: $orders, basket: $basket, favourites: $favourites, city: $city)';
+    return 'MyUserDto(username: $username, userEmail: $userEmail, userPhone: $userPhone, gender: $gender, userAnonimus: $userAnonimus, userFirebase: $userFirebase, orders: $orders, basket: $basket, favourites: $favourites, city: $city)';
   }
 
   @override
@@ -316,7 +304,6 @@ class _$_MyUserDto implements _MyUserDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MyUserDto &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.userEmail, userEmail) ||
@@ -339,7 +326,6 @@ class _$_MyUserDto implements _MyUserDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
       username,
       userEmail,
       userPhone,
@@ -367,8 +353,7 @@ class _$_MyUserDto implements _MyUserDto {
 
 abstract class _MyUserDto implements MyUserDto {
   factory _MyUserDto(
-      {required final int id,
-      final String? username,
+      {final String? username,
       final String? userEmail,
       final String? userPhone,
       final String? gender,
@@ -377,13 +362,11 @@ abstract class _MyUserDto implements MyUserDto {
       final List<MyOrderDto>? orders,
       final List<ProductDto>? basket,
       final List<ProductDto>? favourites,
-      required final City city}) = _$_MyUserDto;
+      final City? city}) = _$_MyUserDto;
 
   factory _MyUserDto.fromJson(Map<String, dynamic> json) =
       _$_MyUserDto.fromJson;
 
-  @override
-  int get id;
   @override
   String? get username;
   @override
@@ -403,7 +386,7 @@ abstract class _MyUserDto implements MyUserDto {
   @override
   List<ProductDto>? get favourites;
   @override
-  City get city;
+  City? get city;
   @override
   @JsonKey(ignore: true)
   _$$_MyUserDtoCopyWith<_$_MyUserDto> get copyWith =>

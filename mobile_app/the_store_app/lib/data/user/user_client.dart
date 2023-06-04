@@ -10,5 +10,8 @@ abstract class UserClient {
   factory UserClient(Dio dio, {String baseUrl}) = _UserClient;
 
   @GET(UserUrls.baseUser)
-  Future<MyUserDto> getUserInfo(@Path() int id);
+  Future<MyUserDto> getUserInfo();
+
+  @POST(UserUrls.baseUser)
+  Future<void> updateUser(@Body() MyUserDto userDto);
 }

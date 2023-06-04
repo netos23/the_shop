@@ -12,6 +12,7 @@ class AppRouter extends _$AppRouter {
       [
         AutoRoute(
           page: OnboardingRoute.page,
+
         ),
         AutoRoute(
           page: CityListRoute.page,

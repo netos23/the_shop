@@ -69,51 +69,50 @@ class ButtonsForMethod extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const SizedBox(
-          width: 20,
-        ),
         Expanded(
-          child: OutlinedButton(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: OutlinedButton(
 
-              onPressed: onDelivery,
+                onPressed: onDelivery,
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.zero,
+                        )
+                    )
+                ),
+                child: Center(
+                  child: Text(
+                    "ДОСТАВКА",
+                    style: fonts.labelMedium,
+                  ),
+                )),
+          ),
+        ),
+
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: FilledButton(
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
+                          borderRadius: BorderRadius.zero,
                       )
                   )
               ),
+              onPressed: onPickup,
               child: Center(
                 child: Text(
-                  "ДОСТАВКА",
-                  style: fonts.labelMedium,
+                  "САМОВЫВОЗ",
+                  style: fonts.labelMedium?.copyWith(color: colors.onPrimary),
                 ),
-              )),
-        ),
-        const SizedBox(
-          width: 20,
-        ),
-        Expanded(
-          child: FilledButton(
-            style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                    )
-                )
-            ),
-            onPressed: onPickup,
-            child: Center(
-              child: Text(
-                "САМОВЫВОЗ",
-                style: fonts.labelMedium?.copyWith(color: colors.onPrimary),
               ),
             ),
           ),
         ),
-        const SizedBox(
-          width: 20,
-        ),
+
       ],
     );
   }

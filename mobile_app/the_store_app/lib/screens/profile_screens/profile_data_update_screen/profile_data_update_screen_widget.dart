@@ -18,15 +18,35 @@ class ProfileDataUpdateScreenWidget
 
   @override
   Widget build(IProfileDataUpdateScreenWidgetModel wm) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Мои данные", style: wm.textTheme.titleMedium),
-          centerTitle: true,
-        ),
-        body: _DataUpdateViewWithValidatedForm(
-          wm: wm,
-        ));
+    return WillPopScope(
+      onWillPop: () async{
+        wm.popDialog();
+        return wm.shouldPop;
+      },
+      child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            title: Text("Мои данные", style: wm.textTheme.titleMedium),
+            leading: AutoLeadingButton(
+              color: wm.colorScheme.onBackground,
+            ),
+            centerTitle: true,
+          ),
+          body: EntityStateNotifierBuilder(
+            listenableEntityState: wm.userState,
+            loadingBuilder: (context, user) {
+
+              return const Center(child: PreloaderCircleIndicator());
+            },
+            builder: (context, userState) {
+              wm.updateControllersText();
+              return _DataUpdateViewWithValidatedForm(wm: wm);
+            },
+          )),
+    );
   }
+
+
 }
 
 class _DataUpdateViewWithValidatedForm extends StatefulWidget {
@@ -54,47 +74,43 @@ class _DataUpdateViewWithValidatedFormState
       child: Column(children: [
         CustomTextField(
           validatingController: widget.wm.cityController,
-          initValue: "Населённый пункт",
+          hintValue: "Населённый пункт",
         ),
         CustomTextField(
           validatingController: widget.wm.nameController,
-          initValue: "Иванов Иван",
+          hintValue: "Иванов Иван",
         ),
         CustomTextField(
           phoneNumber: true,
           validatingController: widget.wm.phoneController,
-          initValue: "7 (900) 000 00 00",
+          hintValue: "7 (900) 000 00 00",
         ),
         CustomTextField(
           validatingController: widget.wm.mailController,
-          initValue: "email@mail.com",
+          hintValue: "email@mail.com",
         ),
         Padding(
             padding: const EdgeInsets.all(8.0),
             child: StreamBuilder<String?>(
               stream: widget.wm.genderController.stream,
               builder: (context, genderSnapshot) {
+                String? value = widget.wm.genderController.valueOrNull;
                 return Row(
                   children: [
                     Expanded(
-                      flex : 1,
+                      flex: 1,
                       child: _GenderCheckbox.male(
-                          value: genderSnapshot.data == 'male',
+                          value: value == 'male',
                           onChanged: () {
                             widget.wm.genderController.add('male');
-                            debugPrint(widget.wm.genderController.valueOrNull ?? "empty");
-                            debugPrint(genderSnapshot.data);
                           }),
                     ),
                     Expanded(
                       flex: 1,
                       child: _GenderCheckbox.female(
-                          value: genderSnapshot.data == 'female',
+                          value: value == 'female',
                           onChanged: () {
                             widget.wm.genderController.add('female');
-
-                            debugPrint(widget.wm.genderController.valueOrNull  ?? "empty");
-                            debugPrint(genderSnapshot.data);
                           }),
                     ),
                     Expanded(
@@ -118,16 +134,7 @@ class _DataUpdateViewWithValidatedFormState
             width: double.infinity,
             height: 50,
             child: OutlinedButton(
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero,
-                  )),
-                  side: MaterialStateProperty.all<BorderSide>(BorderSide(
-                    width: 1,
-                    color:
-                        Theme.of(context).extension<ExtraAppColors>()!.border,
-                  ))),
+              style: Theme.of(context).outlinedButtonTheme.style,
               onPressed: () => _showDeleteDialog(),
               child: Text(
                 "УДАЛИТЬ АККАУНТ",
@@ -163,8 +170,9 @@ class _DataUpdateViewWithValidatedFormState
   }
 
   Future<void> _showDeleteDialog() async {
-    var fonts = Theme.of(context).textTheme;
-    var colors = Theme.of(context).colorScheme;
+    final theme = Theme.of(context);
+    final fonts = Theme.of(context).textTheme;
+    final colors = Theme.of(context).colorScheme;
     return showDialog<void>(
       context: context,
       barrierDismissible: false,
@@ -186,12 +194,7 @@ class _DataUpdateViewWithValidatedFormState
                     padding: const EdgeInsets.all(8.0),
                     child: FilledButton(
                       onPressed: () => widget.wm.onDelete(),
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10)))),
+                      style: theme.filledButtonTheme.style,
                       child: Center(
                         child: Text(
                           "ДА",
@@ -209,12 +212,7 @@ class _DataUpdateViewWithValidatedFormState
                     padding: const EdgeInsets.all(8.0),
                     child: FilledButton(
                       onPressed: () => context.router.pop(),
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(10)))),
+                      style: theme.filledButtonTheme.style,
                       child: Center(
                         child: Text(
                           "НЕТ",
@@ -281,7 +279,6 @@ class _GenderCheckbox extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.zero,
               ),
-
               child: Center(
                 child: Visibility(
                   visible: value,
@@ -300,47 +297,9 @@ class _GenderCheckbox extends StatelessWidget {
               gender == 'male' ? 'Муж' : 'Жен',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
-
-
           ],
         ),
       ),
     );
   }
 }
-
-// class _GenderChooseCheckBox extends StatelessWidget{
-//   const _GenderChooseCheckBox({Key? key,
-//     required this.wm,
-//   }) : super(key: key);
-//
-//   final IProfileDataUpdateScreenWidgetModel wm;
-//
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     FormField<bool>(
-//       builder: (FormFieldState<bool> state) {
-//         return CheckboxListTile(
-//           dense: state.hasError,
-//           title: Text("Муж", style: wm.textTheme.bodyLarge),
-//           value: wm.gender,
-//           onChanged: () => gender = !gender,
-//           subtitle: state.hasError
-//               ? Builder(
-//             builder: (BuildContext context) => Text(
-//               state.errorText ?? "",
-//               style: TextStyle(
-//                   color: Theme.of(context).colorScheme.error),
-//             ),
-//           )
-//               : null,
-//           controlAffinity: ListTileControlAffinity.leading,
-//         );
-//       },
-//     );
-//   }
-// }
-//
-//

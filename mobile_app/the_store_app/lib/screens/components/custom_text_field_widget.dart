@@ -8,14 +8,14 @@ class CustomTextField extends StatelessWidget{
 
   const CustomTextField({
     super.key,
-    required this.initValue,
+    required this.hintValue,
     required this.validatingController,
     this.phoneNumber = false,
 
   });
 
   final bool phoneNumber;
-  final String initValue;
+  final String hintValue;
   final TextValidatingController validatingController;
 
   @override
@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget{
     final extraFonts = Theme.of(context).extension<ExtraAppTypography>();
     final colors = Theme.of(context).colorScheme;
 
-    debugPrint(initValue);
+    debugPrint(hintValue);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: TextFormField(
@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget{
           fillColor: colors.surfaceVariant,
           filled: true,
           contentPadding: const EdgeInsets.only(left: 20),
-          hintText: initValue,
+          hintText: hintValue,
 
         ),
       ),

@@ -1,7 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
+import 'package:the_store_app/entity/user/my_user_dto.dart';
+import 'package:the_store_app/internal/logger.dart';
+import 'package:the_store_app/navigation/app_router.dart';
 import 'package:the_store_app/service/service.dart';
 import 'package:the_store_app/util/util_export.dart';
 import 'profile_data_update_screen_model.dart';
@@ -19,23 +24,34 @@ abstract class IProfileDataUpdateScreenWidgetModel extends IWidgetModel
 
   ValueStreamWrapper<String?> get genderController;
 
+  EntityStateNotifier<MyUserDto> get userState;
+
+  bool get shouldPop;
+
+  Future<void> changeState() async {}
+
   void onDelete();
 
   void onSubmit();
+
+  void updateControllersText() {}
+
+  Future<void> popDialog() async {}
 }
 
 ProfileDataUpdateScreenWidgetModel
-    defaultProfileDataUpdateScreenWidgetModelFactory(BuildContext context) {
+defaultProfileDataUpdateScreenWidgetModelFactory(BuildContext context) {
   return ProfileDataUpdateScreenWidgetModel(ProfileDataUpdateScreenModel(
-      errorHandler: context.read(),
-      client: context.read(),
+    errorHandler: context.read(),
+    client: context.read(),
   ));
 }
 
 // TODO: cover with documentation
 /// Default widget model for ProfileDataUpdateScreenWidget
 class ProfileDataUpdateScreenWidgetModel extends WidgetModel<
-        ProfileDataUpdateScreenWidget, ProfileDataUpdateScreenModel>
+    ProfileDataUpdateScreenWidget,
+    ProfileDataUpdateScreenModel>
     with ThemeProvider
     implements IProfileDataUpdateScreenWidgetModel {
   ProfileDataUpdateScreenWidgetModel(ProfileDataUpdateScreenModel model)
@@ -43,27 +59,41 @@ class ProfileDataUpdateScreenWidgetModel extends WidgetModel<
 
   @override
   TextValidatingController cityController =
-      TextValidatingController(func: _validateBasicText);
+  TextValidatingController(func: _validateBasicText);
 
   @override
   TextValidatingController mailController =
-      TextValidatingController(func: _validateMail);
+  TextValidatingController(func: _validateMail);
 
   @override
   TextValidatingController nameController =
-      TextValidatingController(func: _validateBasicText);
+  TextValidatingController(func: _validateBasicText);
 
   @override
   TextValidatingController phoneController =
-      TextValidatingController(func: _validatePhone);
+  TextValidatingController(func: _validatePhone);
 
   @override
   void initWidgetModel() {
     super.initWidgetModel();
-    //здесь лучше сделать запрос к информации юзера и как ты показывал через entityStateNotifier?
-    //genderController.add(profile.gender?? '');
-    genderController.add('male');
-    debugPrint(genderController.valueOrNull ?? 'suka');
+    _getUser();
+  }
+
+  MyUserDto? user;
+
+  Future<void> _getUser() async {
+    userState.loading(userState.value?.data);
+    try {
+      user = await model.getUser();
+      userState.content(user ?? MyUserDto());
+    } catch (e) {
+      context.showSnackBar("Не удалось получить информацию о пользователе");
+    }
+  }
+
+  @override
+  Future<void> changeState() async {
+    _getUser();
   }
 
   static String? _validateBasicText(String? text) {
@@ -81,7 +111,7 @@ class ProfileDataUpdateScreenWidgetModel extends WidgetModel<
       return "Поле обязательно";
     }
     if (!RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(text)) {
       return "Неправильный формат почты";
     }
@@ -105,15 +135,125 @@ class ProfileDataUpdateScreenWidgetModel extends WidgetModel<
 
   @override
   void onSubmit() {
-    // TODO: implement onSubmit
+    MyUserDto userUpdated = MyUserDto(
+      username: nameController.textEditingController.text,
+      userPhone: phoneController.textEditingController.text,
+      userEmail: mailController.textEditingController.text,
+      gender: genderController.value,
+      //city:
+    );
+    logger.log(Logger.level, "user updated: $userUpdated");
+    //updateUser call
   }
 
   @override
   void dispose() {
+    nameController.dispose();
+    phoneController.dispose();
+    mailController.dispose();
+    cityController.dispose();
     genderController.dispose();
     super.dispose();
   }
 
   @override
   ValueStreamWrapper<String?> genderController = ValueStreamWrapper();
+
+  @override
+  late EntityStateNotifier<MyUserDto> userState = EntityStateNotifier<
+      MyUserDto>();
+
+  @override
+  void updateControllersText() {
+    genderController.add(user?.gender ?? 'male');
+    mailController.textEditingController.text = user?.userEmail ?? '';
+    nameController.textEditingController.text = user?.username ?? '';
+    phoneController.textEditingController.text = user?.userPhone ?? '';
+    //city?
+  }
+
+  void _popRouter() {
+    context.router.pop();
+  }
+
+  @override
+  bool shouldPop = false;
+
+  @override
+  Future<void> popDialog() async {
+    final theme = Theme.of(context);
+    final fonts = Theme
+        .of(context)
+        .textTheme;
+    final colors = Theme
+        .of(context)
+        .colorScheme;
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          actionsAlignment: MainAxisAlignment.spaceEvenly,
+          content: Text(
+            "При выходе не сохранённые изменения будут потеряны. Продолжить?",
+            style: fonts.titleMedium,
+            textAlign: TextAlign.center,
+          ),
+          actionsPadding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FilledButton(
+                      onPressed: () {
+                        shouldPop = true;
+                        logger.log(Logger.level, "yes $shouldPop");
+                        context.router.pop();
+                        context.router.navigate(ProfileMainRoute());
+                      },
+                      style: theme.filledButtonTheme.style,
+                      child: Center(
+                        child: Text(
+                          "ДА",
+                          style: fonts.labelMedium?.copyWith(
+                              color: colors.onPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FilledButton(
+                      onPressed: () {
+                        shouldPop = true;
+                        logger.log(Logger.level, "no $shouldPop");
+                        context.router.pop();
+                      },
+                      style: theme.filledButtonTheme.style,
+                      child: Center(
+                        child: Text(
+                          "НЕТ",
+                          style: fonts.labelMedium?.copyWith(
+                              color: colors.onPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

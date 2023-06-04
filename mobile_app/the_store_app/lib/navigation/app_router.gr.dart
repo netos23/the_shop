@@ -27,13 +27,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     OrderDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<OrderDetailsRouteArgs>(
-          orElse: () => const OrderDetailsRouteArgs());
+      final args = routeData.argsAs<OrderDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: OrderDetailsScreenWidget(
           key: args.key,
           wmFactory: args.wmFactory,
+          index: args.index,
         ),
       );
     },
@@ -155,12 +155,14 @@ class OrderDetailsRoute extends PageRouteInfo<OrderDetailsRouteArgs> {
     WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
             BuildContext)
         wmFactory = defaultOrderDetailsScreenWidgetModelFactory,
+    required int index,
     List<PageRouteInfo>? children,
   }) : super(
           OrderDetailsRoute.name,
           args: OrderDetailsRouteArgs(
             key: key,
             wmFactory: wmFactory,
+            index: index,
           ),
           initialChildren: children,
         );
@@ -175,6 +177,7 @@ class OrderDetailsRouteArgs {
   const OrderDetailsRouteArgs({
     this.key,
     this.wmFactory = defaultOrderDetailsScreenWidgetModelFactory,
+    required this.index,
   });
 
   final Key? key;
@@ -182,9 +185,11 @@ class OrderDetailsRouteArgs {
   final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
       BuildContext) wmFactory;
 
+  final int index;
+
   @override
   String toString() {
-    return 'OrderDetailsRouteArgs{key: $key, wmFactory: $wmFactory}';
+    return 'OrderDetailsRouteArgs{key: $key, wmFactory: $wmFactory, index: $index}';
   }
 }
 

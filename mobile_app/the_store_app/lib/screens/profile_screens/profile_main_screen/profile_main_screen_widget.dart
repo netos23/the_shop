@@ -69,11 +69,13 @@ class ProfileMainScreenWidget
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: SizedBox(
-                width: double.infinity,
-                child: CustomFilledButton(
-                  onTap: () => wm.unAuthorize(),
-                  text: "ВЫЙТИ",
-                )
+                height: 50,
+                child: Center(
+                  child: CustomFilledButton(
+                    onTap: () => wm.showUnAuthDialog(),
+                    text: "ВЫЙТИ",
+                  ),
+                ),
               ),
             ),
           )
@@ -81,6 +83,11 @@ class ProfileMainScreenWidget
       ),
     );
   }
+
+
+
+
+
 }
 
 class _ProfileButton extends StatelessWidget {

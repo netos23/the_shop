@@ -15,6 +15,7 @@ class ShortProduct with _$ShortProduct {
     required String productName,
     required Decimal productPrice,
     Decimal? productOldPrice,
+    required int basketQuantity,
     required List<String> pictures,
   }) = _ShortProduct;
 

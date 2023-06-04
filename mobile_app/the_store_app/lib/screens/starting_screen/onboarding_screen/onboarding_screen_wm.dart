@@ -11,6 +11,8 @@ import 'onboarding_screen_widget.dart';
 abstract class IOnboardingScreenWidgetModel extends IWidgetModel
 implements IThemeProvider{
   onSelect() {}
+
+  PageController get pageController;
 }
 
 OnboardingScreenWidgetModel defaultOnboardingScreenWidgetModelFactory(BuildContext context) {
@@ -33,4 +35,8 @@ class OnboardingScreenWidgetModel extends WidgetModel<OnboardingScreenWidget, On
     context.router.navigate(CityListRoute());
 
   }
+
+  @override
+  // TODO: implement pageController
+  PageController pageController = PageController();
 }

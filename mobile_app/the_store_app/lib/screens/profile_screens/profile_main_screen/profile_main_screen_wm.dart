@@ -15,6 +15,8 @@ abstract class IProfileMainScreenWidgetModel extends IWidgetModel implements ITh
   myOrdersPressed() {}
 
   unAuthorize() {}
+
+  Future<void> showUnAuthDialog() async{}
 }
 
 ProfileMainScreenWidgetModel defaultProfileMainScreenWidgetModelFactory(BuildContext context) {
@@ -55,4 +57,83 @@ class ProfileMainScreenWidgetModel
     // TODO: implement unAuthorize
 
   }
+
+  @override
+  Future<void> showUnAuthDialog() async {
+    final theme = Theme.of(context);
+    final fonts = Theme
+        .of(context)
+        .textTheme;
+    final colors = Theme
+        .of(context)
+        .colorScheme;
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          actionsAlignment: MainAxisAlignment.spaceEvenly,
+          content: Text(
+            "Выйти из аккаунта? Ваши данные будут сохранены",
+            style: fonts.titleMedium,
+            textAlign: TextAlign.center,
+          ),
+          actionsPadding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FilledButton(
+                      onPressed: () {
+
+
+                        context.router.pop();
+                        unAuthorize();
+                      },
+                      style: theme.filledButtonTheme.style,
+                      child: Center(
+                        child: Text(
+                          "ДА",
+                          style: fonts.labelMedium?.copyWith(
+                              color: colors.onPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FilledButton(
+                      onPressed: () {
+                        context.router.pop();
+                      },
+                      style: theme.filledButtonTheme.style,
+                      child: Center(
+                        child: Text(
+                          "НЕТ",
+                          style: fonts.labelMedium?.copyWith(
+                              color: colors.onPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+
 }

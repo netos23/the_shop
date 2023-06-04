@@ -12,6 +12,24 @@ class App extends StatelessWidget {
     return MaterialApp.router(
 
       theme: ThemeData(
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  )),
+              side: MaterialStateProperty.all<BorderSide>(const BorderSide(
+                width: 1,
+                color: AppColor.border,
+              ))),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ))),
+        ),
         textTheme: TextTheme(
           bodySmall: AppTypography.bodySmall,
           bodyMedium: AppTypography.mediumBodySmall12pt,
@@ -25,6 +43,7 @@ class App extends StatelessWidget {
           primary: AppColor.black,
           onPrimary: AppColor.white,
           secondary: AppColor.black50,
+          secondaryContainer: AppColor.darkerGray, //for darker text
           onSecondary: AppColor.black,
           error: AppColor.red,
           onError: AppColor.white,

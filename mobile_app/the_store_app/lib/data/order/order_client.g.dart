@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_client.dart';
+part of 'order_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'user_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _UserClient implements UserClient {
-  _UserClient(
+class _OrderClient implements OrderClient {
+  _OrderClient(
     this._dio, {
     this.baseUrl,
   });
@@ -19,46 +19,49 @@ class _UserClient implements UserClient {
   String? baseUrl;
 
   @override
-  Future<MyUserDto> getUserInfo() async {
+  Future<MyOrderDto> getOrder(dynamic id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<MyUserDto>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<MyOrderDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/user/',
+              '/order/{orderId}',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = MyUserDto.fromJson(_result.data!);
+    final value = MyOrderDto.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<void> updateUser(MyUserDto userDto) async {
+  Future<MyOrderDto> createOrder(MyOrderDto order) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = userDto;
-    await _dio.fetch<void>(_setStreamType<void>(Options(
+    final _data = order;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<MyOrderDto>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/user/',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+            .compose(
+              _dio.options,
+              '/order/create',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = MyOrderDto.fromJson(_result.data!);
+    return value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

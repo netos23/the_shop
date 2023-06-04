@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:the_store_app/screens/components/components.dart';
 import 'onboarding_screen_wm.dart';
@@ -17,7 +18,10 @@ class OnboardingScreenWidget
 
   @override
   Widget build(IOnboardingScreenWidgetModel wm) {
-    final PageController controller = PageController();
+    SystemChrome.setPreferredOrientations(([
+      DeviceOrientation.portraitUp
+    ]));
+    final controller = wm.pageController;
     List<Widget> pages = [
       OnboardingPage(
           text: "1",
@@ -60,62 +64,60 @@ class OnboardingScreenWidget
         ],
       ),
       body: SafeArea(
-        child: Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              const SizedBox(height: 16),
-              SizedBox(
-                height: 600,
-                child: PageView.builder(
-                  controller: controller,
-                  // itemCount: pages.length,
-                  itemBuilder: (_, index) {
-                    return pages[index % pages.length];
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SizedBox(
-                    height: 50,
-                    child: CustomFilledButton(
-                        onTap: () => controller.nextPage(
-                            duration: const Duration(milliseconds: 400),
-                            curve: Curves.easeIn),
-                        text: "Далее")),
-              ),
-              SmoothPageIndicator(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 16),
+            SizedBox(
+              height: 600,
+              child: PageView.builder(
                 controller: controller,
-                count: 4,
-                effect: CustomizableEffect(
+                // itemCount: pages.length,
+                itemBuilder: (_, index) {
+                  return pages[index % pages.length];
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                  height: 50,
+                  child: CustomFilledButton(
+                      onTap: () => controller.nextPage(
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeIn),
+                      text: "Далее")),
+            ),
+            SmoothPageIndicator(
+              controller: controller,
+              count: 4,
+              effect: CustomizableEffect(
 
-                spacing: 15,
+              spacing: 15,
 
-                activeDotDecoration: DotDecoration(
+              activeDotDecoration: DotDecoration(
 
-                  color: wm.colorScheme.onPrimary,
-                  width: 8,
-                  height: 8,
+                color: wm.colorScheme.onPrimary,
+                width: 8,
+                height: 8,
 
-                  borderRadius: BorderRadius.circular(6),
-                  dotBorder: DotBorder(
+                borderRadius: BorderRadius.circular(6),
+                dotBorder: DotBorder(
 
-                    width: 2,
-                    color: wm.colorScheme.primary,
-                  ),
-                ),
-                dotDecoration: DotDecoration(
-                  width: 10,
-                  height: 10,
+                  width: 2,
                   color: wm.colorScheme.primary,
-                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              )
-            ],
-          ),
+              dotDecoration: DotDecoration(
+                width: 10,
+                height: 10,
+                color: wm.colorScheme.primary,
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            )
+          ],
         ),
       ),
     );
@@ -138,14 +140,16 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Padding(
-        padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
-        child: CardWithText(
-          text: text,
-          assetPath: assetPath,
-        ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(60, 64, 60, 0),
+      child: Column(
+        children: [
+          CardWithText(
+            text: text,
+            assetPath: assetPath,
+          ),
+        ],
       ),
-    ]);
+    );
   }
 }

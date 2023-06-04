@@ -10,7 +10,6 @@ part 'my_user_dto.g.dart';
 )
 class MyUserDto with _$MyUserDto{
   factory MyUserDto({
-    required int id,
     String? username,
     String? userEmail,
     String? userPhone,
@@ -20,7 +19,7 @@ class MyUserDto with _$MyUserDto{
     List<MyOrderDto>? orders,
     List<ProductDto>? basket,
     List<ProductDto>? favourites,
-    required City city,
+    City? city,
 }) = _MyUserDto;
 
   factory MyUserDto.fromJson(Map<String, dynamic> json) => _$MyUserDtoFromJson(json);

@@ -12,21 +12,20 @@ class CardWithText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          Padding(
+    return Column(
+      children: [
+        SizedBox(
+          height: 300,
+          child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-            child: SizedBox(
-                height: 300,
-                child: Image.asset(assetPath)),
+            child: Image.asset(assetPath),
           ),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-        ],
-      ),
+        ),
+        Text(
+          text,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ],
     );
   }
 }

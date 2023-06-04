@@ -9,6 +9,7 @@ final class AppColor {
   static const Color white = Colors.white;
   static const Color gray = Color(0xFFF9F9F9);
   static const Color darkGray = Color(0xFF7D7D7D);
+  static const Color darkerGray = Color(0xFF595959);
   static const Color red = Colors.red;
   static const Color grayTextField = Color(0xFFF0F0F0);
 }

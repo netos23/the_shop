@@ -12,16 +12,14 @@ class ProfileDataUpdateScreenModel extends ElementaryModel {
   final UserClient client;
   MyUserDto? userDto;
 
-  Future<MyUserDto> getUser(int id) async{
+  Future<MyUserDto> getUser() async{
     //repo call
-    //откуда мы берём id чтобы сделать запрос в user/{id}?
-
-    return MyUserDto(id: 0,
-        username: "Ясо сучлены",
+    await Future.delayed(const Duration(seconds: 1));
+    return MyUserDto(username: "Ясо сучлены",
         userEmail: "123@email.com",
-        gender: 'male',
+        gender: 'female',
         userPhone: "81231212123",
 
-        city: City(name: 'qewr', region: 'qwe', cityId: 'q'));
+        );
   }
 }
