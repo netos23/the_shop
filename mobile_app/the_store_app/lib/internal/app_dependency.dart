@@ -44,9 +44,7 @@ class AppDependency extends StatelessWidget {
               ..receiveTimeout = config.timeout
               ..sendTimeout = config.timeout;
 
-            if (kDebugMode) {
-              dio.interceptors.add(PrettyDioLogger());
-            }
+
 
             return dio;
           },

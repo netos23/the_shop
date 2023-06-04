@@ -1,13 +1,16 @@
 import 'package:core/core.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-mixin ClientAuthServiceMixin on AsyncInitLifecycleComponent {
-  @override
+mixin ClientAuthServiceMixin {
+  Dio get dio;
+
   Future<void> asyncInit() async {
     final user = FirebaseAuth.instance.currentUser;
 
     if (user == null) {
-      FirebaseAuth.instance.signInAnonymously();
+      await FirebaseAuth.instance.signInAnonymously();
+      dio.post('/user/registration').ignore();
     }
   }
 }

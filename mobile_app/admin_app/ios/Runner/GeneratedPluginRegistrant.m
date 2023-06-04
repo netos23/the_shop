@@ -24,18 +24,6 @@
 @import firebase_core;
 #endif
 
-#if __has_include(<firebase_crashlytics/FLTFirebaseCrashlyticsPlugin.h>)
-#import <firebase_crashlytics/FLTFirebaseCrashlyticsPlugin.h>
-#else
-@import firebase_crashlytics;
-#endif
-
-#if __has_include(<firebase_performance/FLTFirebasePerformancePlugin.h>)
-#import <firebase_performance/FLTFirebasePerformancePlugin.h>
-#else
-@import firebase_performance;
-#endif
-
 #if __has_include(<firebase_remote_config/FLTFirebaseRemoteConfigPlugin.h>)
 #import <firebase_remote_config/FLTFirebaseRemoteConfigPlugin.h>
 #else
@@ -48,10 +36,40 @@
 @import path_provider_foundation;
 #endif
 
+#if __has_include(<share_plus/FLTSharePlusPlugin.h>)
+#import <share_plus/FLTSharePlusPlugin.h>
+#else
+@import share_plus;
+#endif
+
 #if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)
 #import <shared_preferences_foundation/SharedPreferencesPlugin.h>
 #else
 @import shared_preferences_foundation;
+#endif
+
+#if __has_include(<smart_auth/SmartAuthPlugin.h>)
+#import <smart_auth/SmartAuthPlugin.h>
+#else
+@import smart_auth;
+#endif
+
+#if __has_include(<sqflite/SqflitePlugin.h>)
+#import <sqflite/SqflitePlugin.h>
+#else
+@import sqflite;
+#endif
+
+#if __has_include(<url_launcher_ios/FLTURLLauncherPlugin.h>)
+#import <url_launcher_ios/FLTURLLauncherPlugin.h>
+#else
+@import url_launcher_ios;
+#endif
+
+#if __has_include(<webview_flutter_wkwebview/FLTWebViewFlutterPlugin.h>)
+#import <webview_flutter_wkwebview/FLTWebViewFlutterPlugin.h>
+#else
+@import webview_flutter_wkwebview;
 #endif
 
 #if __has_include(<yandex_mapkit/YandexMapkitPlugin.h>)
@@ -66,11 +84,14 @@
   [FLTFirebaseAnalyticsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAnalyticsPlugin"]];
   [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
-  [FLTFirebaseCrashlyticsPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCrashlyticsPlugin"]];
-  [FLTFirebasePerformancePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebasePerformancePlugin"]];
   [FLTFirebaseRemoteConfigPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseRemoteConfigPlugin"]];
   [PathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"PathProviderPlugin"]];
+  [FLTSharePlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharePlusPlugin"]];
   [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
+  [SmartAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"SmartAuthPlugin"]];
+  [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
+  [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];
+  [FLTWebViewFlutterPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTWebViewFlutterPlugin"]];
   [YandexMapkitPlugin registerWithRegistrar:[registry registrarForPlugin:@"YandexMapkitPlugin"]];
 }
 

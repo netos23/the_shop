@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:the_store_app/domain/delivery/delivery_service.dart';
+import 'package:the_store_app/entity/delivery/delivery_method.dart';
 import 'package:the_store_app/entity/delivery/pickup_point.dart';
 import 'package:the_store_app/internal/di_container.dart';
 import 'package:the_store_app/navigation/app_router.dart';
@@ -248,7 +249,9 @@ class MapPointsScreenWidgetModel
     );
     // TODO(netos23): persist
     if (data != null) {
-      router.pop(data);
+      router.pop(
+        DeliveryMethod.shop(point: data),
+      );
     }
   }
 

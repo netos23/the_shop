@@ -17,7 +17,15 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  await DiContainer().asyncInit();
+  final appConfig = AppConfig(
+    dadataKey: '603bb84c98131f6cc1c0a20dd1a34f349307b086',
+    baseUrl: 'https://the-store.fbtw.ru/',
+    timeout: const Duration(seconds: 15),
+  );
+
+  await DiContainer().asyncInit(
+    appConfig,
+  );
 
   FlutterError.onError = (details) {
     if (!kIsWeb) {
@@ -35,11 +43,7 @@ Future<void> main() async {
         showSemanticsDebugger: false,
         debugShowCheckedModeBanner: false,
       ),
-      config: AppConfig(
-        dadataKey: '603bb84c98131f6cc1c0a20dd1a34f349307b086',
-        baseUrl: 'https://the-store.fbtw.ru/',
-        timeout: const Duration(seconds: 15),
-      ),
+      config: appConfig,
       child: App(),
     ),
   );

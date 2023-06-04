@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kiwi/kiwi.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:the_store_app/domain/auth/auth_interceptor.dart';
 import 'package:the_store_app/domain/auth/native_auth_srvice.dart';
 import 'package:the_store_app/domain/auth/web_auth_service.dart';
 import 'package:the_store_app/domain/delivery/delivery_service.dart';
@@ -21,7 +23,7 @@ class DiContainer implements AsyncInitLifecycleComponent {
   final KiwiContainer container = KiwiContainer();
 
   @override
-  Future<void> asyncInit() async {
+  Future<void> asyncInit([AppConfig? config]) async {
     // error handler
     final errorHandler = DefaultErrorHandler()..init();
     container.registerInstance<ErrorHandler>(errorHandler);
@@ -43,20 +45,45 @@ class DiContainer implements AsyncInitLifecycleComponent {
     final cityService = CityService(cityRepo: cityRepository);
     container.registerInstance(cityService);
 
-    // auth
-    final authService = kIsWeb
-        ? StoreWebAuthService(errorHandler: errorHandler)
-        : StoreNativeAuthService(errorHandler: errorHandler);
-    container.registerInstance(authService);
 
     // dio
-    container.registerSingleton(
-      (_) => Dio(),
-    );
+    final dio = Dio();
+    dio.options
+      ..baseUrl = config?.baseUrl ?? ''
+      ..connectTimeout = config?.timeout
+      ..receiveTimeout = config?.timeout
+      ..sendTimeout = config?.timeout;
+
+    if (kDebugMode) {
+      dio.interceptors.add(PrettyDioLogger());
+    }
+
+    dio.interceptors.add(JwtInterceptor());
+    container.registerInstance(dio);
+
+    // auth
+    final AsyncInitLifecycleComponent authService;
+
+    if (kIsWeb) {
+      final webAuthService = StoreWebAuthService(
+        dio: dio,
+        errorHandler: errorHandler,
+      );
+      authService = webAuthService;
+      container.registerInstance<AuthService>(webAuthService);
+    } else {
+      final nativeAuthService = StoreNativeAuthService(
+        dio: dio,
+        errorHandler: errorHandler,
+      );
+      authService = nativeAuthService;
+      container.registerInstance<AuthService>(nativeAuthService);
+    }
 
     await Future.wait([
       deliveryService.asyncInit(),
       cityService.asyncInit(),
+      authService.asyncInit(),
     ]);
   }
 

@@ -59,7 +59,7 @@ class StartingMethodScreenWidgetModel
     model.saveDelivery(res);
 
     if (context.router.canPop()) {
-      router.pop();
+      router.pop(res);
     } else {
       router.replace(HomeRoute());
     }

@@ -23,6 +23,9 @@ class MapPointsScreenWidget
     return Scaffold(
       backgroundColor: wm.colorScheme.background,
       appBar: AppBar(
+        leading: BackButton(
+          color: wm.colorScheme.primary,
+        ),
         title: const Text('Пункты самовывоза'),
         bottom: TabBar(
           controller: wm.tabController,

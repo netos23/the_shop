@@ -45,7 +45,8 @@ class App extends StatelessWidget {
           primary: AppColor.black,
           onPrimary: AppColor.white,
           secondary: AppColor.black50,
-          secondaryContainer: AppColor.darkerGray, //for darker text
+          secondaryContainer: AppColor.darkerGray,
+          //for darker text
           onSecondary: AppColor.black,
           error: AppColor.red,
           onError: AppColor.white,
@@ -98,11 +99,7 @@ class App extends StatelessWidget {
           } else {
             page = HomeRoute();
           }
-//TODO
-          //todo убрать нахуй
-          page = FavouritesRoute();
-          //TODO
-          //todo
+
           return DeepLink(
             [page],
           );

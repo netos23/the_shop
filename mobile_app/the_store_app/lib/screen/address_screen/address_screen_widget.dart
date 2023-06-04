@@ -24,7 +24,7 @@ class AddressScreenWidget extends ElementaryWidget<IAddressScreenWidgetModel> {
     return UnFocusDetector(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Выбор города'),
+          title: const Text('Выберите адрес доставки'),
           leading: BackButton(
             color: wm.colorScheme.primary,
           ),
