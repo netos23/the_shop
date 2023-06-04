@@ -23,6 +23,7 @@ class AppRouter extends _$AppRouter {
           page: AddressRoute.page,
         ),
         AutoRoute(page: StartingMethodRoute.page),
+    AutoRoute(page: DeliveryRegistrationRoute.page),
         AutoRoute(
           page: HomeRoute.page,
           initial: true,

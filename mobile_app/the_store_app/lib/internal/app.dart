@@ -98,11 +98,8 @@ class App extends StatelessWidget {
           } else {
             page = HomeRoute();
           }
-//TODO
-          //todo убрать нахуй
-          page = FavouritesRoute();
-          //TODO
-          //todo
+
+          page = DeliveryRegistrationRoute();
           return DeepLink(
             [page],
           );

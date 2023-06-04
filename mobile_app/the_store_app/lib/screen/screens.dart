@@ -13,3 +13,6 @@ export 'favourites_screen/favourites_screen.dart';
 export 'home_screen/home_screen.dart';
 export 'profile_screen/profile_screen.dart';
 export 'show_case_screen/show_case_screen.dart';
+export 'step_screen/delivery_registration_screen/delivery_registration_screen_widget.dart';
+export 'step_screen/delivery_registration_screen/delivery_registration_screen_wm.dart';
+export 'step_screen/delivery_registration_screen/delivery_registration_screen_model.dart';

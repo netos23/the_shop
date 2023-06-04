@@ -88,6 +88,8 @@ class AddressScreenWidgetModel
       baseOffset: text.length,
       extentOffset: text.length,
     );
+
+
   }
 
   @override
