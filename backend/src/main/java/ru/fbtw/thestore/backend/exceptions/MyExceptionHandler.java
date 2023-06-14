@@ -13,31 +13,31 @@ import java.util.NoSuchElementException;
 @RestControllerAdvice
 public class MyExceptionHandler {
     @ExceptionHandler(NoSuchElementException.class)
-    public ResponseEntity notFoundException(NoSuchElementException exception) {
+    public ResponseEntity<?> notFoundException(NoSuchElementException exception) {
         return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
+                .status(HttpStatus.BAD_REQUEST)
                 .body(exception.getMessage());
     }
     @ExceptionHandler(NullPointerException.class)
-    public ResponseEntity nullPointerException(NullPointerException exception) {
+    public ResponseEntity<?> nullPointerException(NullPointerException exception) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(exception.getMessage());
     }
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity propertyNameException(RuntimeException exception) {
+    public ResponseEntity<?> propertyNameException(RuntimeException exception) {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
                 .body(exception.getMessage());
     }
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity argumentNotValid(MethodArgumentNotValidException exception) {
+    public ResponseEntity<?> argumentNotValid(MethodArgumentNotValidException exception) {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(exception.getMessage());
     }
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity invalidFieldFormat(ConstraintViolationException exception) {
+    public ResponseEntity<?> invalidFieldFormat(ConstraintViolationException exception) {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(exception.getMessage());

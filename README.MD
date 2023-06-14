@@ -35,3 +35,4 @@
 ![Debug view](docs/analitics/analitics1.png)
 ![Debug view](docs/analitics/analitics2.png)
 ![Debug view](docs/analitics/analitics0.png)
+![Debug view](docs/analitics/analitics3.png)

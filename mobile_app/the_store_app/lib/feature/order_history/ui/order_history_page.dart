@@ -53,6 +53,26 @@ class OrderHistoryPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final order = orders[index];
 
+                    final String status;
+
+                    switch (order.status ?? 0) {
+                      case 0:
+                        status = 'Оплачен';
+                        break;
+                      case 1:
+                        status = 'Укомплектован';
+                        break;
+                      case 2:
+                        status = 'Выполнен';
+                        break;
+                      case 3:
+                        status = 'Отменен';
+                        break;
+                      default:
+                        status = 'Неизвестный';
+                        break;
+                    }
+
                     return Card(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -65,7 +85,7 @@ class OrderHistoryPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Заказ № ${order.id}: Оплачен',
+                                  'Заказ № ${order.id}: $status',
                                   style: textTheme.bodyMedium?.copyWith(
                                     color: colorTheme.onBackground,
                                   ),
@@ -90,14 +110,15 @@ class OrderHistoryPage extends StatelessWidget {
                                 scrollDirection: Axis.horizontal,
                                 physics: const BouncingScrollPhysics(),
                                 shrinkWrap: true,
-                            itemBuilder: (context, index) {
-                              final item = order.items[index];
+                                itemBuilder: (context, index) {
+                                  final item = order.items[index];
 
                                   return SizedBox(
                                     width: 100,
                                     height: 140,
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
@@ -120,7 +141,8 @@ class OrderHistoryPage extends StatelessWidget {
                                         Flexible(
                                           child: Text(
                                             item.name,
-                                            style: textTheme.bodySmall?.copyWith(
+                                            style:
+                                                textTheme.bodySmall?.copyWith(
                                               color: colorTheme.onBackground,
                                             ),
                                           ),
