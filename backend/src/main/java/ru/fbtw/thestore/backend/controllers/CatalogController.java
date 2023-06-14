@@ -16,9 +16,11 @@ import ru.fbtw.thestore.backend.data.catalog.dto.CategoryDto;
 import ru.fbtw.thestore.backend.data.catalog.dto.CompactProductDto;
 import ru.fbtw.thestore.backend.data.catalog.dto.ProductDto;
 import ru.fbtw.thestore.backend.data.catalog.dto.ProductPageDto;
+import ru.fbtw.thestore.backend.data.request.FeedUpdateRequest;
 import ru.fbtw.thestore.backend.domains.catalog.enums.ProductSort;
 import ru.fbtw.thestore.backend.services.CategoryService;
 import ru.fbtw.thestore.backend.services.ProductService;
+import ru.fbtw.thestore.backend.services.UpdateFeedService;
 
 import java.io.File;
 import java.util.List;
@@ -30,6 +32,7 @@ import java.util.List;
 public class CatalogController {
     private final CategoryService categoryService;
     private final ProductService productService;
+    private final UpdateFeedService updateFeedService;
 
     @GetMapping()
     @Operation(summary = "Getting products page by page", responses = {
@@ -95,14 +98,20 @@ public class CatalogController {
         return productService.getProductById(id);
     }
 
-    @PostMapping("product/add")
-    @Operation(summary = "Обновление каталога, @RequestBody File file пока так," +
-            "если не так, то я изменю", tags = "catalog")
-    public void updateProducts(@RequestBody File file) {
-        throw new RuntimeException();
+    @PostMapping("/updateFeed")
+    @Operation(summary = "Updating all catalog", responses = {
+            @ApiResponse(responseCode = "200", description = "Updated", content = {
+                    @Content(mediaType = "application/json")
+            }),
+            @ApiResponse(responseCode = "500", description = "An error occurred while updating", content = {
+                    @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEntity.class))
+            })
+    })
+    public void updateFeed(@RequestBody FeedUpdateRequest feedUpdateRequest) {
+        updateFeedService.updateFeed(feedUpdateRequest);
     }
-    // TODO:
-    //  отдельный эндпоинт на обновление фида целиком
+
 
     @GetMapping("/category")
     @Operation(summary = "Getting list of categories", responses = {

@@ -42,6 +42,12 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>9.1.1</version>
+        </dependency>
+
         <!-- swagger-->
         <dependency>
             <groupId>org.springdoc</groupId>

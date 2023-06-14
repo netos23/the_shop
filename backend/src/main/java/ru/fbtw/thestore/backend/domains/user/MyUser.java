@@ -46,7 +46,7 @@ public class MyUser implements UserDetails {
     private Boolean userAnonimus = false;
 
     @Column(name = "user_firebase", nullable = false)
-    private Long userFirebase;
+    private String userFirebase;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
@@ -109,7 +109,7 @@ public class MyUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return userEmail;
+        return username;
     }
 
     @Override

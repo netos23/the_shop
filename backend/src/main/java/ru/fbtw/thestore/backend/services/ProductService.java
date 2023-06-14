@@ -14,6 +14,8 @@ import ru.fbtw.thestore.backend.domains.catalog.Product;
 import ru.fbtw.thestore.backend.domains.catalog.enums.ProductSort;
 import ru.fbtw.thestore.backend.repositories.ProductRepository;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductService {
@@ -33,6 +35,7 @@ public class ProductService {
         ProductDto productDto = productMapper.toDto(product);
         return productDto;
     }
+
 
     public CompactProductDto getCompactProductProductById(Long id) {
         Product product = productRepository.findById(id).orElseThrow();
@@ -62,5 +65,25 @@ public class ProductService {
         Product product = productRepository.findById(productId).orElseThrow();
         product.setBasketQuantity(product.getBasketQuantity()+1);
         productRepository.save(product);
+    }
+    @Transactional
+    public Integer updateBasketQuantityAfterRemove(Long productId) {
+        Product product = productRepository.findById(productId).orElseThrow();
+        if(product.getBasketQuantity() == 0){
+            product.setBasketQuantity(0);
+        } else {
+            product.setBasketQuantity(product.getBasketQuantity()-1);
+        }
+        return productRepository.save(product).getBasketQuantity();
+    }
+
+    @Transactional
+    public void deleteAllProducts(){
+        productRepository.deleteAll();
+    }
+    @Transactional
+    public void updateProductFeed(List<ProductDto> products){
+        List<Product> newProducts = products.stream().map(productMapper::toEntity).toList();
+        productRepository.saveAll(newProducts);
     }
 }

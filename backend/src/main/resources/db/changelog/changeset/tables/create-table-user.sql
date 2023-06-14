@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS my_user
     user_email VARCHAR(200) NOT NULL,
     user_phone VARCHAR(12) NOT NULL,
     user_anonimus BOOLEAN DEFAULT TRUE NOT NULL,
-    user_firebase BIGINT NOT NULL,
+    user_firebase VARCHAR(50) NOT NULL,
     city_id BIGINT REFERENCES city(city_id) ON DELETE CASCADE NOT NULL
 );

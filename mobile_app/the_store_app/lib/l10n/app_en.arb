@@ -1,0 +1,1695 @@
+{
+  "@@last_modified": "2021-11-26T16:18:52.473222",
+  "@@locale": "en",
+  "loginByPhone": "Login by phone",
+  "@loginByPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginByEmail": "Login by e-mail",
+  "@loginByEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginBySocialNetwork": "Login by social network",
+  "@loginBySocialNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgotPassword": "Forgot password?",
+  "@forgotPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "restorePassword": "Restore password",
+  "@restorePassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTitle": "Do you realy\nwant to log out?",
+  "@logoutTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutYes": "Yes",
+  "@logoutYes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutNo": "No",
+  "@logoutNo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameIsRequired": "Name is required",
+  "@nameIsRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "technology": "technology",
+  "@technology": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "byLoggingIn": "By Logging In, I agree to the terms",
+  "@byLoggingIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "Error",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantGoToSiteNo": "No",
+  "@wantGoToSiteNo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantGoToSiteYes": "Yes",
+  "@wantGoToSiteYes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "Ok",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "skip": "Skip",
+  "@skip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "E-mail",
+  "@email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "profile": "Profile",
+  "@profile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourEmail": "Your e-mail",
+  "@yourEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userAgreementTitle": "User agreement",
+  "@userAgreementTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userAgreement": "user agreement",
+  "@userAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "and": " and ",
+  "@and": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offerAgreement": "offer contract",
+  "@offerAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourPhone": "Your phone",
+  "@yourPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendCode": "Send code",
+  "@sendCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkSms": "Check sms-code",
+  "@checkSms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkCart": "ORDER VERIFICATION",
+  "@checkCart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCodeViaSms": "We have sent you a code via SMS. Enter it in the box below.",
+  "@weSentCodeViaSms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkEmail": "Check your email",
+  "@checkEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCodeViaEmail": "We have sent you a code via email. Enter it in the box below.",
+  "@weSentCodeViaEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weSentCode": "We have sent you a code via SMS. Enter it in the box below.",
+  "@weSentCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCode": "Resend code",
+  "@resendCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCodeWait": "Wait",
+  "@resendCodeWait": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendCodeSec": "sec",
+  "@resendCodeSec": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personalData": "Personal data",
+  "@personalData": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "man": "Man",
+  "@man": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "woman": "Woman",
+  "@woman": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourName": "Your name",
+  "@yourName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourAge": "Your age",
+  "@yourAge": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "over51": "over 51",
+  "@over51": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToScan": "Go to scan",
+  "@goToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToProducts": "OPEN CATALOG",
+  "@goToProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyBasket": "The basket is still empty :(\n Waiting for you to fill it!",
+  "@emptyBasket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "minimalPrice": "Minimum order amount {moneyMin}",
+  "@minimalPrice": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "expectedPrice": "Add products for another {moneyMin}",
+  "@expectedPrice": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "discount": "Discount: {moneyMin}",
+  "@discount": {
+    "type": "text",
+    "placeholders": {
+      "moneyMin": {
+        "type": "String",
+        "example": "$100"
+      }
+    }
+  },
+  "description": "Description",
+  "@description": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "specifications": "Specifications",
+  "@specifications": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "choseCityName": "Enter the name of the city",
+  "@choseCityName": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "emptyProductsSearch": "We can't find what you're looking for :(\nTry changing the request.",
+  "@emptyProductsSearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "emptySearch": "No products were found for your request",
+  "@emptySearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "historySearch": "Search history",
+  "@historySearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "clear": "Clear",
+  "@clear": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "oftenSearch": "Often looking for",
+  "@oftenSearch": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "toFavourites": "ADD TO FAVORITES",
+  "@toFavourites": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "inFavourites": "FAVORITE",
+  "@inFavourites": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "inBasket": "IN BASKET",
+  "@inBasket": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "total": "Total: ",
+  "@total": {
+    "type": "text",
+    "placeholders": {
+    }
+  },
+  "promoCode": "PROMO CODE",
+  "@promoCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "applyPromoCode": "APPLY",
+  "@applyPromoCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weNeedThisData": "We need this data in order to give you better sizing guidelines",
+  "@weNeedThisData": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "models": "Models",
+  "@models": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "basket": "Basket",
+  "@basket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "catalog": "Catalog",
+  "@catalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "save": "Save",
+  "@save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youNeedToScan": "You need to scan",
+  "@youNeedToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aRoomWithUniformLighting": "A room with uniform lighting",
+  "@aRoomWithUniformLighting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newNotCrumpledA4Sheet": "New, not crumpled A4 sheet",
+  "@newNotCrumpledA4Sheet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newUpdateRespect": "A new version of the STREET BEAT is available",
+  "@newUpdateRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smoothFloorDarkerThanA4Sheet": "Smooth floor darker than A4 sheet",
+  "@smoothFloorDarkerThanA4Sheet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blackSocksOrTights": "Black socks or tights",
+  "@blackSocksOrTights": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "beforeScan": "Before scan",
+  "@beforeScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wearBlackSocksOrTights": "Wear black socks or tights",
+  "@wearBlackSocksOrTights": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openMap": "Open the map",
+  "@openMap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openYourShinToTheKnee": "Open your shin to the knee",
+  "@openYourShinToTheKnee": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "placeYourFoot": "Place your foot in the center of A4 paper along the long side (the foot should not go over the edges of the sheet) and do not move it",
+  "@placeYourFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forAccurateScanning": "For accurate scanning",
+  "@forAccurateScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "freeUpSpace": "Free up space around A4 sheet (remove foreign objects so that nothing bothers you)",
+  "@freeUpSpace": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doNotMoveYourFoot": "Do not move your foot on A4 paper while scanning",
+  "@doNotMoveYourFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloadLastVersion": "Download the latest version",
+  "@downloadLastVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloadUpdate": "Download update",
+  "@downloadUpdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "shiftYourBody": "Shift your body weight onto the foot you are scanning",
+  "@shiftYourBody": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scan": "Scan",
+  "@scan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toScan": "To scan, you need to photograph the foot from 5 angles, starting from 1",
+  "@toScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startScanning": "Start scanning",
+  "@startScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "start": "Start",
+  "@start": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "next": "Next",
+  "@next": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "footSelection": "Foot selection",
+  "@footSelection": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseTheFoot": "Choose the foot with which it will be more convenient for you to start",
+  "@chooseTheFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanLeftFoot": "Scan the left foot",
+  "@scanLeftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanRightFoot": "Scan the right foot",
+  "@scanRightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanningWillStart": "Scanning will start immediately after your choice",
+  "@scanningWillStart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueWithLeftFoot": "Put the left foot on a paper, press the button and continue scanning",
+  "@continueWithLeftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueWithRightFoot": "Put the right foot on a paper, press the button and continue scanning",
+  "@continueWithRightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "clickIfYouWantToEdit": "Click if you want to edit",
+  "@clickIfYouWantToEdit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "findPerfectMath": "Find your perfect match",
+  "@findPerfectMath": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatIsYourName": "What is your name?",
+  "@whatIsYourName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "modelsFrom": "Models from",
+  "@modelsFrom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "update": "Update Scan",
+  "@update": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "linearFootLength": "Linear foot length",
+  "@linearFootLength": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "linearWidthOfFoot": "Linear width of the foot",
+  "@linearWidthOfFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "footGirthInBunches": "Foot girth in bunches",
+  "@footGirthInBunches": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "liftingGirth": "Lifting girth",
+  "@liftingGirth": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "left": "Left",
+  "@left": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "right": "Right",
+  "@right": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "parameters": "Parameters",
+  "@parameters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rescan": "Rescan",
+  "@rescan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "modelNotBuilt": "Model not built",
+  "@modelNotBuilt": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorWithModels": "An error occurred while building. Re-scan",
+  "@errorWithModels": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "processing": "Processing the photo...",
+  "@processing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "makeModels": "Your foot model is being built and will be ready in less than a minute",
+  "@makeModels": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "infoAbout": "About developers",
+  "@infoAbout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "offerContract": "Offer contract",
+  "@offerContract": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryTerms": "Delivery terms",
+  "@deliveryTerms": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "historyOrders": "History of orders",
+  "@historyOrders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutDevelopers": "About developers",
+  "@aboutDevelopers": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noNetworkError": "No network",
+  "@noNetworkError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unauthProfile": "Register or login",
+  "@unauthProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "unauthCatalog": "Register or login",
+  "@unauthCatalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noModelCatalog": "Scan your legs",
+  "@noModelCatalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "wantScan": "I want scan my legs!",
+  "@wantScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchCaps": "SEARCH",
+  "@searchCaps": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "search": "Search",
+  "@search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerForBonus": "Log in to use the bonus program",
+  "@registerForBonus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showFullCatalog": "Show full catalog",
+  "@showFullCatalog": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "filter": "Filters",
+  "@filter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "popular": "Popular",
+  "@popular": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sort": "Sorting",
+  "@sort": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showFullItems": "Show all",
+  "@showFullItems": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "cancel",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "possibleTypesDelivery": "Delivery method",
+  "@possibleTypesDelivery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "changeCity": "CHANGE CITY",
+  "@changeCity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryAddress": "Delivery address",
+  "@deliveryAddress": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "address": "Address",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackCall": "Request an operator call",
+  "@feedbackCall": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "comment": "Here you can leave\ncomment\n(but this is optional)",
+  "@comment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "payment": "Payment method",
+  "@payment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart0": "By clicking the button, you agree to",
+  "@orderAgreementPart0": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart1": "the Company's Privacy Policy",
+  "@orderAgreementPart1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart2": " and ",
+  "@orderAgreementPart2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAgreementPart3": "the Public Offer Agreement",
+  "@orderAgreementPart3": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "street": "Street, house, apartment",
+  "@street": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderProcessing": "Processing the order...",
+  "@orderProcessing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "products": "Products",
+  "@products": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delivery": "Delivery",
+  "@delivery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderAvailableSoon": "Your order will be processed soon",
+  "@orderAvailableSoon": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ordering": "PLACE AN ORDER",
+  "@ordering": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderingScreen": "Order checkout",
+  "@orderingScreen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phone": "Phone",
+  "@phone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "required": "This field must be filled in",
+  "@required": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fullname": "Full name",
+  "@fullname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forMen": "Men",
+  "@forMen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forWomen": "Women",
+  "@forWomen": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tighter": "Tighter",
+  "@tighter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "freer": "Freer",
+  "@freer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "greatSize": "Great",
+  "@greatSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "neuralNetwork": "Neural network determined: good fit in all zones of both legs",
+  "@neuralNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "favorite": "To favorite",
+  "@favorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tobasket": "TO BASKET",
+  "@tobasket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gender": "Gender",
+  "@gender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanning": "About scanning",
+  "@aboutScanning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainOffice": "Main Office",
+  "@mainOffice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeToTechSupport": "Write to technical support",
+  "@writeToTechSupport": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "legalInfo": "Legal information",
+  "@legalInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgram": "Loyalty program",
+  "@loyaltyProgram": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgramDescription": "Specify discounts and delivery conditions when confirming the order with the operator",
+  "@loyaltyProgramDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addressInfo": "Voronezh region, Voronezh city,\nTekstilshchikov street, 5B, \nindex 394026v",
+  "@addressInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerDescriptionShowCase": "Register to try on shoes online",
+  "@registerDescriptionShowCase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "respect": "STREET BEAT",
+  "@respect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requiredFields": "required fields",
+  "@requiredFields": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmed": "Confirmed",
+  "@confirmed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "agreement": "Agreement",
+  "@agreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectPhone": "Incorrect phone",
+  "@incorrectPhone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectEmail": "Incorrect email",
+  "@incorrectEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "incorrectDate": "Incorrect date",
+   "@incorrectDate": {
+     "type": "text",
+     "placeholders": {}
+   },
+  "camera": "Camera",
+  "@camera": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gallery": "Gallery",
+  "@gallery": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showCase": "Show Case",
+  "@showCase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "favorites": "Favorites",
+  "@favorites": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendAppRating": "Send Review",
+  "@sendAppRating": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseRateOurApp": "Please, rate our app",
+  "@pleaseRateOurApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goodRate": "Good",
+  "@goodRate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "badRate": "Bad",
+  "@badRate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perfect": "Perfect",
+  "@perfect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perfectFootSize": "In our service, we calculate the degree of fit of the shoe to the foot and, based on machine learning algorithms, we display the gradations of sensations of your particular foot in the selected shoe model.",
+  "@perfectFootSize": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutService": "Choosing the size, our service will tell you how suitable the option you have chosen and how the shoes will fit the foot.",
+  "@aboutService": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanningAlgorithm": "Our algorithm automatically detects two suitable sizes by enclosing them with a green border. The first will fit closer to your leg and the second will hold more loosely.",
+  "@aboutScanningAlgorithm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutScanningInfo": "Thanks to our algorithm, you have a unique opportunity to appreciate the sensations Your feet in every shoe size, and make the final choice on your own according to how you prefer to wear shoes, denser or looser.",
+  "@aboutScanningInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "differentSizes": "Each user has the parameters of each leg may differ, so the sensations in one and the same size may be different.",
+  "@differentSizes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableInOneProductShop": "Available in 1 shop",
+  "@availableInOneProductShop": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableProductShopsCount": "Available in {count} shops",
+  "@availableProductShopsCount": {
+    "type": "text",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "all": "All",
+  "@all": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allProducts": "All products",
+  "@allProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "infoDetail": "Detail info",
+  "@infoDetail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inShop": "Go to shop",
+  "@inShop": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buyFavoriteMarket": "Buy from your favorite marketplaces",
+  "@buyFavoriteMarket": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "buyShoesAtRespect": "Buy shoes at STREET BEAT",
+  "@buyShoesAtRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "prepositionWith": "with",
+  "@prepositionWith": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "withService": "service",
+  "@withService": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tryOnOnline": "try on online",
+  "@tryOnOnline": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doScan": "Scan",
+  "@doScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanAtRespect": "Scan your feet at STREET BEAT stores",
+  "@scanAtRespect": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanAtRespectDescription": "Come and we will find the perfect shoes!",
+  "@scanAtRespectDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scaning": "Scaning",
+  "@scaning": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutGoToScan": "About go to scan",
+  "@aboutGoToScan": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "turnOnSound": "Turn on the sound, there are voice prompts in the app",
+  "@turnOnSound": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nothingToShow": "Nothing to show",
+  "@nothingToShow": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "couldNotFindAnything": "Couldn't find anything for your request",
+  "@couldNotFindAnything": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "disableFilters": "Disable filters",
+  "@disableFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reset": "Reset",
+  "@reset": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "allFilters": "All filters",
+  "@allFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeFilters": "Active filters",
+  "@activeFilters": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showProducts": "Show products",
+  "@showProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "versionAbout": "Application version",
+  "@versionAbout": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myInfo": "My information",
+  "@myInfo": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "legModel3d": "3D leg model",
+  "@legModel3d": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutUs": "About us",
+  "@aboutUs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "empty": "There's nothing here yet",
+  "@empty": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addToFavorites": "To add a product to favorites, click on the heart in the product card",
+  "@addToFavorites": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addFavorite": "Product added to favorites",
+  "@addFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "removeFavorite": "The product was removed from favorites",
+  "@removeFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorFavorite": "Couldn't change favorites",
+  "@errorFavorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "watchedRecently": "Watched recently",
+  "@watchedRecently": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommended": "Recommended products",
+  "@recommended": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exchange": "Refund and Exchange",
+  "@exchange": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notificationHistory": "Notification History",
+  "@notificationHistory": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "storeMap": "Store map",
+  "@storeMap": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scannerLocations": "Scanner locations",
+  "@scannerLocations": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyProducts": "We're sorry, but we couldn't \n find anything for your request",
+  "@emptyProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lookSomethingElse": "Look for something else",
+  "@lookSomethingElse": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appVersion": "Version:",
+  "@appVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appUpdate": "App update",
+  "@appUpdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginOrRegister": "Login / Register",
+  "@loginOrRegister": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "serverVersion": "Server version",
+  "@serverVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "scanServerVersion": "Scan server version",
+  "@scanServerVersion": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "testAccount": "Test account",
+  "@testAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "smsCodeInsert": "Code insert automaticly.",
+  "@smsCodeInsert": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noNetwork": "No network connection",
+  "@noNetwork": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegs": "How to scan legs",
+  "@howToScanLegs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegsText1": "Shift your body weight and bend the scanned leg at the knee",
+  "@howToScanLegsText1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "howToScanLegsText2": "Combine the frames with a sheet of paper in a circle",
+  "@howToScanLegsText2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "angleIndicator": "Angle indicator",
+  "@angleIndicator": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "angleIndicatorText": "Start scanning from the inside of the foot, as indicated by the flashing indicator.",
+  "@angleIndicatorText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "leftFoot": "Left foot",
+  "@leftFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rightFoot": "Right foot",
+  "@rightFoot": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "flashing": "flashing",
+  "@flashing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publicOfferAgreement": "publicOfferAgreement",
+  "@publicOfferAgreement": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "finalPrice": "Total:",
+  "unableToAddMoreProducts": "Unable to add\n more products",
+  "@unableToAddMoreProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "itHasOnly": "It has only",
+  "@itHasOnly": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "okay": "Okay",
+  "@okay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "promotionalCodeIsApplied": "Promotional code is applied:",
+  "@promotionalCodeIsApplied": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bonuses": "Bonuses",
+  "@bonuses": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "willReceive": "Will receive",
+  "@willReceive": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableForDebiting": "Available for debiting",
+  "@availableForDebiting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "willBeDebited": "Will be debited",
+  "@willBeDebited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancelCaps": "CANCEL",
+  "@cancelCaps": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeOffBonusesForPurchase": "WRITE OFF BONUSES FOR PURCHASE",
+  "@writeOffBonusesForPurchase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "isNotAvailable": "Is not available",
+  "@isNotAvailable": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "order": "Order",
+  "@order": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forFree": "For free",
+  "@forFree": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderDate": "Order date",
+  "@orderDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderStatus": "Order status:",
+  "@orderStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "paymentStatus": "Payment status",
+  "@paymentStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "payForTheOrder": "PAY FOR THE ORDER",
+  "@payForTheOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeatAnOrder": "REPEAT THE ORDER",
+  "@repeatAnOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myOrders": "My Orders",
+  "@myOrders": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHaventBoughtAnythingYet": "You haven’t bought anything yet",
+  "@youHaventBoughtAnythingYet": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToShopping": "GO TO SHOPPING",
+  "@goToShopping": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommendedProducts": "Recommended products",
+  "@recommendedProducts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youDontHaveAnyNewNotifications": "You don't have any new notifications",
+  "@youDontHaveAnyNewNotifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goToTheShowcase": "Go to the showcase",
+  "@goToTheShowcase": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "customUrl": "Кастомный url",
+  "@customUrl": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doYouReallyWantToLogOutOfYourProfile": "Do you really want to log out of your profile?",
+  "@doYouReallyWantToLogOutOfYourProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exit": "EXIT",
+  "@exit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doYouReallyWantToDeleteYourAccount": "Do you really want to delete your account?",
+  "@doYouReallyWantToDeleteYourAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "DELETE",
+  "@delete": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteYourAccount": "Delete your account",
+  "@deleteYourAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyaltyProgramStatus": "Loyalty Program Status",
+  "@loyaltyProgramStatus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myBalance": "My balance",
+  "@myBalance": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "bonusesOf": "bonuses",
+  "@bonusesOf": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "deliveryAndPayment": "Delivery and payment",
+  "@deliveryAndPayment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messageSMS": "Message SMS",
+  "@messageSMS": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "messageEmail": "Message Email",
+  "@messageEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "getTheCode": "Get the code",
+  "@getTheCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Login",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thankYou": "Thank you",
+  "@thankYou": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourOrderHasBeenConfirmed": "Your order has been confirmed",
+  "@yourOrderHasBeenConfirmed": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orderDetailsCanBeFoundInTheProfile": "Order details can be found in the profile",
+  "@orderDetailsCanBeFoundInTheProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "toOrder": "To order",
+  "@toOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "paymentNotMadePleasePayTheOrder": "Payment not made, please pay the order",
+  "@paymentNotMadePleasePayTheOrder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pleaseSelectOneOfThem": "Please select one of them",
+  "@pleaseSelectOneOfThem": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noResult": "no result",
+  "@noResult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendYourDeliveryTime": "Send your delivery time",
+  "@sendYourDeliveryTime": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectTheOption": "Select the option",
+  "@selectTheOption": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "settelment": "settelment",
+  "@settelment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theDeliveryDate": "The delivery date",
+  "@theDeliveryDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "select": "Select",
+  "@select": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "post": "Post",
+  "@post": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectAAddressOfThatStore": "Select a address of that store",
+  "@selectAAddressOfThatStore": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectAFacility": "Select a facility",
+  "@selectAFacility": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectTheAddressOfThePickupPoint": "Select the address of the pickup point",
+  "@selectTheAddressOfThePickupPoint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myDetails": "My details",
+  "@myDetails": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nameAndSurname": "Name and surname",
+  "@nameAndSurname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "birthday": "Birthday",
+  "@birthday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectDate": "Select date",
+  "@selectDate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "male": "male",
+  "@male": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "female": "female",
+  "@female": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callAConsultant": "CALL A CONSULTANT",
+  "@callAConsultant": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatsapp": "WRITE TO WHATSAPP",
+  "@whatsapp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onlinePayment": "Online payment",
+  "show": "Show",
+  "@show": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "product": "product",
+  "@product": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "product5": "products",
+  "@product5": {
+    "type": "text",
+    "placeholders": {}
+  },"product2": "products",
+  "@product2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "workInProgress": "This page will be available in production",
+  "sendCodeTimer": "Send the code again via",
+  "@sendCodeTimer": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkEnterCode": "Check the entered code or try",
+  "@checkEnterCode": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enter": "LOGIN",
+  "@enter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rateApp": "Please rate our app",
+  "@rateApp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "whatImprove": "Tell us what to improve?",
+  "@whatImprove": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourComments": "Your comment",
+  "@yourComments": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendComment": "SEND",
+  "@sendComment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ascPrice": "Ascending prices",
+  "@ascPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "descPrice": "Descending prices",
+  "@descPrice": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "none": "Sort",
+  "@none": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "descDiscount": "Discount",
+  "@descDiscount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authRequired": "To use the profile, you need to log in or register.",
+  "@authRequired": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registration": "Registration",
+  "@registration": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userIsAlreadyExists": "User with the same name already exists",
+  "@userIsAlreadyExists": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "userIsNotRegistered": "This account does not exist.",
+  "@userIsNotRegistered": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "blog": "Blog",
+  "@blog": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
